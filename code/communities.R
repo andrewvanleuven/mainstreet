@@ -172,4 +172,4 @@ mn <- left_join(places,(xw %>% filter(stab == "mn")),by = "GEOID") %>%
 ####
 muns <- rbind(ia,oh,wi,nc,mi,va,me,co,tx,mn) %>%
   arrange(fips) %>%
-  write_csv("data/communities.csv")
+  write_csv("data/csv/communities.csv")

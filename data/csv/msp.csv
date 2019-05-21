@@ -1,0 +1,407 @@
+﻿fips,cityst,name,st,msp_yr,msp_accr,msp_affl,msp
+809555,"Brush, Colorado",Brush,Colorado,2001,1,0,1
+842330,"Lake City, Colorado",Lake City,Colorado,2005,1,0,1
+873825,"Steamboat Springs, Colorado",Steamboat Springs,Colorado,2006,1,0,1
+831605,"Granby, Colorado",Granby,Colorado,2008,1,0,1
+843110,"Lamar, Colorado",Lamar,Colorado,2009,1,0,1
+864255,"Rifle, Colorado",Rifle,Colorado,2009,0,1,1
+847070,"Lyons, Colorado",Lyons,Colorado,2010,0,1,1
+851745,"Montrose, Colorado",Montrose,Colorado,2012,0,1,1
+864200,"Ridgway, Colorado",Ridgway,Colorado,2012,1,0,1
+880865,"Victor, Colorado",Victor,Colorado,2012,1,0,1
+878610,"Trinidad, Colorado",Trinidad,Colorado,2013,0,1,1
+810105,"Buena Vista, Colorado",Buena Vista,Colorado,2014,0,1,1
+886090,"Woodland Park, Colorado",Woodland Park,Colorado,2014,1,0,1
+812910,"Central City, Colorado",Central City,Colorado,2015,0,1,1
+823740,"Elizabeth, Colorado",Elizabeth,Colorado,2015,0,1,1
+844320,"Leadville, Colorado",Leadville,Colorado,2015,0,1,1
+883230,"Wellington, Colorado",Wellington,Colorado,2015,1,0,1
+849875,"Meeker, Colorado",Meeker,Colorado,2016,0,1,1
+885485,"Windsor, Colorado",Windsor,Colorado,2016,1,0,1
+842110,"La Junta, Colorado",La Junta,Colorado,2018,0,1,1
+1922395,"Dubuque, Iowa",Dubuque ,Iowa,1985,1,0,1
+1909550,"Burlington, Iowa",Burlington ,Iowa,1986,1,0,1
+1940845,"Keokuk, Iowa",Keokuk ,Iowa,1986,1,0,1
+1959925,"Oskaloosa, Iowa",Oskaloosa ,Iowa,1986,1,0,1
+1911755,"Cedar Falls, Iowa",Cedar Falls ,Iowa,1987,1,0,1
+1974280,"Spencer, Iowa",Spencer ,Iowa,1987,1,0,1
+1983910,"West Des Moines, Iowa",West Des Moines ,Iowa,1987,1,0,1
+1982875,"Waverly, Iowa",Waverly ,Iowa,1989,1,0,1
+1916500,"Corning, Iowa",Corning ,Iowa,1990,1,0,1
+1938640,"Iowa Falls, Iowa",Iowa Falls ,Iowa,1990,1,0,1
+1915825,"Conrad, Iowa",Conrad ,Iowa,1991,1,0,1
+1924690,"Elkader, Iowa",Elkader ,Iowa,1991,1,0,1
+1983145,"Webster City, Iowa",Webster City,Iowa,1991,1,0,1
+1933960,"Hampton, Iowa",Hampton ,Iowa,1991,1,0,1
+1956100,"New Hampton, Iowa",New Hampton ,Iowa,1993,1,0,1
+1922890,"Dunlap, Iowa",Dunlap ,Iowa,1994,1,0,1
+1907030,"Bloomfield, Iowa",Bloomfield ,Iowa,1995,1,0,1
+1932790,"Greenfield, Iowa",Greenfield ,Iowa,1995,1,0,1
+1944400,"Le Mars, Iowa",Le Mars ,Iowa,1995,1,0,1
+1912765,"Charles City, Iowa",Charles City ,Iowa,1996,1,0,1
+1969645,"Sac City, Iowa",Sac City ,Iowa,1996,1,0,1
+1982425,"Waterloo, Iowa",Waterloo ,Iowa,1996,1,0,1
+1959835,"Osceola, Iowa",Osceola ,Iowa,1997,1,0,1
+1912495,"Central City, Iowa",Central City ,Iowa,2000,1,0,1
+1975135,"State Center, Iowa",State Center ,Iowa,2000,1,0,1
+1975675,"Story City, Iowa",Story City ,Iowa,2000,1,0,1
+1949755,"Marshalltown, Iowa",Marshalltown ,Iowa,2002,1,0,1
+1954705,"Mount Pleasant, Iowa",Mount Pleasant ,Iowa,2002,1,0,1
+1950160,"Mason City, Iowa",Mason City ,Iowa,2004,1,0,1
+1960465,"Ottumwa, Iowa",Ottumwa ,Iowa,2006,1,0,1
+1983595,"West Branch, Iowa",West Branch ,Iowa,2006,1,0,1
+1984765,"West Union, Iowa",West Union ,Iowa,2006,1,0,1
+1905590,"Belle Plaine, Iowa",Belle Plaine ,Iowa,2008,1,0,1
+1954840,"Mount Vernon, Iowa",Mount Vernon ,Iowa,2008,1,0,1
+1982335,"Washington, Iowa",Washington ,Iowa,2008,1,0,1
+1986835,"Woodbine, Iowa",Woodbine ,Iowa,2008,1,0,1
+1901855,"Ames, Iowa",Ames ,Iowa,2009,1,0,1
+1912000,"Cedar Rapids, Iowa",Cedar Rapids ,Iowa,2009,1,0,1
+1915060,"Colfax, Iowa",Colfax ,Iowa,2009,1,0,1
+1919000,"Davenport, Iowa",Davenport ,Iowa,2009,1,0,1
+1921000,"Des Moines, Iowa",Des Moines ,Iowa,2009,1,0,1
+1928605,"Fort Madison, Iowa",Fort Madison ,Iowa,2009,1,0,1
+1948945,"Manning, Iowa",Manning ,Iowa,2009,1,0,1
+1912720,"Chariton, Iowa",Chariton ,Iowa,2012,1,0,1
+1939450,"Jefferson, Iowa",Jefferson ,Iowa,2012,1,0,1
+1943275,"Lansing, Iowa",Lansing ,Iowa,2012,1,0,1
+1949485,"Marion, Iowa",Marion ,Iowa,2013,1,0,1
+1903970,"Avoca, Iowa",Avoca ,Iowa,2014,1,0,1
+1933420,"Guthrie Center, Iowa",Guthrie Center ,Iowa,2014,1,0,1
+1956505,"Newton, Iowa",Newton ,Iowa,2014,1,0,1
+1912315,"Centerville, Iowa",Centerville ,Iowa,2015,1,0,1
+1933195,"Grundy Center, Iowa",Grundy Center ,Iowa,2015,1,0,1
+2303355,"Bath, Maine",Bath,Maine,2001,1,0,1
+2327085,"Gardiner, Maine",Gardiner,Maine,2001,1,0,1
+2364675,"Saco, Maine",Saco,Maine,2001,1,0,1
+2368875,"Skowhegan, Maine",Skowhegan,Maine,2005,1,0,1
+2304860,"Biddeford, Maine",Biddeford,Maine,2006,1,0,1
+2363590,"Rockland, Maine",Rockland,Maine,2009,1,0,1
+2303950,"Belfast, Maine",Belfast,Maine,2011,1,0,1
+2308395,"Brunswick, Maine",Brunswick,Maine,2012,1,0,1
+2302100,"Augusta, Maine",Augusta,Maine,2013,1,0,1
+2382105,"Westbrook, Maine",Westbrook,Maine,2017,1,0,1
+2609820,"Boyne City, Michigan",Boyne City,Michigan,2003,1,0,1
+2665860,"Portland, Michigan",Portland,Michigan,2003,1,0,1
+2657760,"Niles, Michigan",Niles,Michigan,2004,1,0,1
+2633340,"Grand Haven, Michigan",Grand Haven,Michigan,2005,1,0,1
+2639540,"Howell, Michigan",Howell,Michigan,2005,1,0,1
+2646000,"Lansing, Michigan",Lansing,Michigan,2006,1,0,1
+2661940,"Owosso, Michigan",Owosso,Michigan,2009,1,0,1
+2609000,"Blissfield, Michigan",Blissfield,Michigan,2010,1,0,1
+2636920,"Hart, Michigan",Hart,Michigan,2010,1,0,1
+2684880,"Wayland, Michigan",Wayland,Michigan,2010,1,0,1
+2671140,"Saline, Michigan",Saline,Michigan,2011,1,0,1
+2646000,"Lansing, Michigan",Lansing,Michigan,2012,1,0,1
+2661620,"Otsego, Michigan",Otsego,Michigan,2012,1,0,1
+2634640,"Grayling, Michigan",Grayling,Michigan,2014,0,1,1
+2679760,"Three Rivers, Michigan",Three Rivers,Michigan,2014,0,1,1
+2684940,"Wayne, Michigan",Wayne,Michigan,2014,0,1,1
+2614780,"Charlevoix, Michigan",Charlevoix,Michigan,2015,0,1,1
+2653920,"Milan, Michigan",Milan,Michigan,2016,0,1,1
+2671740,"Sault Ste. Marie, Michigan",Sault Ste. Marie,Michigan,2017,0,1,1
+2614820,"Charlotte, Michigan",Charlotte,Michigan,2017,0,1,1
+2646040,"Lapeer, Michigan",Lapeer,Michigan,2017,0,1,1
+2720546,"Faribault, Minnesota",Faribault ,Minnesota,2010,0,1,1
+2753620,"Red Wing, Minnesota",Red Wing ,Minnesota,2010,1,0,1
+2770420,"Willmar, Minnesota",Willmar ,Minnesota,2010,0,1,1
+2746042,"New Ulm, Minnesota",New Ulm ,Minnesota,2011,0,1,1
+2771032,"Winona, Minnesota",Winona ,Minnesota,2013,1,0,1
+2749300,"Owatonna, Minnesota",Owatonna ,Minnesota,2014,0,1,1
+2759350,"Shakopee, Minnesota",Shakopee ,Minnesota,2014,1,0,1
+2739878,"Mankato, Minnesota",Mankato,Minnesota,2017,0,1,1
+2746924,"Northfield, Minnesota",Northfield ,Minnesota,2018,0,1,1
+2767378,"Wabasha, Minnesota",Wabasha ,Minnesota,2018,0,1,1
+3761200,"Shelby, North Carolina",Shelby,North Carolina,1980,1,0,1
+3746340,"New Bern, North Carolina",New Bern,North Carolina,1980,1,0,1
+3766700,"Tarboro, North Carolina",Tarboro,North Carolina,1980,1,0,1
+3758860,"Salisbury, North Carolina",Salisbury,North Carolina,1980,1,0,1
+3771220,"Washington, North Carolina",Washington,North Carolina,1980,1,0,1
+3713240,"Clinton, North Carolina",Clinton,North Carolina,1982,1,0,1
+3744400,"Morganton, North Carolina",Morganton,North Carolina,1982,1,0,1
+3764740,"Statesville, North Carolina",Statesville,North Carolina,1982,1,0,1
+3757500,"Rocky Mount, North Carolina",Rocky Mount,North Carolina,1982,1,0,1
+3774540,"Wilson, North Carolina",Wilson,North Carolina,1982,1,0,1
+3726880,"Goldsboro, North Carolina",Goldsboro,North Carolina,1984,1,0,1
+3737760,"Lenoir, North Carolina",Lenoir,North Carolina,1984,1,0,1
+3755900,"Reidsville, North Carolina",Reidsville,North Carolina,1984,1,0,1
+3759280,"Sanford, North Carolina",Sanford,North Carolina,1984,1,0,1
+3770380,"Wadesboro, North Carolina",Wadesboro,North Carolina,1984,1,0,1
+3730660,"Henderson, North Carolina",Henderson,North Carolina,1986,1,0,1
+3730720,"Hendersonville, North Carolina",Hendersonville,North Carolina,1986,1,0,1
+3762520,"Smithfield, North Carolina",Smithfield,North Carolina,1986,1,0,1
+3771500,"Waynesville, North Carolina",Waynesville,North Carolina,1986,1,0,1
+3735920,"Kinston, North Carolina",Kinston,North Carolina,1986,1,0,1
+3720580,"Elizabeth City, North Carolina",Elizabeth City,North Carolina,1988,1,0,1
+3739700,"Lumberton, North Carolina",Lumberton,North Carolina,1988,1,0,1
+3744220,"Mooresville, North Carolina",Mooresville,North Carolina,1988,1,0,1
+3744800,"Mount Airy, North Carolina",Mount Airy,North Carolina,1988,1,0,1
+3709060,"Burlington, North Carolina",Burlington,North Carolina,1988,1,0,1
+3724640,"Franklin, North Carolina",Franklin,North Carolina,1990,1,0,1
+3714100,"Concord, North Carolina",Concord,North Carolina,1990,1,0,1
+3747000,"Newton, North Carolina",Newton,North Carolina,1990,1,0,1
+3758460,"Rutherfordton, North Carolina",Rutherfordton,North Carolina,1990,1,0,1
+3700160,"Aberdeen, North Carolina",Aberdeen,North Carolina,1990,1,0,1
+3743720,"Mocksville, North Carolina",Mocksville,North Carolina,1991,1,0,1
+3764260,"Spruce Pine, North Carolina",Spruce Pine,North Carolina,1991,1,0,1
+3763400,"Southport, North Carolina",Southport,North Carolina,1991,1,0,1
+3707080,"Boone, North Carolina",Boone,North Carolina,1993,1,0,1
+3700680,"Albemarle, North Carolina",Albemarle,North Carolina,1993,1,0,1
+3707720,"Brevard, North Carolina",Brevard,North Carolina,1993,1,0,1
+3738060,"Lexington, North Carolina",Lexington,North Carolina,1993,1,0,1
+3766500,"Sylva, North Carolina",Sylva,North Carolina,1995,1,0,1
+3738320,"Lincolnton, North Carolina",Lincolnton,North Carolina,1995,1,0,1
+3722820,"Farmville, North Carolina",Farmville,North Carolina,1995,1,0,1
+3758160,"Roxboro, North Carolina",Roxboro,North Carolina,1995,1,0,1
+3749800,"Oxford, North Carolina",Oxford,North Carolina,1998,1,0,1
+3743920,"Monroe, North Carolina",Monroe,North Carolina,1998,1,0,1
+3720620,"Elkin, North Carolina",Elkin,North Carolina,1998,1,0,1
+3763680,"Sparta, North Carolina",Sparta,North Carolina,1998,1,0,1
+3747880,"North Wilkesboro, North Carolina",North Wilkesboro,North Carolina,2000,1,0,1
+3704840,"Belmont, North Carolina",Belmont,North Carolina,2000,1,0,1
+3730900,"Hertford, North Carolina",Hertford,North Carolina,2000,1,0,1
+3744320,"Morehead City, North Carolina",Morehead City,North Carolina,2000,1,0,1
+3720080,"Eden, North Carolina",Eden,North Carolina,2003,1,0,1
+3720120,"Edenton, North Carolina",Edenton,North Carolina,2003,1,0,1
+3711640,"Chadbourn, North Carolina",Chadbourn,North Carolina,2003,0,1,1
+3745100,"Mount Olive, North Carolina",Mount Olive,North Carolina,2003,0,1,1
+3724080,"Forest City, North Carolina",Forest City,North Carolina,2003,1,0,1
+3741420,"Marion, North Carolina",Marion,North Carolina,2003,1,0,1
+3771780,"Weldon, North Carolina",Weldon,North Carolina,2003,0,1,1
+3774220,"Williamston, North Carolina",Williamston,North Carolina,2003,0,1,1
+3764160,"Spring hope, North Carolina",Spring hope,North Carolina,2004,0,1,1
+3776220,"Zebulon, North Carolina",Zebulon,North Carolina,2004,0,1,1
+3770780,"Walnut Cove, North Carolina",Walnut Cove,North Carolina,2005,0,1,1
+3744900,"Mount Gilead, North Carolina",Mount Gilead,North Carolina,2006,0,1,1
+3712860,"Clayton, North Carolina",Clayton,North Carolina,2006,1,0,1
+3725300,"Fuquay-Varina, North Carolina",Fuquay-Varina,North Carolina,2006,1,0,1
+3722360,"Fairmont, North Carolina",Fairmont,North Carolina,2006,0,1,1
+3731060,"Hickory, North Carolina",Hickory,North Carolina,2006,1,0,1
+3770540,"Wake Forest, North Carolina",Wake Forest,North Carolina,2006,1,0,1
+3702840,"Ayden, North Carolina",Ayden,North Carolina,2006,0,1,1
+3774680,"Windsor, North Carolina",Windsor,North Carolina,2007,0,1,1
+3701400,"Angier, North Carolina",Angier,North Carolina,2007,0,1,1
+3702960,"Badin, North Carolina",Badin,North Carolina,2007,0,1,1
+3708960,"Burgaw, North Carolina",Burgaw,North Carolina,2007,0,1,1
+3768580,"Tryon, North Carolina",Tryon,North Carolina,2007,0,1,1
+3772540,"West Jefferson, North Carolina",West Jefferson,North Carolina,2007,0,1,1
+3758160,"Roxboro, North Carolina",Roxboro,North Carolina,2008,0,1,1
+3729160,"Hamlet, North Carolina",Hamlet,North Carolina,2008,0,1,1
+3705040,"Benson, North Carolina",Benson,North Carolina,2008,0,1,1
+3709140,"Burnsville, North Carolina",Burnsville,North Carolina,2008,0,1,1
+3727420,"Granite Falls, North Carolina",Granite Falls,North Carolina,2008,0,1,1
+3742020,"Maxton, North Carolina",Maxton,North Carolina,2008,0,1,1
+3757000,"Robbins, North Carolina",Robbins,North Carolina,2009,0,1,1
+3736400,"La Grange, North Carolina",La Grange,North Carolina,2009,0,1,1
+3738100,"Liberty, North Carolina",Liberty,North Carolina,2009,0,1,1
+3716400,"Davidson, North Carolina",Davidson,North Carolina,2009,1,0,1
+3725480,"Garner, North Carolina",Garner,North Carolina,2009,1,0,1
+3735880,"Kings Mountain, North Carolina",Kings Mountain,North Carolina,2009,1,0,1
+3771460,"Waxhaw, North Carolina",Waxhaw,North Carolina,2009,0,1,1
+3756900,"Roanoke Rapids, North Carolina",Roanoke Rapids,North Carolina,2009,1,0,1
+3774020,"Wilkesboro, North Carolina",Wilkesboro,North Carolina,2009,0,1,1
+3760320,"Selma, North Carolina",Selma,North Carolina,2009,0,1,1
+3710980,"Catawba, North Carolina",Catawba,North Carolina,2010,0,1,1
+3731360,"Highlands, North Carolina",Highlands,North Carolina,2010,0,1,1
+3745640,"Murfreesboro, North Carolina",Murfreesboro,North Carolina,2010,0,1,1
+3759780,"Scotland Neck, North Carolina",Scotland Neck,North Carolina,2010,0,1,1
+3768520,"Troy, North Carolina",Troy,North Carolina,2010,0,1,1
+3753040,"Plymouth, North Carolina",Plymouth,North Carolina,2010,0,1,1
+3705220,"Bessemer City, North Carolina",Bessemer City,North Carolina,2011,0,1,1
+3752660,"Pittsboro, North Carolina",Pittsboro,North Carolina,2011,0,1,1
+3768500,"Troutman, North Carolina",Troutman,North Carolina,2011,0,1,1
+3738220,"Lillington, North Carolina",Lillington,North Carolina,2011,0,1,1
+3771100,"Warrenton, North Carolina",Warrenton,North Carolina,2011,0,1,1
+3756360,"Richlands, North Carolina",Richlands,North Carolina,2012,0,1,1
+3712340,"Cherryville, North Carolina",Cherryville,North Carolina,2012,0,1,1
+3720600,"Elizabethtown, North Carolina",Elizabethtown,North Carolina,2012,0,1,1
+3758920,"Saluda, North Carolina",Saluda,North Carolina,2012,0,1,1
+3763760,"Spencer, North Carolina",Spencer,North Carolina,2012,0,1,1
+3704640,"Belhaven, North Carolina",Belhaven,North Carolina,2013,0,1,1
+3730280,"Hayesville, North Carolina",Hayesville,North Carolina,2013,0,1,1
+3741640,"Marshville, North Carolina",Marshville,North Carolina,2013,0,1,1
+3742060,"Mayodan, North Carolina",Mayodan,North Carolina,2013,0,1,1
+3757100,"Robersonville, North Carolina",Robersonville,North Carolina,2013,0,1,1
+3769520,"Valdese, North Carolina",Valdese,North Carolina,2013,0,1,1
+3921434,"Delaware, Ohio",Delaware,Ohio,2000,1,0,1
+3962848,"Piqua, Ohio",Piqua,Ohio,2000,1,0,1
+3910996,"Cambridge, Ohio",Cambridge,Ohio,2004,1,0,1
+3977588,"Troy, Ohio",Troy,Ohio,2004,1,0,1
+3979562,"Van Wert, Ohio",Van Wert,Ohio,2004,1,0,1
+3979716,"Vermilion, Ohio",Vermilion,Ohio,2004,1,0,1
+3986548,"Wooster, Ohio",Wooster,Ohio,2004,1,0,1
+3941664,"Lakewood, Ohio",Lakewood,Ohio,2006,1,0,1
+3950372,"Millersburg, Ohio",Millersburg,Ohio,2006,1,0,1
+3916000,"Cleveland, Ohio",Cleveland,Ohio,2007,1,0,1
+3939872,"Kent, Ohio",Kent,Ohio,2007,1,0,1
+3964304,"Portsmouth, Ohio",Portsmouth,Ohio,2007,1,0,1
+3916000,"Cleveland, Ohio",Cleveland,Ohio,2007,1,0,1
+3948790,"Medina, Ohio",Medina,Ohio,2008,1,0,1
+3942364,"Lebanon, Ohio",Lebanon ,Ohio,2009,1,0,1
+3953102,"Mount Vernon, Ohio",Mount Vernon,Ohio,2009,1,0,1
+3959416,"Painesville, Ohio",Painesville,Ohio,2009,1,0,1
+3947628,"Marietta, Ohio",Marietta,Ohio,2013,1,0,1
+3902568,"Ashland, Ohio",Ashland ,Ohio,2014,0,1,1
+3979072,"Urbana, Ohio",Urbana,Ohio,2014,0,1,1
+3985792,"Wilmington, Ohio",Wilmington ,Ohio,2014,0,1,1
+3976778,"Tiffin, Ohio",Tiffin,Ohio,2015,1,0,1
+3901798,"Amherst, Ohio",Amherst ,Ohio,2015,0,1,1
+3913554,"Chardon, Ohio",Chardon ,Ohio,2015,1,0,1
+3918868,"Coshocton, Ohio",Coshocton ,Ohio,2015,0,1,1
+3954040,"Newark, Ohio",Newark ,Ohio,2015,0,1,1
+3957834,"Oberlin, Ohio",Oberlin,Ohio,2015,0,1,1
+3964150,"Port Clinton, Ohio",Port Clinton ,Ohio,2015,0,1,1
+3986604,"Worthington, Ohio",Worthington ,Ohio,2015,0,1,1
+3976876,"Tipp City, Ohio",Tipp City,Ohio,2016,1,0,1
+3980304,"Wadsworth, Ohio",Wadsworth,Ohio,2016,1,0,1
+3949840,"Middletown, Ohio",Middletown ,Ohio,2017,1,0,1
+3982642,"Wellington, Ohio",Wellington,Ohio,2018,1,0,1
+4845072,"Lufkin, Texas",Lufkin,Texas,1983,1,0,1
+4817060,"Corsicana, Texas",Corsicana,Texas,1985,1,0,1
+4865600,"San Marcos, Texas",San Marcos,Texas,1986,1,0,1
+4857908,"Pittsburg, Texas",Pittsburg,Texas,1987,1,0,1
+4830116,"Gonzales, Texas",Gonzales,Texas,1988,1,0,1
+4819972,"Denton, Texas",Denton,Texas,1989,1,0,1
+4819900,"Denison, Texas",Denison,Texas,1989,1,0,1
+4848648,"Mineola, Texas",Mineola,Texas,1989,1,0,1
+4823044,"Elgin, Texas",Elgin,Texas,1990,1,0,1
+4874144,"Tyler, Texas",Tyler,Texas,1990,1,0,1
+4850820,"New Braunfels, Texas",New Braunfels,Texas,1991,1,0,1
+4805984,"Bay City, Texas",Bay City,Texas,1992,1,0,1
+4807000,"Beaumont, Texas",Beaumont,Texas,1992,1,0,1
+4849860,"Mount Vernon, Texas",Mount Vernon,Texas,1992,1,0,1
+4857980,"Plainview, Texas",Plainview,Texas,1992,1,0,1
+4830644,"Grapevine, Texas",Grapevine,Texas,1993,1,0,1
+4849800,"Mount Pleasant, Texas",Mount Pleasant,Texas,1993,1,0,1
+4819528,"Decatur, Texas",Decatur,Texas,1994,1,0,1
+4815472,"Clifton, Texas",Clifton,Texas,1995,1,0,1
+4839040,"Kerrville, Texas",Kerrville,Texas,1995,1,0,1
+4833212,"Henderson, Texas",Henderson,Texas,1996,1,0,1
+4840276,"La Grange, Texas",La Grange,Texas,1996,1,0,1
+4809640,"Bowie, Texas",Bowie,Texas,1997,1,0,1
+4813684,"Celina, Texas",Celina,Texas,1997,1,0,1
+4830080,"Goliad, Texas",Goliad,Texas,1997,1,0,1
+4832372,"Harlingen, Texas",Harlingen,Texas,1997,1,0,1
+4866644,"Seguin, Texas",Seguin,Texas,1997,1,0,1
+4829336,"Georgetown, Texas",Georgetown,Texas,1998,1,0,1
+4842448,"Levelland, Texas",Levelland,Texas,1998,1,0,1
+4850256,"Nacogdoches, Texas",Nacogdoches,Texas,1998,1,0,1
+4855080,"Paris, Texas",Paris,Texas,1998,1,0,1
+4810156,"Brenham, Texas",Brenham,Texas,1999,1,0,1
+4829660,"Gladewater, Texas",Gladewater,Texas,1999,1,0,1
+4830920,"Greenville, Texas",Greenville,Texas,1999,1,0,1
+4871948,"Taylor, Texas",Taylor,Texas,1999,1,0,1
+4825488,"Farmersville, Texas",Farmersville,Texas,2000,1,0,1
+4812496,"Canton, Texas",Canton,Texas,2001,1,0,1
+4813108,"Carthage, Texas",Carthage,Texas,2001,1,0,1
+4834088,"Hillsboro, Texas",Hillsboro,Texas,2001,1,0,1
+4835528,"Huntsville, Texas",Huntsville,Texas,2001,1,0,1
+4803000,"Amarillo, Texas",Amarillo,Texas,2002,1,0,1
+4812532,"Canyon, Texas",Canyon,Texas,2002,1,0,1
+4857476,"Pilot Point, Texas",Pilot Point,Texas,2002,1,0,1
+4862168,"Rio Grande City, Texas",Rio Grande City,Texas,2002,1,0,1
+4876816,"Waxahachie, Texas",Waxahachie,Texas,2002,1,0,1
+4815160,"Clarksville, Texas",Clarksville,Texas,2003,1,0,1
+4819792,"Del Rio, Texas",Del Rio,Texas,2003,1,0,1
+4843144,"Llano, Texas",Llano,Texas,2003,1,0,1
+4845096,"Luling, Texas",Luling,Texas,2003,1,0,1
+4846776,"Marshall, Texas",Marshall,Texas,2003,1,0,1
+4879816,"Winnsboro, Texas",Winnsboro,Texas,2003,1,0,1
+4830476,"Grand Saline, Texas",Grand Saline,Texas,2004,1,0,1
+4845744,"McKinney, Texas",McKinney,Texas,2004,1,0,1
+4857200,"Pharr, Texas",Pharr,Texas,2004,1,0,1
+4843132,"Livingston, Texas",Livingston,Texas,2005,1,0,1
+4864472,"San Angelo, Texas",San Angelo,Texas,2005,1,0,1
+4807192,"Beeville, Texas",Beeville,Texas,2006,1,0,1
+4816120,"Colorado City, Texas",Colorado City,Texas,2006,1,0,1
+4872368,"Texarkana, Texas",Texarkana,Texas,2006,1,0,1
+4805864,"Bastrop, Texas",Bastrop,Texas,2007,1,0,1
+4810264,"Bridgeport, Texas",Bridgeport,Texas,2007,1,0,1
+4817216,"Cotulla, Texas",Cotulla,Texas,2007,1,0,1
+4839124,"Kilgore, Texas",Kilgore,Texas,2007,1,0,1
+4863668,"Royse City, Texas",Royse City,Texas,2007,1,0,1
+4841464,"Laredo, Texas",Laredo,Texas,2008,1,0,1
+4843888,"Longview, Texas",Longview,Texas,2008,1,0,1
+4854708,"Palestine, Texas",Palestine,Texas,2008,1,0,1
+4862828,"Rockwall, Texas",Rockwall,Texas,2009,1,0,1
+4876864,"Weatherford, Texas",Weatherford,Texas,2009,1,0,1
+4821892,"Eagle Pass, Texas",Eagle Pass,Texas,2010,1,0,1
+4839352,"Kingsville, Texas",Kingsville,Texas,2011,1,0,1
+4874588,"Uvalde, Texas",Uvalde,Texas,2011,1,0,1
+4875308,"Vernon, Texas",Vernon,Texas,2011,1,0,1
+4875428,"Victoria, Texas",Victoria,Texas,2012,1,0,1
+4814668,"Childress, Texas",Childress,Texas,2013,1,0,1
+4818092,"Cuero, Texas",Cuero,Texas,2013,1,0,1
+4865024,"San Augustine, Texas",San Augustine,Texas,2013,1,0,1
+4811836,"Caldwell, Texas",Caldwell,Texas,2014,1,0,1
+4866464,"Sealy, Texas",Sealy,Texas,2014,1,0,1
+4876000,"Waco, Texas",Waco,Texas,2014,1,0,1
+4824348,"Ennis, Texas",Ennis,Texas,2015,1,0,1
+4863284,"Rosenberg, Texas",Rosenberg,Texas,2015,1,0,1
+4810768,"Brownsville, Texas",Brownsville,Texas,2016,1,0,1
+4817000,"Corpus Christi, Texas",Corpus Christi,Texas,2016,1,0,1
+4867496,"Sherman, Texas",Sherman,Texas,2016,1,0,1
+4811080,"Buda, Texas",Buda,Texas,2017,1,0,1
+4842844,"Linden, Texas",Linden,Texas,2017,1,0,1
+5105544,"Bedford, Virginia",Bedford,Virginia,1985,0,1,1
+5129600,"Franklin, Virginia",Franklin,Virginia,1985,1,0,1
+5186720,"Winchester, Virginia",Winchester,Virginia,1985,1,0,1
+5120752,"Culpeper, Virginia",Culpeper,Virginia,1988,1,0,1
+5148952,"Manassas, Virginia",Manassas,Virginia,1988,1,0,1
+5183136,"Warrenton, Virginia",Warrenton,Virginia,1989,1,0,1
+5106968,"Berryville, Virginia",Berryville,Virginia,1992,1,0,1
+5159496,"Orange, Virginia",Orange,Virginia,1992,1,0,1
+5149464,"Marion, Virginia",Marion,Virginia,1995,1,0,1
+5149784,"Martinsville, Virginia",Martinsville,Virginia,1995,1,0,1
+5175216,"Staunton, Virginia",Staunton,Virginia,1995,1,0,1
+5147672,"Lynchburg, Virginia",Lynchburg,Virginia,2000,1,0,1
+5135624,"Harrisonburg, Virginia",Harrisonburg,Virginia,2004,1,0,1
+5147528,"Luray, Virginia",Luray,Virginia,2004,1,0,1
+5173712,"South Boston, Virginia",South Boston,Virginia,2004,1,0,1
+5100148,"Abingdon, Virginia",Abingdon,Virginia,2007,0,1,1
+5101528,"Altavista, Virginia",Altavista,Virginia,2007,1,0,1
+5107832,"Blackstone, Virginia",Blackstone,Virginia,2007,1,0,1
+5109816,"Bristol, Virginia",Bristol,Virginia,2011,1,0,1
+5127440,"Farmville, Virginia",Farmville,Virginia,2011,1,0,1
+5138424,"Hopewell, Virginia",Hopewell,Virginia,2011,1,0,1
+5169936,"St. Paul, Virginia",St. Paul,Virginia,2011,1,0,1
+5103368,"Ashland, Virginia",Ashland,Virginia,2013,1,0,1
+5129744,"Fredericksburg, Virginia",Fredericksburg,Virginia,2013,1,0,1
+5121344,"Danville, Virginia",Danville,Virginia,2016,1,0,1
+5131608,"Gloucester Courthouse, Virginia",Gloucester Courthouse,Virginia,2016,1,0,1
+5145512,"Lexington, Virginia",Lexington,Virginia,2016,1,0,1
+5188000,"Wytheville, Virginia",Wytheville,Virginia,2016,1,0,1
+5506500,"Beloit, Wisconsin",Beloit,Wisconsin,1988,1,0,1
+5568175,"Ripon, Wisconsin",Ripon,Wisconsin,1988,1,0,1
+5573025,"Sheboygan Falls, Wisconsin",Sheboygan Falls,Wisconsin,1988,1,0,1
+5514575,"Chippewa Falls, Wisconsin",Chippewa Falls,Wisconsin,1989,1,0,1
+5582925,"Viroqua, Wisconsin",Viroqua,Wisconsin,1989,1,0,1
+5519775,"De Pere, Wisconsin",De Pere,Wisconsin,1990,1,0,1
+5549675,"Marshfield, Wisconsin",Marshfield,Wisconsin,1990,1,0,1
+5567350,"Rice Lake, Wisconsin",Rice Lake,Wisconsin,1991,1,0,1
+5579825,"Tigerton, Wisconsin",Tigerton,Wisconsin,1993,1,0,1
+5577875,"Sturgeon Bay, Wisconsin",Sturgeon Bay,Wisconsin,1994,1,0,1
+5531000,"Green Bay, Wisconsin",Green Bay,Wisconsin,1995,1,0,1
+5518875,"Darlington, Wisconsin",Darlington,Wisconsin,1996,1,0,1
+5562240,"Pewaukee, Wisconsin",Pewaukee,Wisconsin,1996,1,0,1
+5581325,"Two Rivers, Wisconsin",Two Rivers,Wisconsin,1996,1,0,1
+5560450,"Osceola, Wisconsin",Osceola,Wisconsin,1997,1,0,1
+5521625,"Eagle River, Wisconsin",Eagle River,Wisconsin,1999,1,0,1
+5563250,"Platteville, Wisconsin",Platteville,Wisconsin,1999,1,0,1
+5583975,"Watertown, Wisconsin",Watertown,Wisconsin,2000,1,0,1
+5585300,"West Allis, Wisconsin",West Allis,Wisconsin,2001,1,0,1
+5584475,"Wausau, Wisconsin",Wausau,Wisconsin,2002,1,0,1
+5526275,"Fond du Lac, Wisconsin",Fond du Lac,Wisconsin,2004,1,0,1
+5553750,"Monroe, Wisconsin",Monroe,Wisconsin,2005,1,0,1
+5541675,"Lake Mills, Wisconsin",Lake Mills,Wisconsin,2006,1,0,1
+5564450,"Port Washington, Wisconsin",Port Washington,Wisconsin,2008,1,0,1
+5580125,"Tomahawk, Wisconsin",Tomahawk,Wisconsin,2008,1,0,1
+5559875,"Omro, Wisconsin",Omro,Wisconsin,2011,1,0,1
+5539225,"Kenosha, Wisconsin",Kenosha,Wisconsin,2013,1,0,1
+5540850,"Ladysmith, Wisconsin",Ladysmith,Wisconsin,2013,1,0,1
+5540775,"La Crosse, Wisconsin",La Crosse,Wisconsin,2014,1,0,1
+5551025,"Menomonie, Wisconsin",Menomonie,Wisconsin,2015,1,0,1
+5573825,"Shullsburg, Wisconsin",Shullsburg,Wisconsin,2016,1,0,1
+5553000,"Milwaukee, Wisconsin",Milwaukee,Wisconsin,2017,1,0,1
+5550200,"Mayville, Wisconsin",Mayville,Wisconsin,2018,1,0,1
+5566000,"Racine, Wisconsin",Racine,Wisconsin,2018,1,0,1

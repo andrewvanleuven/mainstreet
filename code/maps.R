@@ -13,7 +13,7 @@ options(tigris_use_cache = TRUE)
 '%!in%' <- function(x,y)!('%in%'(x,y))
 ###
 st.msp <- read_csv("data/csv/states.csv")
-communities <- read_csv("data/communities.csv") %>%
+communities <- read_csv("data/csv/communities.csv") %>%
   filter(st == "Iowa") %>% 
   mutate(GEOID = fips,
          fips = NULL)
