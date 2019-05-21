@@ -6,8 +6,6 @@ library(curl)
 library(stargazer)
 options(tigris_use_cache = TRUE)
 ###
-setwd("~/Documents/GitHub/R/mainstreet")
-###
 neuterCensus <- function(x) {
   x %>% mutate_if(is.character, str_replace_all, pattern = " city", replacement = "") %>%
     mutate_if(is.character, str_replace_all, pattern = " CDP", replacement = "") %>%

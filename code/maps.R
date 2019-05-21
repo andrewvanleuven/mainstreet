@@ -6,12 +6,10 @@ library(curl)
 library(maptools)
 library(usmap)
 library(sf)
-library(stargazer)
 library(tmap)
 options(tigris_class = "sf")
 options(tigris_use_cache = TRUE)
 ###
-setwd("~/Documents/GitHub/R/mainstreet")
 '%!in%' <- function(x,y)!('%in%'(x,y))
 ###
 st.msp <- read_csv("data/csv/states.csv")
