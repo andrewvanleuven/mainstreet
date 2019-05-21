@@ -2,3 +2,5 @@
 .Rhistory
 .RData
 .Ruserdata
+defunct/
+.DS_Store
