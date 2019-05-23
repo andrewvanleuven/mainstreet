@@ -33,15 +33,7 @@ us_msp <- tm_shape(usa, projection = 26916) +
   tm_layout(panel.labels = c("Main Street Program Data Coverage"))
 us_msp
 tmap_save(us_msp, "plot/us_msp.png", height=6.5)
-###-------------------------------------Show 
-iowa.st <- states(cb = TRUE, resolution = "20m") %>% filter_state("Iowa")
-  
-ia_msp <- ggplot() +
-  geom_sf(data = iowa.st) + 
-  geom_sf(data = ia.plc)
-ia_msp
 
-ggsave("plot/iowa_msp.png",ia_msp, height=6.5)
 
 
 

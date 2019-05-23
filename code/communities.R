@@ -14,6 +14,7 @@ neuterCensus <- function(x) {
     mutate_if(is.character, str_replace_all, pattern = " town", replacement = "")}
 ###
 columns <- c("fips","name","st","county","rucc","pop_2010")
+#columns.old <- c("fips","name","st","county","rucc","pop_2010","pop_1940","pop_1930","pop_1920","pop_1910","pop_1900")
 states <- c("08","19","23","26","27","37","39","48","51","55")
 ###
 rucc <- read_csv("data/csv/rucc.csv") %>% 
@@ -29,6 +30,18 @@ places <- get_decennial(geography = "place", state = states, variables = "P00100
   separate(NAME,c("NAME","ST"),sep = ",") %>%
   mutate_if(is.character, str_trim) %>%
   neuterCensus()
+###-------------------------------------USA
+#hist <- left_join(places,xw,by = "GEOID") %>%
+#  filter(GEOID != 9999999)  %>%
+#  left_join(.,rucc, by = "cty") %>%
+#  select(-(State:Population_2010)) %>% 
+#  filter(afact > 0.45) %>%
+#  select(-variable,-(stab:afact)) %>%
+#  inner_join(.,historical,by = c("NAME","ST")) %>%
+#  select(-value,-stabbr,-(pop_2000:pop_1950)) %>% 
+#  `colnames<-`(columns.old) %>%
+#  distinct() %>%
+#  write_csv("data/csv/hist_geo.csv")
 ###-------------------------------------IOWA
 ia <- left_join(places,(xw %>% filter(stab == "ia")),by = "GEOID") %>%
   filter(GEOID != 9999999)  %>%
