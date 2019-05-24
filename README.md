@@ -2,10 +2,14 @@
 
 This is a repository where code and data related to my research on the Main Street Program will be housed.
 
+<<<<<<< HEAD
 <p align="center">
   <img width="700" src="img/mainst_nc.png">
 </p>
 
+=======
+![](img/mainst_nc.png)
+>>>>>>> c6fb657ceeb65036db39e2c01b88fc5cb6615fd8
 
 ### Objective
 The objective of this study (a 3-essay dissertation) is to identify the effectiveness of the Main Street Program as a small-scale economic development strategy in small towns and rural communities.
