@@ -31,16 +31,21 @@ jobs <- read_csv("data/csv/jobs.csv")
 places <- read_csv("data/csv/places.csv") %>%
   mutate(POP2010 = value) %>%
   select(GEOID,POP2010)
+countyseats <- read_csv("data/csv/county_seats.csv") %>%
+  mutate(GEOID = (paste0(STATE_FIPS,FIPS55)),
+         CTY_SEAT = 1) %>%
+  select(GEOID,CTY_SEAT)
 cbsa <- read_csv("data/csv/cbsa_xw.csv") %>%
   select(CTY_FIPS:CSA,METRO_TYPE)
-  #####
+#####
 msp.join <- inner_join(hist,cz, by = "CTY_FIPS") %>%
   inner_join(.,places, by = "GEOID") %>%
   inner_join(.,rucc, by = "CTY_FIPS") %>%
   full_join(.,cbsa, by = "CTY_FIPS") %>%
   mutate_at(vars(CBSA:METRO_TYPE), ~replace_na(., 0)) %>%
   left_join(.,msp, by = "GEOID") %>%
-  mutate_at(vars(msp:msp_affl), ~replace_na(., 0)) %>%
+  left_join(.,countyseats, by = "GEOID") %>%
+  mutate_at(vars(msp:msp_affl,CTY_SEAT), ~replace_na(., 0)) %>%
   mutate(GEOID = as.numeric(GEOID)) %>%
   inner_join(.,jobs, by = "GEOID") %>%
   distinct()
@@ -52,6 +57,35 @@ msp.data <- msp.join %>%
   filter(pop2010 > 750 & pop2010 < 75000) %>%
   arrange(rucc) %>%
   distinct() %>%
+  filter(st != "Colorado" & st != "Maine")
   write_csv("data/csv/msp_data.csv")
+#####
+msp.frequ <- as.data.frame(table(msp.data$st,msp.data$msp,msp.data$cty_seat)) %>%
+    arrange(Var1) %>%
+    `colnames<-`(c("State","MSP","County_Seat","N")) %>%
+    as_tibble() %>%
+    filter(MSP == 1 & County_Seat ==1)
+msp.freq <- as.data.frame(table(msp.data$st)) %>%
+  arrange(Var1) %>%
+  `colnames<-`(c("State","N")) %>%
+  as_tibble() %>%
+  full_join(.,msp.frequ,by = "State") %>%
+  select(-MSP,-County_Seat) %>%
+  `colnames<-`(c("State","N","Both")) %>%
+  mutate(`Percent Both` = round(((Both/N)*100),digits =1)) %>%
+  select(State,Both,N,everything())
+msp.freq
+#####
+
+
+
+
+
+
+
+
+
+
+
 
 
