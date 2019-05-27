@@ -57,7 +57,7 @@ msp.data <- msp.join %>%
   filter(pop2010 > 750 & pop2010 < 75000) %>%
   arrange(rucc) %>%
   distinct() %>%
-  filter(st != "Colorado" & st != "Maine")
+  filter(st != "Colorado" & st != "Maine") %>%
   write_csv("data/csv/msp_data.csv")
 #####
 msp.frequ <- as.data.frame(table(msp.data$st,msp.data$msp,msp.data$cty_seat)) %>%
