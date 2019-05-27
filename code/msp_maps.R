@@ -104,7 +104,7 @@ statemap <- function(xstate,msp = NULL) {
                  shape = 21,
                  size = 2,
                  alpha = 1) + 
-      scale_fill_manual(values = c("white","black"),
+      scale_fill_manual(values = c("white","#BB0000"),
                         labels = c("Control Group","Treatment Group"),
                         name = "Main Street Program Status") +
       coord_sf(ndiscr = 0) +
@@ -135,7 +135,7 @@ statemap <- function(xstate,msp = NULL) {
           plot.subtitle=element_text(family='', size=12, hjust = .5,margin=margin(t=10, b = 10)),
           legend.position="bottom")
 }
-statemap("IA",msp = 1)
+statemap("IA")
 # US MSP Coverage Map -----------------------------------------------------
 us_msp <- ggplot() +
   geom_sf(data = us,
@@ -154,12 +154,12 @@ for (i in state_names) {
   temp_title <- lookup_st(i)
   temp_plot = statemap(i) + ggtitle("Main Street Program Communities by CZ",
                                     subtitle = temp_title)
-  ggsave(temp_plot, file=paste0("plot/st_msp/map_", i,"_msp.png"), height = 6.5)}
+  ggsave(temp_plot, file=paste0("plot/st_msp/map_cities_", i,".png"), width = 6)}
 for (i in state_names) {
   temp_title <- lookup_st(i)
-  temp_plot = statemap.msp(i) + ggtitle("Main Street Program Communities",
+  temp_plot = statemap(i, msp = 1) + ggtitle("Main Street Program Communities",
                                     subtitle = temp_title)
-  ggsave(temp_plot, file=paste0("plot/st_msp/map_", i,".png"), height = 6.5)}
+  ggsave(temp_plot, file=paste0("plot/st_msp/map_czs_", i,".png"), width = 6)}
 # Graveyard ---------------------------------------------------------------
 #st.cty <- usctys %>%
 #  filter(ST == "IA")
