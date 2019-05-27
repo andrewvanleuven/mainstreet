@@ -54,7 +54,7 @@ lookup_st <- function (state) {
     return(vals$STATE)}}
 stfips <- lookup_st("IA")
 # Functions to make State Masp ----------------------------------------------
-statemap <- function(xstate) {
+statemap <- function(xstate,msp = NULL) {
   xstate <- toupper(xstate)
   st_cty <- usctys %>%
     filter(ST == xstate)
@@ -67,90 +67,75 @@ statemap <- function(xstate) {
   czcols <- inlmisc::GetColors((nrow(as.data.frame(table(st_cty$CZ)))), alpha = 0.2) %>%
     as.character() %>%
     str_sub(., end=-3)
-  st_city <- places(state = xstate, cb = TRUE) %>%
-    left_join(.,st.xw, by = "STATEFP") %>%
-    inner_join(.,cities, by = "GEOID") %>%
-    filter(msp == 1) %>%
-    mutate(centroids = st_centroid(geometry)) %>%
-    unnest(centroids) %>% 
-    group_by(GEOID) %>% 
-    mutate(col=seq_along(GEOID)) %>% #add a column indicator
-    spread(key=col, value=centroids) %>%
-    mutate(X = `1`,Y = `2`)
+  if(is.null(msp)) {
+    st_city <- places(state = xstate, cb = TRUE) %>%
+      left_join(.,st.xw, by = "STATEFP") %>%
+      inner_join(.,cities, by = "GEOID") %>%
+      mutate(centroids = st_centroid(geometry)) %>%
+      unnest(centroids) %>% 
+      group_by(GEOID) %>% 
+      mutate(col=seq_along(GEOID)) %>% #add a column indicator
+      spread(key=col, value=centroids) %>%
+      mutate(X = `1`,Y = `2`)
+  } else {
+    st_city <- places(state = xstate, cb = TRUE) %>%
+      left_join(.,st.xw, by = "STATEFP") %>%
+      inner_join(.,cities, by = "GEOID") %>%
+      filter(msp == 1) %>%
+      mutate(centroids = st_centroid(geometry)) %>%
+      unnest(centroids) %>% 
+      group_by(GEOID) %>% 
+      mutate(col=seq_along(GEOID)) %>% #add a column indicator
+      spread(key=col, value=centroids) %>%
+      mutate(X = `1`,Y = `2`)
+  }
   stmap <- ggplot() +
     geom_sf(data = st_cty,
-            color = "grey") +
-    geom_sf(data = st_cz,
-            aes(fill = factor(CZ)),
-            color = "black",
-            alpha = 0.2) +
-    geom_point(data = st_city, 
-               aes(x = X, y = Y,
-                   color = factor(msp)),
-               #color='white', 
-               fill = "black",
-               shape = 21,
-               size = 2,
-               alpha = 1) + 
-    scale_fill_manual(values = sample(czcols),
-                      guide = FALSE) + 
-    scale_color_manual(values = "white",
-                       labels = "= Main Street Program Community") +
-    coord_sf(ndiscr = 0) +
-    theme_void() +
-    guides(color = guide_legend(nrow = 1,title=NULL))
-  stmap +     
-    theme(plot.title=element_text(family='', face='bold', size=18, hjust = .5),
-          plot.subtitle=element_text(family='', size=12, hjust = .5,margin=margin(t=10, b = 10)),
-          legend.position="bottom")
-}
-statemap.msp <- function(xstate) {
-  xstate <- toupper(xstate)
-  st_cty <- usctys %>%
-    filter(ST == xstate)
-  st_cz <- st_cty %>%
-    mutate(MAX_X = map_dbl(geometry, ~ st_bbox(.x) %>% extract2("xmax")), 
-           GRP = factor(ntile(MAX_X, 3)),
-           STATUS = 'distinct') %>%
-    group_by(CZ) %>%
-    summarise(STATUS = 'dissolved')
-  czcols <- inlmisc::GetColors((nrow(as.data.frame(table(st_cty$CZ)))), alpha = 0.2) %>%
-    as.character() %>%
-    str_sub(., end=-3)
-  st_city <- places(state = xstate, cb = TRUE) %>%
-    left_join(.,st.xw, by = "STATEFP") %>%
-    inner_join(.,cities, by = "GEOID") %>%
-    mutate(centroids = st_centroid(geometry)) %>%
-    unnest(centroids) %>% 
-    group_by(GEOID) %>% 
-    mutate(col=seq_along(GEOID)) %>% #add a column indicator
-    spread(key=col, value=centroids) %>%
-    mutate(X = `1`,Y = `2`)
-  stmap <- ggplot() +
-    geom_sf(data = st_cty,
-            color = "grey") +
-    geom_sf(data = st_cz,
+            color = "grey")
+  if(is.null(msp)) {
+    stmap.p <- stmap +
+      geom_sf(data = st_cz,
             color = "black",
             alpha = 0) +
-    geom_point(data = st_city, 
-               aes(x = X, y = Y,
-                   fill = factor(msp)),
-               #color='white', 
-               color = "black",
-               shape = 21,
-               size = 2,
-               alpha = 1) + 
-    scale_fill_manual(values = c("white","black"),
-                      labels = c("Control Group","Treatment Group"),
-                      name = "Main Street Program Status") +
-    coord_sf(ndiscr = 0) +
-    theme_void() #+
-    #guides(fill = guide_legend(nrow = 1))
-  stmap +     
+      geom_point(data = st_city, 
+                 aes(x = X, y = Y,
+                     fill = factor(msp)),
+                 color = "black",
+                 shape = 21,
+                 size = 2,
+                 alpha = 1) + 
+      scale_fill_manual(values = c("white","black"),
+                        labels = c("Control Group","Treatment Group"),
+                        name = "Main Street Program Status") +
+      coord_sf(ndiscr = 0) +
+      theme_void()
+  } else {
+    stmap.p <- stmap +
+      geom_sf(data = st_cz,
+              aes(fill = factor(CZ)),
+              color = "black",
+              alpha = 0.2) +
+      geom_point(data = st_city, 
+                 aes(x = X, y = Y,
+                     color = factor(msp)),
+                 fill = "black",
+                 shape = 21,
+                 size = 2,
+                 alpha = 1) + 
+      scale_fill_manual(values = sample(czcols),
+                        guide = FALSE) + 
+      scale_color_manual(values = "white",
+                         labels = "= Main Street Program Community") +
+      coord_sf(ndiscr = 0) +
+      theme_void() +
+      guides(color = guide_legend(nrow = 1,title=NULL))
+  }
+  stmap.p +     
     theme(plot.title=element_text(family='', face='bold', size=18, hjust = .5),
           plot.subtitle=element_text(family='', size=12, hjust = .5,margin=margin(t=10, b = 10)),
           legend.position="bottom")
 }
+statemap("IA",msp = 1)
 # US MSP Coverage Map -----------------------------------------------------
 us_msp <- ggplot() +
   geom_sf(data = us,
