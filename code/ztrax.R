@@ -6,9 +6,9 @@ options(tigris_use_cache = TRUE)
 options(scipen = 999)
 options(stringsAsFactors = FALSE)
 # Frequency Table Function ------------------------------------------------
-freqTab <- function(d,var) {
-  df <- d %>% select(var)
-  dft <- table(df)
+freqTab <- function(df,var) {
+  dfs <- df %>% select(var)
+  dft <- table(dfs)
   as.data.frame(dft) %>% 
     mutate(p = round((Freq/(sum(Freq)/100)), digits=1))%>%
     mutate(rank = rank(desc(p))) %>%
