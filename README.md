@@ -3,7 +3,7 @@
 This is a repository where code and data related to my research on the Main Street Program will be housed.
 
 <p align="center">
-  <img width="600" src="img/mainst_nc.png">
+  <img width="600" src="img/ottumwa.jpg">
 </p>
 
 ### Objective
