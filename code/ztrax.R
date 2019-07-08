@@ -1,23 +1,10 @@
-library(arsenal)
-library(tidyverse)
 library(tidycensus)
+library(tidyverse)
+library(rleuven)
 options(tigris_class = "sf")
 options(tigris_use_cache = TRUE)
 options(scipen = 999)
 options(stringsAsFactors = FALSE)
-# Frequency Table Function ------------------------------------------------
-freqTab <- function(df,var) {
-  dfs <- df %>% select(var)
-  dft <- table(dfs)
-  as.data.frame(dft) %>% 
-    mutate(p = round((Freq/(sum(Freq)/100)), digits=1))%>%
-    mutate(rank = rank(desc(p))) %>%
-    filter(rank < 16) %>%
-    arrange(desc(Freq)) %>%
-    select(-rank) %>%
-    `colnames<-`(c(var,"N","Percent"))
-}
-#freqTab(zIowaSales,"County")
 # Layout Files -----------------------------------------------------
 layoutZAsmt <- readxl::read_excel("hidden/Layout.xlsx", sheet = 1)
 layoutZTrans <- readxl::read_excel("hidden/Layout.xlsx", sheet = 2)
