@@ -52,11 +52,5 @@ ggplot() +
              fill = "white",
              shape = 21) +
   ggtitle("Three Rivers, Michigan") +
-  theme_void() 
-
-ggplot() +
-  geom_sf(data = riv3,
-          fill = "gray90") +
-  geom_point(data = points,
-             aes(x = y, y = x))
-
+  theme_void() +
+  ggsave("plot/buffertest.png", width = 10)
