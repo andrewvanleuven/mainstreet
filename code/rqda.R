@@ -1,5 +1,0 @@
-library(tidyverse)
-library(RQDA)
-library(tm)
-library(wordcloud)
-library(igraph)
