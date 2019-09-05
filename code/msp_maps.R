@@ -53,7 +53,7 @@ lookup_st <- function (state) {
   else {vals <- head(st.xw[st.xw$ST_POSTAL == state,], 1)
     return(vals$STATE)}}
 stfips <- lookup_st("IA")
-# Functions to make State Masp ----------------------------------------------
+# Functions to make State Map ----------------------------------------------
 statemap <- function(xstate,msp = NULL) {
   xstate <- toupper(xstate)
   st_cty <- usctys %>%
