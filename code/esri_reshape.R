@@ -55,10 +55,8 @@ unique <- data %>%
          rr = ifelse(grepl("RR ", address), 1, 0),
          need_match = ifelse(match.code %in% c("2","4","X"), 1, 0),
          no_address = ifelse(is.na(address.line.1), 1, 0)) %>%
-  select(id,address,match.code,po_box:no_address) %>% 
+  select(id,address.line.1:address,match.code,po_box:no_address) %>% 
   arrange(address) %>% distinct() %>% 
-  filter(need_match == 1, rr == 0, mi == 0,
-         mile == 0 & exception == 0, no_address == 0) %>% 
   write_csv("data/csv/esri_geocode.csv") # 15.7 percent CANNOT be geocoded
 
 #freqTab(unique,"po_box")
