@@ -24,13 +24,75 @@ rm(esri_1997,esri_1998,esri_1999,esri_2000,esri_2001,esri_2002,esri_2003,
 
 # New Geocoded Points -----------------------------------------------------
 df <- st_read("data/shp/cura/a0000000c.gdbtable") %>% rename_all(tolower) 
+not_yet_geocoded <- data %>% mutate(uniqid = paste(id,year,sep = "_")) %>% 
+  select(id_yr,id,year,address.line.1:zipcode,match.code,x,y,address) %>%
+  mutate(po_box = ifelse(grepl("PO BOX", address), 1, 0),
+         box = ifelse(grepl("BOX", address), 1, 0),
+         mi = ifelse(grepl(" MI ", address), 1, 0),
+         mile = ifelse(grepl(" MILE", address), 1, 0),
+         rr = ifelse(grepl("RR ", address), 1, 0),
+         need_match = ifelse(match.code %in% c("2","4","X"), 1, 0),
+         no_address = ifelse(is.na(address.line.1), 1, 0)) %>% 
+  arrange(id_yr) %>% select(-id,-year,-address) %>%
+  filter(match.code %in% c("2","4","X"),
+         box == 0 , mi == 0 , mile == 0 ,
+         rr == 0 , no_address == 0) %>% 
+  #filter(match.code %in% c("2","4","X")) %>% 
+  select(-(po_box:no_address))
+
+already_geocoded <- data %>% mutate(uniqid = paste(id,year,sep = "_")) %>% 
+  select(id_yr,address.line.1:zipcode,match.code,x,y) %>%
+  filter(!match.code %in% c("2","4","X"))
 
 ia_gcode <- df %>% rename(geometry = shape) %>%
-  filter(score > 2) %>% 
-  select(uniqid, match_type, match_addr, geometry) %>% 
-  mutate(x = sapply(geometry, "[[", 1), 
-         y = sapply(geometry, "[[", 2)) %>% 
-  st_as_sf(., coords = c("x","y"), crs = iowa_crs)
+  select(uniqid, score, match_addr, geometry) %>% 
+  mutate(x2 = sapply(geometry, "[[", 1), 
+         y2 = sapply(geometry, "[[", 2),
+         id_yr = as.character(str_pad(uniqid, 14, pad = "0")),) %>% 
+  select(id_yr, everything()) %>% select(-uniqid) %>% 
+  st_as_sf(., crs = iowa_crs) 
+
+matched <- inner_join(not_yet_geocoded,ia_gcode) %>% 
+  filter(score != 0) %>% select(-score,-geometry,-match_addr) %>% 
+  #mutate(x_error = x2-x, y_error = y2-y) %>% 
+  select(-x,-y) %>% rename(x=x2,y=y2)
+
+iowa_geocoded <- bind_rows(already_geocoded,matched) %>% 
+  select(-(address.line.1:match.code)) %>% 
+  write_csv("hidden/esri/iowa_geocoded_xy.csv")
+
+# Tally Success Rate ------------------------------------------------------
+(nrow(already_geocoded)/nrow(data))*100 
+# 82.24% already geocoded
+(nrow(ia_gcode)/(nrow(data)-nrow(already_geocoded)))*100 
+# 59.25% of those possible to geocode
+(nrow(matched)/nrow(ia_gcode))*100 
+# 67.2% of those successfully geocoded
+((nrow(already_geocoded)+nrow(matched))/nrow(data))*100 
+(nrow(iowa_geocoded)/nrow(data))*100 
+# 89.31% total rows geocoded
+
+
+# Add Lat/Lon Coordinates to full data ------------------------------------
+for (i in 1997:2017) {
+  csvname <- sprintf("hidden/esri/iowa/esri_ia_%s.csv", i)
+  df2 <- read_csv(csvname) %>% mutate(id_yr = paste(id,year,sep = "_")) %>%
+    select(id_yr, everything()) %>% select(-x,-y,-address,-geometry)
+  nam <- paste0("esri_",i)
+  assign(nam, df2)}
+rm(csvname,i,nam,df2)
+
+fulldf <- rbind(esri_1997,esri_1998,esri_1999,esri_2000,esri_2001,esri_2002,esri_2003,
+              esri_2004,esri_2005,esri_2006,esri_2007,esri_2008,esri_2009,esri_2010,
+              esri_2011,esri_2012,esri_2013,esri_2014,esri_2015,esri_2016,esri_2017) 
+
+rm(esri_1997,esri_1998,esri_1999,esri_2000,esri_2001,esri_2002,esri_2003,
+   esri_2004,esri_2005,esri_2006,esri_2007,esri_2008,esri_2009,esri_2010,
+   esri_2011,esri_2012,esri_2013,esri_2014,esri_2015,esri_2016,esri_2017)
+rm(already_geocoded,df,ia_gcode,matched,not_yet_geocoded)
+
+iowa_all <- inner_join(fulldf,iowa_geocoded) %>% 
+  write_csv("hidden/esri/iowa_geocoded.csv")
 
 # Maps --------------------------------------------------------------------
 iowa_places <- places(state = "19", cb = T) %>% 
@@ -44,7 +106,7 @@ iowa <- states(cb = T) %>% filter(STATEFP == "19")
 ggplot() + geom_sf(data = iowa) +
   #geom_sf(data = iowa_towns, color = NA,fill = "yellow") +
   geom_point(data = (sample_frac(ia_gcode,.1)), size = 0.05,
-             aes(x=x, y=y), color = "magenta") +
+             aes(x=x2, y=y2), color = "magenta") +
   theme_void() +
   ggsave("plot/cura.png", width = 20, height = 16)
 
@@ -93,16 +155,4 @@ ggplot() + geom_sf(data = iowa) +
 #parceldata <- data %>% filter(!match.code %in% c("2","4","X")) %>% write_csv("hidden/esri/iowa.csv")
 #to_geocode <- data %>% filter(match.code %in% c("2","4","X")) %>% write_csv("hidden/esri/ia_2geo.csv")
 #
-#data_yr <- data %>% mutate(id_yr = paste(id,year,sep = "_")) %>% 
-#  select(id_yr,id,year,address.line.1:zipcode,match.code,x,y,address) %>%
-#  mutate(po_box = ifelse(grepl("PO BOX", address), 1, 0),
-#         box = ifelse(grepl("BOX", address), 1, 0),
-#         mi = ifelse(grepl(" MI ", address), 1, 0),
-#         mile = ifelse(grepl(" MILE", address), 1, 0),
-#         rr = ifelse(grepl("RR ", address), 1, 0),
-#         need_match = ifelse(match.code %in% c("2","4","X"), 1, 0),
-#         no_address = ifelse(is.na(address.line.1), 1, 0)) %>%
-#  arrange(id_yr) %>% select(-address) %>%
-#  write_csv("hidden/all_unique.csv") %>% select(-id_yr,year) %>%
-#  filter(match.code %in% c("2","4","X")) %>% distinct() %>% 
-#  write_csv("hidden/to_geocode.csv")
+
