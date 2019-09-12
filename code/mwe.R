@@ -1,26 +1,33 @@
-library(tidyverse)
+suppressMessages({library(tidyverse)
 library(sf)
-library(tigris)
+library(tigris)})
 options(tigris_class = "sf")
 options(tigris_use_cache = TRUE)
 
-iowa_crs <- 26775
+csv <- "https://raw.githubusercontent.com/andrewvanleuven/mainstreet/master/data/csv/sample_xy.csv"
+
+df <- read_csv(csv) %>% 
+  st_as_sf(., coords = c("x","y"), crs = 4326) %>%
+  st_transform(.,crs = 32610) %>% 
+  mutate(utm_E = sapply(geometry, "[[", 1),
+         utm_N = sapply(geometry, "[[", 2)) #%>%
+  #st_transform(.,crs = 4326) %>% 
+  #mutate(lon = sapply(geometry, "[[", 1),
+  #       lat = sapply(geometry, "[[", 2))
+  
 iowa <- states(cb = T) %>% 
   filter(STATEFP == "19") %>% 
   select(STATEFP,geometry) %>% 
-  st_transform(.,crs = iowa_crs)
-df <- read_csv("data/csv/sample_xy.csv") %>% 
-  st_as_sf(., coords = c("x","y"), crs = iowa_crs) %>% 
-  mutate(x = sapply(geometry, "[[", 1), y = sapply(geometry, "[[", 2))
+  st_transform(.,crs = 32610)
 
-df_intersect <- st_intersection(iowa,df)
+df_intersect <- st_intersection(iowa,df) # no intersection
 
-iowa$geometry 
-df$geometry
+iowa$geometry # shows geometry in UTM (northing & easting) format
+df$geometry # still shows geometry in lat/long format
 
 ggplot() +
   geom_sf(data = iowa) + 
-  geom_point(data = df, 
-             aes(x=x,y=y)) 
-
-
+  geom_point(data = df_intersect, 
+             aes(x = utm_E,
+                 y = utm_N),
+             size = .25) 
