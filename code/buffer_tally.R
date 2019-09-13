@@ -122,5 +122,5 @@ random_map <- function(colors){
   gplt
 }
 #random_map("YlGnBu") #display.brewer.all()
-random_map()
+random_map("RdBu")
 
