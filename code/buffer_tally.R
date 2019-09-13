@@ -2,14 +2,12 @@ library(tidyverse)
 library(sf)
 library(rleuven)
 library(tigris)
-library(cowplot)
-library(rlang)
+library(RColorBrewer)
 options(tigris_class = "sf")
 options(tigris_use_cache = TRUE)
 # Read in Iowa data -------------------------------------------------------
 df <- read_csv("hidden/esri/iowa_geocoded.csv")
 iowa_crs <- 32615
-iowa <- states(cb = T) %>% filter(STATEFP == "19") %>% st_transform(.,crs = iowa_crs)
 iowa_df <- df %>%
   #filter(year == 2000) %>% 
   #sample_n(.,10000) %>% 
@@ -33,28 +31,42 @@ iowa_roads <- map((counties("IA", cb = TRUE, resolution = "20m") %>% pull(COUNTY
                   ~{roads(state = "19", county = .x)}) %>% rbind_tigris() %>% st_transform(.,crs = iowa_crs)  
 beepr::beep()
 
-# Check that CRS matches up -----------------------------------------------
-iowa$geometry
-iowa_df$geometry
-iowa_towns$geometry
-iowa_sf$geometry
-iowa_downtowns$geometry
+# Loop for everything -----------------------------------------------------
+#for (i in (iowa_downtowns %>% pull(name))) {
+#  town <- (iowa_towns %>% select(-geoid)) %>% filter(name == i)
+#  cbd0 <- st_buffer((iowa_downtowns %>% filter(name == i)), 200, joinStyle = "MITRE", endCapStyle = "SQUARE")
+#  cbd1 <- st_intersection(town,st_buffer(cbd0, 1*400))
+#  cbd2 <- st_intersection(town,st_buffer(cbd0, 2*400))
+#  cbd3 <- st_intersection(town,st_buffer(cbd0, 3*400))
+#  cbd4 <- st_intersection(town,st_buffer(cbd0, 4*400))
+#  buf5 <- st_difference(town,cbd4) %>% select(name,geometry) %>% mutate(buffer = 5)
+#  buf4 <- st_difference(cbd4,cbd3) %>% select(name,geometry) %>% mutate(buffer = 4)
+#  buf3 <- st_difference(cbd3,cbd2) %>% select(name,geometry) %>% mutate(buffer = 3)
+#  buf2 <- st_difference(cbd2,cbd1) %>% select(name,geometry) %>% mutate(buffer = 2)
+#  buf1 <- st_difference(cbd1,cbd0) %>% select(name,geometry) %>% mutate(buffer = 1)
+#  buf0 <- cbd0 %>% select(name,geometry) %>% mutate(buffer = 0)
+#  bind <- rbind(buf5,buf4,buf3,buf2,buf1,buf0) %>% select(name,buffer,geometry)
+#  dots <- st_intersection(bind,(iowa_df %>% select(-(id:st))))
+#  name <- paste0("loop_",tolower(str_replace_all(i, fixed(" "), "_")))
+#  assign(name, dots)}
+#beepr::beep()
+#
+#iowa_bound <- mget(ls(pattern="loop")) %>% bind_rows() %>% arrange(name,buffer) %>% 
+#  separate(id_yr, sep = "_", into = c("id","yr")) %>% mutate(id_yr = paste(id,yr,sep = "_")) %>%
+#  select(id_yr,buffer,utm_E,utm_N,geometry) %>% write_csv("hidden/esri/buffer_tally.csv")
+#
+#for (i in towns) {rm(list=paste0("loop_",tolower(str_replace_all(i, fixed(" "), "_"))))}
+#rm(town,cbd0,cbd1,cbd2,cbd3,cbd4,buf5,buf4,buf3,buf2,buf1,buf0,bind,dots,name,i)
+#
+#iowa_buffered <- inner_join((iowa_bound %>% st_drop_geometry()),df, by = "id_yr") %>% 
+#  write_csv("hidden/esri/iowa_buffered.csv")
 
-# Map ---------------------------------------------------------------------
-ggplot() + 
-  geom_sf(data = iowa) +
-  geom_sf(data = iowa_towns, color = NA,fill = "yellow") +
-  geom_sf(data = iowa_downtowns, color = "red",size = .05) +
-  geom_point(data = iowa_df, 
-             aes(x = utm_E,
-                 y = utm_N),
-             size = .25) +
-  theme_void() +
-  coord_sf(ylim = c(4761146, 4816486), xlim = c(214657.5, 299804.1), expand = FALSE) + 
-  ggsave("plot/cura.png", width = 20, height = 16)
-
-# Start Buffering Around Towns --------------------------------------------
-random_map <- function(){
+# Make some maps ----------------------------------------------------------
+random_map <- function(colors){
+  if(missing(colors)) {
+    colors = sample((c("Blues","BuGn","BuPu","GnBu","Greens","Greys","Oranges","OrRd","PuBu",
+                       "PuBuGn","PuRd","Purples","RdPu","Reds","YlGn","YlGnBu","YlOrBr","YlOrRd",
+                       "BrBG","PiYG","PRGn","PuOr","RdBu","RdGy","RdYlBu","RdYlGn","Spectral")),1)}
   n_yr <- sample(1997:2017, 1)
   ntwn <- sample_n(iowa_downtowns,1) %>% pull(name)
   titl <- sprintf("%s, Iowa in %s", ntwn, n_yr)
@@ -76,7 +88,7 @@ random_map <- function(){
   tabl <- dots %>% group_by(buffer) %>% summarise(sum = n()) %>% pull(sum)
   nwth <- c("within downtown","within 1/4 mile","within 1/2 mile","within 3/4 mile","within 1 mile","beyond 1 mile")
   labs <- paste(tabl,nwth,sep = " ")
-  clrs <- c('#c6dbef','#9ecae1','#6baed6','#4292c6','#2171b5','#084594')
+  clrs <- brewer.pal(7,colors)[2:7]
   
   gplt <- ggplot() +
     geom_sf(data = buf5, fill = clrs[1], color = NA, alpha = 1) +
@@ -109,34 +121,6 @@ random_map <- function(){
   rm(town,cbd0,cbd1,cbd2,cbd3,cbd4,buf5,buf4,buf3,buf2,buf1,buf0,bind,dots,name,i)
   gplt
 }
+#random_map("YlGnBu") #display.brewer.all()
 random_map()
-freqTab(df,"name")
-# Loop for everything -----------------------------------------------------
-for (i in (iowa_downtowns %>% pull(name))) {
-  town <- (iowa_towns %>% select(-geoid)) %>% filter(name == i)
-  cbd0 <- st_buffer((iowa_downtowns %>% filter(name == i)), 200, joinStyle = "MITRE", endCapStyle = "SQUARE")
-  cbd1 <- st_intersection(town,st_buffer(cbd0, 1*400))
-  cbd2 <- st_intersection(town,st_buffer(cbd0, 2*400))
-  cbd3 <- st_intersection(town,st_buffer(cbd0, 3*400))
-  cbd4 <- st_intersection(town,st_buffer(cbd0, 4*400))
-  buf5 <- st_difference(town,cbd4) %>% select(name,geometry) %>% mutate(buffer = 5)
-  buf4 <- st_difference(cbd4,cbd3) %>% select(name,geometry) %>% mutate(buffer = 4)
-  buf3 <- st_difference(cbd3,cbd2) %>% select(name,geometry) %>% mutate(buffer = 3)
-  buf2 <- st_difference(cbd2,cbd1) %>% select(name,geometry) %>% mutate(buffer = 2)
-  buf1 <- st_difference(cbd1,cbd0) %>% select(name,geometry) %>% mutate(buffer = 1)
-  buf0 <- cbd0 %>% select(name,geometry) %>% mutate(buffer = 0)
-  bind <- rbind(buf5,buf4,buf3,buf2,buf1,buf0) %>% select(name,buffer,geometry)
-  dots <- st_intersection(bind,(iowa_df %>% select(-(id:st))))
-  name <- paste0("loop_",tolower(str_replace_all(i, fixed(" "), "_")))
-  assign(name, dots)}
-beepr::beep()
 
-iowa_bound <- mget(ls(pattern="loop")) %>% bind_rows() %>% arrange(name,buffer) %>% 
-  separate(id_yr, sep = "_", into = c("id","yr")) %>% mutate(id_yr = paste(id,yr,sep = "_")) %>%
-  select(id_yr,buffer,utm_E,utm_N,geometry) %>% write_csv("hidden/esri/buffer_tally.csv")
-
-for (i in towns) {rm(list=paste0("loop_",tolower(str_replace_all(i, fixed(" "), "_"))))}
-rm(town,cbd0,cbd1,cbd2,cbd3,cbd4,buf5,buf4,buf3,buf2,buf1,buf0,bind,dots,name,i)
-
-iowa_buffered <- inner_join((iowa_bound %>% st_drop_geometry()),df, by = "id_yr") %>% 
-  write_csv("hidden/esri/iowa_buffered.csv")
