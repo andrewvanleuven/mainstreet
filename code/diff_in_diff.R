@@ -1,0 +1,10 @@
+suppressMessages({library(tidyverse)
+library(sf)
+library(rleuven)
+library(tigris)
+library(plm)
+library(panelr)})
+options(tigris_class = "sf")
+options(tigris_use_cache = TRUE)
+
+df <- read_csv("data/csv/panel.csv")

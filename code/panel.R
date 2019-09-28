@@ -2,6 +2,7 @@ suppressMessages({library(tidyverse)
 library(sf)
 library(rleuven)
 library(tigris)
+library(plm)
 library(panelr)})
 options(tigris_class = "sf")
 options(tigris_use_cache = TRUE)
@@ -57,22 +58,22 @@ unstacked <- jobs_panel %>% select(-(buffer_0:buffer_5)) %>%
 freqTab(unstacked,"cz",Inf)
 
 msp_yrs <- unstacked %>% select(name,msp_yr) %>% distinct()
-stack_1 <- msp_yrs %>% rename(name_stack1 = name, cyear_stack1 = msp_yr)
-stack_2 <- msp_yrs %>% rename(name_stack2 = name, cyear_stack2 = msp_yr)
-stack_3 <- msp_yrs %>% rename(name_stack3 = name, cyear_stack3 = msp_yr)
-stack_4 <- msp_yrs %>% rename(name_stack4 = name, cyear_stack4 = msp_yr)
+stack_1 <- msp_yrs %>% rename(name_stack1 = name, mspyear_stack1 = msp_yr)
+stack_2 <- msp_yrs %>% rename(name_stack2 = name, mspyear_stack2 = msp_yr)
+stack_3 <- msp_yrs %>% rename(name_stack3 = name, mspyear_stack3 = msp_yr)
+stack_4 <- msp_yrs %>% rename(name_stack4 = name, mspyear_stack4 = msp_yr)
 
 unstacked_yrs <- left_join(unstacked,stack_1) %>% 
   left_join(.,stack_2) %>% 
   left_join(.,stack_3) %>% 
   left_join(.,stack_4) %>% 
-  mutate(ryear_stack1 = year - cyear_stack1,
-         ryear_stack2 = year - cyear_stack2,
-         ryear_stack3 = year - cyear_stack3,
-         ryear_stack4 = year - cyear_stack4) %>%
-  rename(community = name) #%>% 
+  mutate(ryear_stack1 = year - mspyear_stack1,
+         ryear_stack2 = year - mspyear_stack2,
+         ryear_stack3 = year - mspyear_stack3,
+         ryear_stack4 = year - mspyear_stack4) %>%
+  rename(community = name) %>% 
   select(community,year,name_stack1:name_stack4,
-         cyear_stack1:cyear_stack4,ryear_stack1:ryear_stack4)
+         mspyear_stack1:mspyear_stack4,ryear_stack1:ryear_stack4)
 
 stacked <- unstacked_yrs %>% 
   pivot_longer(
@@ -83,20 +84,44 @@ stacked <- unstacked_yrs %>%
   ) %>% arrange(community, stack) %>% 
   mutate(stack = str_replace_all(stack, "stack", "")) %>% 
   rename(stack_name = name,
-         name = community)
+         name = community) 
 
 # Merge Values with Stacked Data ------------------------------------------
-jobs_stack_match <- jobs_panel %>% 
-  rename(stack_name = name,
-         cyear = year,
-         buff_0 = buffer_0,
-         buff_1 = buffer_1) %>% 
-  select(stack_name,cyear,buff_0:buff_1)
 jobs_match <- jobs_panel %>% 
   select(name,year,cz:msp_yr,buffer_0:buffer_1)
-  
+
 panel <- left_join(stacked,jobs_match, by = c("name","year")) %>% 
-  select(name,year,cz:buffer_1,everything()) %>% 
-  left_join(.,jobs_stack_match, by = c("stack_name","cyear"))
+  rename(downtown_jobs = buffer_0,
+         treated = msp,
+         treated_yr = msp_yr,
+         match = stack_name,
+         time = ryear,
+         match_treat_yr = mspyear,
+         town = name) %>% 
+  mutate(townid = as.factor(paste0("S",(group_indices(.,town,stack)))),
+         cal_year = as.factor(year)) %>% 
+  filter(time >= -3 & time <= 5,
+         match_treat_yr >= 2000 & match_treat_yr <= 2013,
+         town != match) %>% 
+  select(town,time,cal_year,downtown_jobs,treated,treated_yr,cz,match,match_treat_yr,townid) %>% 
+  write_csv("data/csv/panel.csv")
+
+# Panel Diagnostics -------------------------------------------------------
+length(unique(panel$townid)) #number of 9-year stretches
+length(unique(panel$town))   #number of unique towns in panel
+length(unique(panel$match))   #number of unique TREATED towns in panel
+ 
+
+
+
+
+
+
+
+
+
+
+
+
 
 

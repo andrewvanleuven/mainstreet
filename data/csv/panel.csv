@@ -1,0 +1,937 @@
+town,time,cal_year,downtown_jobs,treated,treated_yr,cz,match,match_treat_yr,townid
+Albia,-3,2003,978,0,0,393,Ottumwa,2006,S8
+Albia,-2,2004,1035,0,0,393,Ottumwa,2006,S8
+Albia,-1,2005,954,0,0,393,Ottumwa,2006,S8
+Albia,0,2006,909,0,0,393,Ottumwa,2006,S8
+Albia,1,2007,919,0,0,393,Ottumwa,2006,S8
+Albia,2,2008,1005,0,0,393,Ottumwa,2006,S8
+Albia,3,2009,1015,0,0,393,Ottumwa,2006,S8
+Albia,4,2010,955,0,0,393,Ottumwa,2006,S8
+Albia,5,2011,811,0,0,393,Ottumwa,2006,S8
+Bloomfield,-3,2003,1029,1,1995,393,Ottumwa,2006,S16
+Bloomfield,-2,2004,969,1,1995,393,Ottumwa,2006,S16
+Bloomfield,-1,2005,976,1,1995,393,Ottumwa,2006,S16
+Bloomfield,0,2006,992,1,1995,393,Ottumwa,2006,S16
+Bloomfield,1,2007,872,1,1995,393,Ottumwa,2006,S16
+Bloomfield,2,2008,866,1,1995,393,Ottumwa,2006,S16
+Bloomfield,3,2009,846,1,1995,393,Ottumwa,2006,S16
+Bloomfield,4,2010,851,1,1995,393,Ottumwa,2006,S16
+Bloomfield,5,2011,808,1,1995,393,Ottumwa,2006,S16
+Boone,-3,1997,1501,0,0,15,Story City,2000,S18
+Boone,-2,1998,1245,0,0,15,Story City,2000,S18
+Boone,-1,1999,1523,0,0,15,Story City,2000,S18
+Boone,0,2000,1524,0,0,15,Story City,2000,S18
+Boone,1,2001,1446,0,0,15,Story City,2000,S18
+Boone,2,2002,1841,0,0,15,Story City,2000,S18
+Boone,3,2003,2136,0,0,15,Story City,2000,S18
+Boone,4,2004,2121,0,0,15,Story City,2000,S18
+Boone,5,2005,1862,0,0,15,Story City,2000,S18
+Britt,-3,2001,290,0,0,304,Mason City,2004,S19
+Britt,-2,2002,277,0,0,304,Mason City,2004,S19
+Britt,-1,2003,362,0,0,304,Mason City,2004,S19
+Britt,0,2004,372,0,0,304,Mason City,2004,S19
+Britt,1,2005,296,0,0,304,Mason City,2004,S19
+Britt,2,2006,287,0,0,304,Mason City,2004,S19
+Britt,3,2007,297,0,0,304,Mason City,2004,S19
+Britt,4,2008,294,0,0,304,Mason City,2004,S19
+Britt,5,2009,276,0,0,304,Mason City,2004,S19
+Brooklyn,-3,2006,412,0,0,455,Colfax,2009,S20
+Brooklyn,-2,2007,271,0,0,455,Colfax,2009,S20
+Brooklyn,-1,2008,279,0,0,455,Colfax,2009,S20
+Brooklyn,0,2009,260,0,0,455,Colfax,2009,S20
+Brooklyn,1,2010,266,0,0,455,Colfax,2009,S20
+Brooklyn,2,2011,262,0,0,455,Colfax,2009,S20
+Brooklyn,3,2012,267,0,0,455,Colfax,2009,S20
+Brooklyn,4,2013,293,0,0,455,Colfax,2009,S20
+Brooklyn,5,2014,281,0,0,455,Colfax,2009,S20
+Brooklyn,-3,1999,47,0,0,455,Marshalltown,2002,S21
+Brooklyn,-2,2000,47,0,0,455,Marshalltown,2002,S21
+Brooklyn,-1,2001,41,0,0,455,Marshalltown,2002,S21
+Brooklyn,0,2002,49,0,0,455,Marshalltown,2002,S21
+Brooklyn,1,2003,234,0,0,455,Marshalltown,2002,S21
+Brooklyn,2,2004,223,0,0,455,Marshalltown,2002,S21
+Brooklyn,3,2005,245,0,0,455,Marshalltown,2002,S21
+Brooklyn,4,2006,412,0,0,455,Marshalltown,2002,S21
+Brooklyn,5,2007,271,0,0,455,Marshalltown,2002,S21
+Brooklyn,-3,1997,252,0,0,455,State Center,2000,S23
+Brooklyn,-2,1998,44,0,0,455,State Center,2000,S23
+Brooklyn,-1,1999,47,0,0,455,State Center,2000,S23
+Brooklyn,0,2000,47,0,0,455,State Center,2000,S23
+Brooklyn,1,2001,41,0,0,455,State Center,2000,S23
+Brooklyn,2,2002,49,0,0,455,State Center,2000,S23
+Brooklyn,3,2003,234,0,0,455,State Center,2000,S23
+Brooklyn,4,2004,223,0,0,455,State Center,2000,S23
+Brooklyn,5,2005,245,0,0,455,State Center,2000,S23
+Burlington,-3,2006,3626,1,1986,192,Fort Madison,2009,S25
+Burlington,-2,2007,3638,1,1986,192,Fort Madison,2009,S25
+Burlington,-1,2008,3652,1,1986,192,Fort Madison,2009,S25
+Burlington,0,2009,3479,1,1986,192,Fort Madison,2009,S25
+Burlington,1,2010,3597,1,1986,192,Fort Madison,2009,S25
+Burlington,2,2011,3354,1,1986,192,Fort Madison,2009,S25
+Burlington,3,2012,3520,1,1986,192,Fort Madison,2009,S25
+Burlington,4,2013,3484,1,1986,192,Fort Madison,2009,S25
+Burlington,5,2014,3556,1,1986,192,Fort Madison,2009,S25
+Burlington,-3,1999,5584,1,1986,192,Mount Pleasant,2002,S27
+Burlington,-2,2000,5422,1,1986,192,Mount Pleasant,2002,S27
+Burlington,-1,2001,2499,1,1986,192,Mount Pleasant,2002,S27
+Burlington,0,2002,2594,1,1986,192,Mount Pleasant,2002,S27
+Burlington,1,2003,3590,1,1986,192,Mount Pleasant,2002,S27
+Burlington,2,2004,3537,1,1986,192,Mount Pleasant,2002,S27
+Burlington,3,2005,3591,1,1986,192,Mount Pleasant,2002,S27
+Burlington,4,2006,3626,1,1986,192,Mount Pleasant,2002,S27
+Burlington,5,2007,3638,1,1986,192,Mount Pleasant,2002,S27
+Carroll,-3,2009,2254,0,0,621,Jefferson,2012,S30
+Carroll,-2,2010,2046,0,0,621,Jefferson,2012,S30
+Carroll,-1,2011,1830,0,0,621,Jefferson,2012,S30
+Carroll,0,2012,2122,0,0,621,Jefferson,2012,S30
+Carroll,1,2013,2267,0,0,621,Jefferson,2012,S30
+Carroll,2,2014,2151,0,0,621,Jefferson,2012,S30
+Carroll,3,2015,1987,0,0,621,Jefferson,2012,S30
+Carroll,4,2016,1953,0,0,621,Jefferson,2012,S30
+Carroll,5,2017,1980,0,0,621,Jefferson,2012,S30
+Carroll,-3,2006,2120,0,0,621,Manning,2009,S31
+Carroll,-2,2007,2243,0,0,621,Manning,2009,S31
+Carroll,-1,2008,2133,0,0,621,Manning,2009,S31
+Carroll,0,2009,2254,0,0,621,Manning,2009,S31
+Carroll,1,2010,2046,0,0,621,Manning,2009,S31
+Carroll,2,2011,1830,0,0,621,Manning,2009,S31
+Carroll,3,2012,2122,0,0,621,Manning,2009,S31
+Carroll,4,2013,2267,0,0,621,Manning,2009,S31
+Carroll,5,2014,2151,0,0,621,Manning,2009,S31
+Centerville,-3,2003,1102,1,2015,393,Ottumwa,2006,S35
+Centerville,-2,2004,1128,1,2015,393,Ottumwa,2006,S35
+Centerville,-1,2005,1166,1,2015,393,Ottumwa,2006,S35
+Centerville,0,2006,1067,1,2015,393,Ottumwa,2006,S35
+Centerville,1,2007,1074,1,2015,393,Ottumwa,2006,S35
+Centerville,2,2008,980,1,2015,393,Ottumwa,2006,S35
+Centerville,3,2009,990,1,2015,393,Ottumwa,2006,S35
+Centerville,4,2010,956,1,2015,393,Ottumwa,2006,S35
+Centerville,5,2011,828,1,2015,393,Ottumwa,2006,S35
+Clarksville,-3,2003,143,0,0,230,West Union,2006,S44
+Clarksville,-2,2004,149,0,0,230,West Union,2006,S44
+Clarksville,-1,2005,139,0,0,230,West Union,2006,S44
+Clarksville,0,2006,138,0,0,230,West Union,2006,S44
+Clarksville,1,2007,182,0,0,230,West Union,2006,S44
+Clarksville,2,2008,192,0,0,230,West Union,2006,S44
+Clarksville,3,2009,174,0,0,230,West Union,2006,S44
+Clarksville,4,2010,188,0,0,230,West Union,2006,S44
+Clarksville,5,2011,190,0,0,230,West Union,2006,S44
+Clear Lake,-3,2001,588,0,0,304,Mason City,2004,S45
+Clear Lake,-2,2002,548,0,0,304,Mason City,2004,S45
+Clear Lake,-1,2003,805,0,0,304,Mason City,2004,S45
+Clear Lake,0,2004,801,0,0,304,Mason City,2004,S45
+Clear Lake,1,2005,885,0,0,304,Mason City,2004,S45
+Clear Lake,2,2006,1014,0,0,304,Mason City,2004,S45
+Clear Lake,3,2007,856,0,0,304,Mason City,2004,S45
+Clear Lake,4,2008,834,0,0,304,Mason City,2004,S45
+Clear Lake,5,2009,879,0,0,304,Mason City,2004,S45
+Colfax,-3,1999,222,1,2009,455,Marshalltown,2002,S47
+Colfax,-2,2000,221,1,2009,455,Marshalltown,2002,S47
+Colfax,-1,2001,237,1,2009,455,Marshalltown,2002,S47
+Colfax,0,2002,209,1,2009,455,Marshalltown,2002,S47
+Colfax,1,2003,225,1,2009,455,Marshalltown,2002,S47
+Colfax,2,2004,229,1,2009,455,Marshalltown,2002,S47
+Colfax,3,2005,257,1,2009,455,Marshalltown,2002,S47
+Colfax,4,2006,270,1,2009,455,Marshalltown,2002,S47
+Colfax,5,2007,248,1,2009,455,Marshalltown,2002,S47
+Colfax,-3,1997,198,1,2009,455,State Center,2000,S49
+Colfax,-2,1998,219,1,2009,455,State Center,2000,S49
+Colfax,-1,1999,222,1,2009,455,State Center,2000,S49
+Colfax,0,2000,221,1,2009,455,State Center,2000,S49
+Colfax,1,2001,237,1,2009,455,State Center,2000,S49
+Colfax,2,2002,209,1,2009,455,State Center,2000,S49
+Colfax,3,2003,225,1,2009,455,State Center,2000,S49
+Colfax,4,2004,229,1,2009,455,State Center,2000,S49
+Colfax,5,2005,257,1,2009,455,State Center,2000,S49
+Coon Rapids,-3,2009,526,0,0,621,Jefferson,2012,S50
+Coon Rapids,-2,2010,516,0,0,621,Jefferson,2012,S50
+Coon Rapids,-1,2011,520,0,0,621,Jefferson,2012,S50
+Coon Rapids,0,2012,517,0,0,621,Jefferson,2012,S50
+Coon Rapids,1,2013,513,0,0,621,Jefferson,2012,S50
+Coon Rapids,2,2014,511,0,0,621,Jefferson,2012,S50
+Coon Rapids,3,2015,478,0,0,621,Jefferson,2012,S50
+Coon Rapids,4,2016,446,0,0,621,Jefferson,2012,S50
+Coon Rapids,5,2017,441,0,0,621,Jefferson,2012,S50
+Coon Rapids,-3,2006,514,0,0,621,Manning,2009,S51
+Coon Rapids,-2,2007,497,0,0,621,Manning,2009,S51
+Coon Rapids,-1,2008,536,0,0,621,Manning,2009,S51
+Coon Rapids,0,2009,526,0,0,621,Manning,2009,S51
+Coon Rapids,1,2010,516,0,0,621,Manning,2009,S51
+Coon Rapids,2,2011,520,0,0,621,Manning,2009,S51
+Coon Rapids,3,2012,517,0,0,621,Manning,2009,S51
+Coon Rapids,4,2013,513,0,0,621,Manning,2009,S51
+Coon Rapids,5,2014,511,0,0,621,Manning,2009,S51
+Corydon,-3,2009,479,0,0,526,Chariton,2012,S54
+Corydon,-2,2010,488,0,0,526,Chariton,2012,S54
+Corydon,-1,2011,459,0,0,526,Chariton,2012,S54
+Corydon,0,2012,509,0,0,526,Chariton,2012,S54
+Corydon,1,2013,520,0,0,526,Chariton,2012,S54
+Corydon,2,2014,503,0,0,526,Chariton,2012,S54
+Corydon,3,2015,494,0,0,526,Chariton,2012,S54
+Corydon,4,2016,507,0,0,526,Chariton,2012,S54
+Corydon,5,2017,479,0,0,526,Chariton,2012,S54
+Eldon,-3,2003,93,0,0,393,Ottumwa,2006,S66
+Eldon,-2,2004,92,0,0,393,Ottumwa,2006,S66
+Eldon,-1,2005,99,0,0,393,Ottumwa,2006,S66
+Eldon,0,2006,24,0,0,393,Ottumwa,2006,S66
+Eldon,1,2007,100,0,0,393,Ottumwa,2006,S66
+Eldon,2,2008,105,0,0,393,Ottumwa,2006,S66
+Eldon,3,2009,100,0,0,393,Ottumwa,2006,S66
+Eldon,4,2010,95,0,0,393,Ottumwa,2006,S66
+Eldon,5,2011,106,0,0,393,Ottumwa,2006,S66
+Elkader,-3,2009,621,1,1991,470,Lansing,2012,S70
+Elkader,-2,2010,667,1,1991,470,Lansing,2012,S70
+Elkader,-1,2011,557,1,1991,470,Lansing,2012,S70
+Elkader,0,2012,571,1,1991,470,Lansing,2012,S70
+Elkader,1,2013,554,1,1991,470,Lansing,2012,S70
+Elkader,2,2014,577,1,1991,470,Lansing,2012,S70
+Elkader,3,2015,563,1,1991,470,Lansing,2012,S70
+Elkader,4,2016,624,1,1991,470,Lansing,2012,S70
+Elkader,5,2017,626,1,1991,470,Lansing,2012,S70
+Fayette,-3,2003,166,0,0,230,West Union,2006,S75
+Fayette,-2,2004,163,0,0,230,West Union,2006,S75
+Fayette,-1,2005,170,0,0,230,West Union,2006,S75
+Fayette,0,2006,174,0,0,230,West Union,2006,S75
+Fayette,1,2007,202,0,0,230,West Union,2006,S75
+Fayette,2,2008,189,0,0,230,West Union,2006,S75
+Fayette,3,2009,174,0,0,230,West Union,2006,S75
+Fayette,4,2010,173,0,0,230,West Union,2006,S75
+Fayette,5,2011,164,0,0,230,West Union,2006,S75
+Forest City,-3,2001,717,0,0,304,Mason City,2004,S76
+Forest City,-2,2002,780,0,0,304,Mason City,2004,S76
+Forest City,-1,2003,973,0,0,304,Mason City,2004,S76
+Forest City,0,2004,931,0,0,304,Mason City,2004,S76
+Forest City,1,2005,875,0,0,304,Mason City,2004,S76
+Forest City,2,2006,943,0,0,304,Mason City,2004,S76
+Forest City,3,2007,906,0,0,304,Mason City,2004,S76
+Forest City,4,2008,932,0,0,304,Mason City,2004,S76
+Forest City,5,2009,944,0,0,304,Mason City,2004,S76
+Fort Madison,-3,1999,1774,1,2009,192,Mount Pleasant,2002,S81
+Fort Madison,-2,2000,1702,1,2009,192,Mount Pleasant,2002,S81
+Fort Madison,-1,2001,1282,1,2009,192,Mount Pleasant,2002,S81
+Fort Madison,0,2002,1249,1,2009,192,Mount Pleasant,2002,S81
+Fort Madison,1,2003,1869,1,2009,192,Mount Pleasant,2002,S81
+Fort Madison,2,2004,1826,1,2009,192,Mount Pleasant,2002,S81
+Fort Madison,3,2005,1833,1,2009,192,Mount Pleasant,2002,S81
+Fort Madison,4,2006,1479,1,2009,192,Mount Pleasant,2002,S81
+Fort Madison,5,2007,1071,1,2009,192,Mount Pleasant,2002,S81
+Garner,-3,2001,364,0,0,304,Mason City,2004,S82
+Garner,-2,2002,367,0,0,304,Mason City,2004,S82
+Garner,-1,2003,573,0,0,304,Mason City,2004,S82
+Garner,0,2004,586,0,0,304,Mason City,2004,S82
+Garner,1,2005,588,0,0,304,Mason City,2004,S82
+Garner,2,2006,579,0,0,304,Mason City,2004,S82
+Garner,3,2007,647,0,0,304,Mason City,2004,S82
+Garner,4,2008,601,0,0,304,Mason City,2004,S82
+Garner,5,2009,720,0,0,304,Mason City,2004,S82
+Grand Junction,-3,2009,60,0,0,621,Jefferson,2012,S84
+Grand Junction,-2,2010,20,0,0,621,Jefferson,2012,S84
+Grand Junction,-1,2011,54,0,0,621,Jefferson,2012,S84
+Grand Junction,0,2012,58,0,0,621,Jefferson,2012,S84
+Grand Junction,1,2013,21,0,0,621,Jefferson,2012,S84
+Grand Junction,2,2014,55,0,0,621,Jefferson,2012,S84
+Grand Junction,3,2015,59,0,0,621,Jefferson,2012,S84
+Grand Junction,4,2016,39,0,0,621,Jefferson,2012,S84
+Grand Junction,5,2017,39,0,0,621,Jefferson,2012,S84
+Grand Junction,-3,2006,21,0,0,621,Manning,2009,S85
+Grand Junction,-2,2007,31,0,0,621,Manning,2009,S85
+Grand Junction,-1,2008,45,0,0,621,Manning,2009,S85
+Grand Junction,0,2009,60,0,0,621,Manning,2009,S85
+Grand Junction,1,2010,20,0,0,621,Manning,2009,S85
+Grand Junction,2,2011,54,0,0,621,Manning,2009,S85
+Grand Junction,3,2012,58,0,0,621,Manning,2009,S85
+Grand Junction,4,2013,21,0,0,621,Manning,2009,S85
+Grand Junction,5,2014,55,0,0,621,Manning,2009,S85
+Greene,-3,2003,174,0,0,230,West Union,2006,S88
+Greene,-2,2004,174,0,0,230,West Union,2006,S88
+Greene,-1,2005,173,0,0,230,West Union,2006,S88
+Greene,0,2006,195,0,0,230,West Union,2006,S88
+Greene,1,2007,203,0,0,230,West Union,2006,S88
+Greene,2,2008,240,0,0,230,West Union,2006,S88
+Greene,3,2009,209,0,0,230,West Union,2006,S88
+Greene,4,2010,217,0,0,230,West Union,2006,S88
+Greene,5,2011,171,0,0,230,West Union,2006,S88
+Greenfield,-3,1997,433,1,1995,15,Story City,2000,S90
+Greenfield,-2,1998,331,1,1995,15,Story City,2000,S90
+Greenfield,-1,1999,372,1,1995,15,Story City,2000,S90
+Greenfield,0,2000,377,1,1995,15,Story City,2000,S90
+Greenfield,1,2001,407,1,1995,15,Story City,2000,S90
+Greenfield,2,2002,356,1,1995,15,Story City,2000,S90
+Greenfield,3,2003,512,1,1995,15,Story City,2000,S90
+Greenfield,4,2004,456,1,1995,15,Story City,2000,S90
+Greenfield,5,2005,454,1,1995,15,Story City,2000,S90
+Grinnell,-3,2006,2225,0,0,455,Colfax,2009,S91
+Grinnell,-2,2007,1968,0,0,455,Colfax,2009,S91
+Grinnell,-1,2008,2751,0,0,455,Colfax,2009,S91
+Grinnell,0,2009,2722,0,0,455,Colfax,2009,S91
+Grinnell,1,2010,2705,0,0,455,Colfax,2009,S91
+Grinnell,2,2011,2169,0,0,455,Colfax,2009,S91
+Grinnell,3,2012,2240,0,0,455,Colfax,2009,S91
+Grinnell,4,2013,1646,0,0,455,Colfax,2009,S91
+Grinnell,5,2014,1718,0,0,455,Colfax,2009,S91
+Grinnell,-3,1999,1168,0,0,455,Marshalltown,2002,S92
+Grinnell,-2,2000,1163,0,0,455,Marshalltown,2002,S92
+Grinnell,-1,2001,1107,0,0,455,Marshalltown,2002,S92
+Grinnell,0,2002,1128,0,0,455,Marshalltown,2002,S92
+Grinnell,1,2003,1354,0,0,455,Marshalltown,2002,S92
+Grinnell,2,2004,1474,0,0,455,Marshalltown,2002,S92
+Grinnell,3,2005,1507,0,0,455,Marshalltown,2002,S92
+Grinnell,4,2006,2225,0,0,455,Marshalltown,2002,S92
+Grinnell,5,2007,1968,0,0,455,Marshalltown,2002,S92
+Grinnell,-3,1997,2009,0,0,455,State Center,2000,S94
+Grinnell,-2,1998,1320,0,0,455,State Center,2000,S94
+Grinnell,-1,1999,1168,0,0,455,State Center,2000,S94
+Grinnell,0,2000,1163,0,0,455,State Center,2000,S94
+Grinnell,1,2001,1107,0,0,455,State Center,2000,S94
+Grinnell,2,2002,1128,0,0,455,State Center,2000,S94
+Grinnell,3,2003,1354,0,0,455,State Center,2000,S94
+Grinnell,4,2004,1474,0,0,455,State Center,2000,S94
+Grinnell,5,2005,1507,0,0,455,State Center,2000,S94
+Grundy Center,-3,2003,539,1,2015,230,West Union,2006,S97
+Grundy Center,-2,2004,559,1,2015,230,West Union,2006,S97
+Grundy Center,-1,2005,585,1,2015,230,West Union,2006,S97
+Grundy Center,0,2006,590,1,2015,230,West Union,2006,S97
+Grundy Center,1,2007,578,1,2015,230,West Union,2006,S97
+Grundy Center,2,2008,583,1,2015,230,West Union,2006,S97
+Grundy Center,3,2009,595,1,2015,230,West Union,2006,S97
+Grundy Center,4,2010,604,1,2015,230,West Union,2006,S97
+Grundy Center,5,2011,633,1,2015,230,West Union,2006,S97
+Guttenberg,-3,2009,329,0,0,470,Lansing,2012,S99
+Guttenberg,-2,2010,278,0,0,470,Lansing,2012,S99
+Guttenberg,-1,2011,206,0,0,470,Lansing,2012,S99
+Guttenberg,0,2012,263,0,0,470,Lansing,2012,S99
+Guttenberg,1,2013,398,0,0,470,Lansing,2012,S99
+Guttenberg,2,2014,252,0,0,470,Lansing,2012,S99
+Guttenberg,3,2015,258,0,0,470,Lansing,2012,S99
+Guttenberg,4,2016,258,0,0,470,Lansing,2012,S99
+Guttenberg,5,2017,250,0,0,470,Lansing,2012,S99
+Independence,-3,2003,1092,0,0,230,West Union,2006,S107
+Independence,-2,2004,1066,0,0,230,West Union,2006,S107
+Independence,-1,2005,1071,0,0,230,West Union,2006,S107
+Independence,0,2006,1124,0,0,230,West Union,2006,S107
+Independence,1,2007,1128,0,0,230,West Union,2006,S107
+Independence,2,2008,1116,0,0,230,West Union,2006,S107
+Independence,3,2009,1058,0,0,230,West Union,2006,S107
+Independence,4,2010,1026,0,0,230,West Union,2006,S107
+Independence,5,2011,979,0,0,230,West Union,2006,S107
+Jefferson,-3,2006,1039,1,2012,621,Manning,2009,S111
+Jefferson,-2,2007,1106,1,2012,621,Manning,2009,S111
+Jefferson,-1,2008,1041,1,2012,621,Manning,2009,S111
+Jefferson,0,2009,1039,1,2012,621,Manning,2009,S111
+Jefferson,1,2010,972,1,2012,621,Manning,2009,S111
+Jefferson,2,2011,1033,1,2012,621,Manning,2009,S111
+Jefferson,3,2012,1043,1,2012,621,Manning,2009,S111
+Jefferson,4,2013,1163,1,2012,621,Manning,2009,S111
+Jefferson,5,2014,1091,1,2012,621,Manning,2009,S111
+Keokuk,-3,2006,1639,1,1986,192,Fort Madison,2009,S114
+Keokuk,-2,2007,1614,1,1986,192,Fort Madison,2009,S114
+Keokuk,-1,2008,1606,1,1986,192,Fort Madison,2009,S114
+Keokuk,0,2009,1551,1,1986,192,Fort Madison,2009,S114
+Keokuk,1,2010,1613,1,1986,192,Fort Madison,2009,S114
+Keokuk,2,2011,1478,1,1986,192,Fort Madison,2009,S114
+Keokuk,3,2012,1633,1,1986,192,Fort Madison,2009,S114
+Keokuk,4,2013,2067,1,1986,192,Fort Madison,2009,S114
+Keokuk,5,2014,1517,1,1986,192,Fort Madison,2009,S114
+Keokuk,-3,1999,1680,1,1986,192,Mount Pleasant,2002,S116
+Keokuk,-2,2000,1672,1,1986,192,Mount Pleasant,2002,S116
+Keokuk,-1,2001,1635,1,1986,192,Mount Pleasant,2002,S116
+Keokuk,0,2002,1383,1,1986,192,Mount Pleasant,2002,S116
+Keokuk,1,2003,1846,1,1986,192,Mount Pleasant,2002,S116
+Keokuk,2,2004,1703,1,1986,192,Mount Pleasant,2002,S116
+Keokuk,3,2005,1722,1,1986,192,Mount Pleasant,2002,S116
+Keokuk,4,2006,1639,1,1986,192,Mount Pleasant,2002,S116
+Keokuk,5,2007,1614,1,1986,192,Mount Pleasant,2002,S116
+Keota,-3,2003,203,0,0,393,Ottumwa,2006,S120
+Keota,-2,2004,212,0,0,393,Ottumwa,2006,S120
+Keota,-1,2005,211,0,0,393,Ottumwa,2006,S120
+Keota,0,2006,188,0,0,393,Ottumwa,2006,S120
+Keota,1,2007,213,0,0,393,Ottumwa,2006,S120
+Keota,2,2008,230,0,0,393,Ottumwa,2006,S120
+Keota,3,2009,242,0,0,393,Ottumwa,2006,S120
+Keota,4,2010,162,0,0,393,Ottumwa,2006,S120
+Keota,5,2011,148,0,0,393,Ottumwa,2006,S120
+Knoxville,-3,2003,978,0,0,393,Ottumwa,2006,S125
+Knoxville,-2,2004,893,0,0,393,Ottumwa,2006,S125
+Knoxville,-1,2005,954,0,0,393,Ottumwa,2006,S125
+Knoxville,0,2006,888,0,0,393,Ottumwa,2006,S125
+Knoxville,1,2007,948,0,0,393,Ottumwa,2006,S125
+Knoxville,2,2008,977,0,0,393,Ottumwa,2006,S125
+Knoxville,3,2009,984,0,0,393,Ottumwa,2006,S125
+Knoxville,4,2010,948,0,0,393,Ottumwa,2006,S125
+Knoxville,5,2011,934,0,0,393,Ottumwa,2006,S125
+La Porte City,-3,2003,330,0,0,230,West Union,2006,S128
+La Porte City,-2,2004,321,0,0,230,West Union,2006,S128
+La Porte City,-1,2005,336,0,0,230,West Union,2006,S128
+La Porte City,0,2006,3631,0,0,230,West Union,2006,S128
+La Porte City,1,2007,3659,0,0,230,West Union,2006,S128
+La Porte City,2,2008,3671,0,0,230,West Union,2006,S128
+La Porte City,3,2009,330,0,0,230,West Union,2006,S128
+La Porte City,4,2010,307,0,0,230,West Union,2006,S128
+La Porte City,5,2011,275,0,0,230,West Union,2006,S128
+Lake Mills,-3,2001,558,0,0,304,Mason City,2004,S130
+Lake Mills,-2,2002,583,0,0,304,Mason City,2004,S130
+Lake Mills,-1,2003,664,0,0,304,Mason City,2004,S130
+Lake Mills,0,2004,653,0,0,304,Mason City,2004,S130
+Lake Mills,1,2005,648,0,0,304,Mason City,2004,S130
+Lake Mills,2,2006,648,0,0,304,Mason City,2004,S130
+Lake Mills,3,2007,673,0,0,304,Mason City,2004,S130
+Lake Mills,4,2008,710,0,0,304,Mason City,2004,S130
+Lake Mills,5,2009,727,0,0,304,Mason City,2004,S130
+Lamoni,-3,2009,187,0,0,526,Chariton,2012,S132
+Lamoni,-2,2010,206,0,0,526,Chariton,2012,S132
+Lamoni,-1,2011,227,0,0,526,Chariton,2012,S132
+Lamoni,0,2012,238,0,0,526,Chariton,2012,S132
+Lamoni,1,2013,427,0,0,526,Chariton,2012,S132
+Lamoni,2,2014,223,0,0,526,Chariton,2012,S132
+Lamoni,3,2015,254,0,0,526,Chariton,2012,S132
+Lamoni,4,2016,244,0,0,526,Chariton,2012,S132
+Lamoni,5,2017,215,0,0,526,Chariton,2012,S132
+Leon,-3,2009,296,0,0,526,Chariton,2012,S139
+Leon,-2,2010,307,0,0,526,Chariton,2012,S139
+Leon,-1,2011,298,0,0,526,Chariton,2012,S139
+Leon,0,2012,295,0,0,526,Chariton,2012,S139
+Leon,1,2013,331,0,0,526,Chariton,2012,S139
+Leon,2,2014,345,0,0,526,Chariton,2012,S139
+Leon,3,2015,309,0,0,526,Chariton,2012,S139
+Leon,4,2016,307,0,0,526,Chariton,2012,S139
+Leon,5,2017,493,0,0,526,Chariton,2012,S139
+Madrid,-3,1997,265,0,0,15,Story City,2000,S142
+Madrid,-2,1998,234,0,0,15,Story City,2000,S142
+Madrid,-1,1999,193,0,0,15,Story City,2000,S142
+Madrid,0,2000,198,0,0,15,Story City,2000,S142
+Madrid,1,2001,196,0,0,15,Story City,2000,S142
+Madrid,2,2002,209,0,0,15,Story City,2000,S142
+Madrid,3,2003,187,0,0,15,Story City,2000,S142
+Madrid,4,2004,197,0,0,15,Story City,2000,S142
+Madrid,5,2005,194,0,0,15,Story City,2000,S142
+Manly,-3,2001,3,0,0,304,Mason City,2004,S144
+Manly,-2,2002,3,0,0,304,Mason City,2004,S144
+Manly,-1,2003,83,0,0,304,Mason City,2004,S144
+Manly,0,2004,77,0,0,304,Mason City,2004,S144
+Manly,1,2005,81,0,0,304,Mason City,2004,S144
+Manly,2,2006,80,0,0,304,Mason City,2004,S144
+Manly,3,2007,59,0,0,304,Mason City,2004,S144
+Manly,4,2008,42,0,0,304,Mason City,2004,S144
+Manly,5,2009,47,0,0,304,Mason City,2004,S144
+Manning,-3,2009,531,1,2009,621,Jefferson,2012,S145
+Manning,-2,2010,507,1,2009,621,Jefferson,2012,S145
+Manning,-1,2011,497,1,2009,621,Jefferson,2012,S145
+Manning,0,2012,510,1,2009,621,Jefferson,2012,S145
+Manning,1,2013,528,1,2009,621,Jefferson,2012,S145
+Manning,2,2014,345,1,2009,621,Jefferson,2012,S145
+Manning,3,2015,333,1,2009,621,Jefferson,2012,S145
+Manning,4,2016,331,1,2009,621,Jefferson,2012,S145
+Manning,5,2017,330,1,2009,621,Jefferson,2012,S145
+Marengo,-3,2005,817,0,0,161,Washington,2008,S150
+Marengo,-2,2006,800,0,0,161,Washington,2008,S150
+Marengo,-1,2007,780,0,0,161,Washington,2008,S150
+Marengo,0,2008,775,0,0,161,Washington,2008,S150
+Marengo,1,2009,780,0,0,161,Washington,2008,S150
+Marengo,2,2010,752,0,0,161,Washington,2008,S150
+Marengo,3,2011,604,0,0,161,Washington,2008,S150
+Marengo,4,2012,665,0,0,161,Washington,2008,S150
+Marengo,5,2013,675,0,0,161,Washington,2008,S150
+Marshalltown,-3,2006,6861,1,2002,455,Colfax,2009,S151
+Marshalltown,-2,2007,6878,1,2002,455,Colfax,2009,S151
+Marshalltown,-1,2008,6935,1,2002,455,Colfax,2009,S151
+Marshalltown,0,2009,6654,1,2002,455,Colfax,2009,S151
+Marshalltown,1,2010,5746,1,2002,455,Colfax,2009,S151
+Marshalltown,2,2011,7126,1,2002,455,Colfax,2009,S151
+Marshalltown,3,2012,6350,1,2002,455,Colfax,2009,S151
+Marshalltown,4,2013,6341,1,2002,455,Colfax,2009,S151
+Marshalltown,5,2014,6203,1,2002,455,Colfax,2009,S151
+Marshalltown,-3,1997,6345,1,2002,455,State Center,2000,S154
+Marshalltown,-2,1998,3298,1,2002,455,State Center,2000,S154
+Marshalltown,-1,1999,3159,1,2002,455,State Center,2000,S154
+Marshalltown,0,2000,3578,1,2002,455,State Center,2000,S154
+Marshalltown,1,2001,3816,1,2002,455,State Center,2000,S154
+Marshalltown,2,2002,4579,1,2002,455,State Center,2000,S154
+Marshalltown,3,2003,7287,1,2002,455,State Center,2000,S154
+Marshalltown,4,2004,7139,1,2002,455,State Center,2000,S154
+Marshalltown,5,2005,6831,1,2002,455,State Center,2000,S154
+McGregor,-3,2009,193,0,0,470,Lansing,2012,S157
+McGregor,-2,2010,179,0,0,470,Lansing,2012,S157
+McGregor,-1,2011,133,0,0,470,Lansing,2012,S157
+McGregor,0,2012,211,0,0,470,Lansing,2012,S157
+McGregor,1,2013,209,0,0,470,Lansing,2012,S157
+McGregor,2,2014,216,0,0,470,Lansing,2012,S157
+McGregor,3,2015,219,0,0,470,Lansing,2012,S157
+McGregor,4,2016,187,0,0,470,Lansing,2012,S157
+McGregor,5,2017,181,0,0,470,Lansing,2012,S157
+Melcher-Dallas,-3,2003,106,0,0,393,Ottumwa,2006,S161
+Melcher-Dallas,-2,2004,98,0,0,393,Ottumwa,2006,S161
+Melcher-Dallas,-1,2005,105,0,0,393,Ottumwa,2006,S161
+Melcher-Dallas,0,2006,114,0,0,393,Ottumwa,2006,S161
+Melcher-Dallas,1,2007,189,0,0,393,Ottumwa,2006,S161
+Melcher-Dallas,2,2008,187,0,0,393,Ottumwa,2006,S161
+Melcher-Dallas,3,2009,185,0,0,393,Ottumwa,2006,S161
+Melcher-Dallas,4,2010,175,0,0,393,Ottumwa,2006,S161
+Melcher-Dallas,5,2011,178,0,0,393,Ottumwa,2006,S161
+Monona,-3,2009,192,0,0,470,Lansing,2012,S164
+Monona,-2,2010,161,0,0,470,Lansing,2012,S164
+Monona,-1,2011,140,0,0,470,Lansing,2012,S164
+Monona,0,2012,148,0,0,470,Lansing,2012,S164
+Monona,1,2013,159,0,0,470,Lansing,2012,S164
+Monona,2,2014,150,0,0,470,Lansing,2012,S164
+Monona,3,2015,168,0,0,470,Lansing,2012,S164
+Monona,4,2016,158,0,0,470,Lansing,2012,S164
+Monona,5,2017,157,0,0,470,Lansing,2012,S164
+Monroe,-3,2006,199,0,0,455,Colfax,2009,S165
+Monroe,-2,2007,199,0,0,455,Colfax,2009,S165
+Monroe,-1,2008,192,0,0,455,Colfax,2009,S165
+Monroe,0,2009,184,0,0,455,Colfax,2009,S165
+Monroe,1,2010,199,0,0,455,Colfax,2009,S165
+Monroe,2,2011,157,0,0,455,Colfax,2009,S165
+Monroe,3,2012,158,0,0,455,Colfax,2009,S165
+Monroe,4,2013,141,0,0,455,Colfax,2009,S165
+Monroe,5,2014,157,0,0,455,Colfax,2009,S165
+Monroe,-3,1999,13,0,0,455,Marshalltown,2002,S166
+Monroe,-2,2000,13,0,0,455,Marshalltown,2002,S166
+Monroe,-1,2001,17,0,0,455,Marshalltown,2002,S166
+Monroe,0,2002,35,0,0,455,Marshalltown,2002,S166
+Monroe,1,2003,217,0,0,455,Marshalltown,2002,S166
+Monroe,2,2004,187,0,0,455,Marshalltown,2002,S166
+Monroe,3,2005,199,0,0,455,Marshalltown,2002,S166
+Monroe,4,2006,199,0,0,455,Marshalltown,2002,S166
+Monroe,5,2007,199,0,0,455,Marshalltown,2002,S166
+Monroe,-3,1997,204,0,0,455,State Center,2000,S168
+Monroe,-2,1998,14,0,0,455,State Center,2000,S168
+Monroe,-1,1999,13,0,0,455,State Center,2000,S168
+Monroe,0,2000,13,0,0,455,State Center,2000,S168
+Monroe,1,2001,17,0,0,455,State Center,2000,S168
+Monroe,2,2002,35,0,0,455,State Center,2000,S168
+Monroe,3,2003,217,0,0,455,State Center,2000,S168
+Monroe,4,2004,187,0,0,455,State Center,2000,S168
+Monroe,5,2005,199,0,0,455,State Center,2000,S168
+Montezuma,-3,2006,691,0,0,455,Colfax,2009,S169
+Montezuma,-2,2007,700,0,0,455,Colfax,2009,S169
+Montezuma,-1,2008,711,0,0,455,Colfax,2009,S169
+Montezuma,0,2009,658,0,0,455,Colfax,2009,S169
+Montezuma,1,2010,595,0,0,455,Colfax,2009,S169
+Montezuma,2,2011,592,0,0,455,Colfax,2009,S169
+Montezuma,3,2012,634,0,0,455,Colfax,2009,S169
+Montezuma,4,2013,696,0,0,455,Colfax,2009,S169
+Montezuma,5,2014,696,0,0,455,Colfax,2009,S169
+Montezuma,-3,1999,92,0,0,455,Marshalltown,2002,S170
+Montezuma,-2,2000,92,0,0,455,Marshalltown,2002,S170
+Montezuma,-1,2001,116,0,0,455,Marshalltown,2002,S170
+Montezuma,0,2002,117,0,0,455,Marshalltown,2002,S170
+Montezuma,1,2003,629,0,0,455,Marshalltown,2002,S170
+Montezuma,2,2004,623,0,0,455,Marshalltown,2002,S170
+Montezuma,3,2005,687,0,0,455,Marshalltown,2002,S170
+Montezuma,4,2006,691,0,0,455,Marshalltown,2002,S170
+Montezuma,5,2007,700,0,0,455,Marshalltown,2002,S170
+Montezuma,-3,1997,467,0,0,455,State Center,2000,S172
+Montezuma,-2,1998,107,0,0,455,State Center,2000,S172
+Montezuma,-1,1999,92,0,0,455,State Center,2000,S172
+Montezuma,0,2000,92,0,0,455,State Center,2000,S172
+Montezuma,1,2001,116,0,0,455,State Center,2000,S172
+Montezuma,2,2002,117,0,0,455,State Center,2000,S172
+Montezuma,3,2003,629,0,0,455,State Center,2000,S172
+Montezuma,4,2004,623,0,0,455,State Center,2000,S172
+Montezuma,5,2005,687,0,0,455,State Center,2000,S172
+Mount Pleasant,-3,2006,1722,1,2002,192,Fort Madison,2009,S175
+Mount Pleasant,-2,2007,1794,1,2002,192,Fort Madison,2009,S175
+Mount Pleasant,-1,2008,1734,1,2002,192,Fort Madison,2009,S175
+Mount Pleasant,0,2009,1729,1,2002,192,Fort Madison,2009,S175
+Mount Pleasant,1,2010,1331,1,2002,192,Fort Madison,2009,S175
+Mount Pleasant,2,2011,1568,1,2002,192,Fort Madison,2009,S175
+Mount Pleasant,3,2012,1604,1,2002,192,Fort Madison,2009,S175
+Mount Pleasant,4,2013,1622,1,2002,192,Fort Madison,2009,S175
+Mount Pleasant,5,2014,1670,1,2002,192,Fort Madison,2009,S175
+Muscatine,-3,2005,3007,0,0,161,Washington,2008,S178
+Muscatine,-2,2006,3394,0,0,161,Washington,2008,S178
+Muscatine,-1,2007,3520,0,0,161,Washington,2008,S178
+Muscatine,0,2008,2793,0,0,161,Washington,2008,S178
+Muscatine,1,2009,2660,0,0,161,Washington,2008,S178
+Muscatine,2,2010,2567,0,0,161,Washington,2008,S178
+Muscatine,3,2011,2371,0,0,161,Washington,2008,S178
+Muscatine,4,2012,2636,0,0,161,Washington,2008,S178
+Muscatine,5,2013,2311,0,0,161,Washington,2008,S178
+Nevada,-3,1997,724,0,0,15,Story City,2000,S182
+Nevada,-2,1998,559,0,0,15,Story City,2000,S182
+Nevada,-1,1999,683,0,0,15,Story City,2000,S182
+Nevada,0,2000,739,0,0,15,Story City,2000,S182
+Nevada,1,2001,718,0,0,15,Story City,2000,S182
+Nevada,2,2002,691,0,0,15,Story City,2000,S182
+Nevada,3,2003,779,0,0,15,Story City,2000,S182
+Nevada,4,2004,825,0,0,15,Story City,2000,S182
+Nevada,5,2005,855,0,0,15,Story City,2000,S182
+New London,-3,2006,287,0,0,192,Fort Madison,2009,S186
+New London,-2,2007,303,0,0,192,Fort Madison,2009,S186
+New London,-1,2008,288,0,0,192,Fort Madison,2009,S186
+New London,0,2009,297,0,0,192,Fort Madison,2009,S186
+New London,1,2010,301,0,0,192,Fort Madison,2009,S186
+New London,2,2011,286,0,0,192,Fort Madison,2009,S186
+New London,3,2012,306,0,0,192,Fort Madison,2009,S186
+New London,4,2013,221,0,0,192,Fort Madison,2009,S186
+New London,5,2014,244,0,0,192,Fort Madison,2009,S186
+New London,-3,1999,257,0,0,192,Mount Pleasant,2002,S188
+New London,-2,2000,255,0,0,192,Mount Pleasant,2002,S188
+New London,-1,2001,245,0,0,192,Mount Pleasant,2002,S188
+New London,0,2002,288,0,0,192,Mount Pleasant,2002,S188
+New London,1,2003,255,0,0,192,Mount Pleasant,2002,S188
+New London,2,2004,298,0,0,192,Mount Pleasant,2002,S188
+New London,3,2005,288,0,0,192,Mount Pleasant,2002,S188
+New London,4,2006,287,0,0,192,Mount Pleasant,2002,S188
+New London,5,2007,303,0,0,192,Mount Pleasant,2002,S188
+New Sharon,-3,2003,120,0,0,393,Ottumwa,2006,S192
+New Sharon,-2,2004,124,0,0,393,Ottumwa,2006,S192
+New Sharon,-1,2005,98,0,0,393,Ottumwa,2006,S192
+New Sharon,0,2006,119,0,0,393,Ottumwa,2006,S192
+New Sharon,1,2007,112,0,0,393,Ottumwa,2006,S192
+New Sharon,2,2008,124,0,0,393,Ottumwa,2006,S192
+New Sharon,3,2009,124,0,0,393,Ottumwa,2006,S192
+New Sharon,4,2010,123,0,0,393,Ottumwa,2006,S192
+New Sharon,5,2011,141,0,0,393,Ottumwa,2006,S192
+Newton,-3,2006,9230,1,2014,455,Colfax,2009,S193
+Newton,-2,2007,9210,1,2014,455,Colfax,2009,S193
+Newton,-1,2008,2803,1,2014,455,Colfax,2009,S193
+Newton,0,2009,2695,1,2014,455,Colfax,2009,S193
+Newton,1,2010,2617,1,2014,455,Colfax,2009,S193
+Newton,2,2011,2562,1,2014,455,Colfax,2009,S193
+Newton,3,2012,2306,1,2014,455,Colfax,2009,S193
+Newton,4,2013,2880,1,2014,455,Colfax,2009,S193
+Newton,5,2014,2502,1,2014,455,Colfax,2009,S193
+Newton,-3,1999,4700,1,2014,455,Marshalltown,2002,S194
+Newton,-2,2000,4658,1,2014,455,Marshalltown,2002,S194
+Newton,-1,2001,8324,1,2014,455,Marshalltown,2002,S194
+Newton,0,2002,5319,1,2014,455,Marshalltown,2002,S194
+Newton,1,2003,8634,1,2014,455,Marshalltown,2002,S194
+Newton,2,2004,8836,1,2014,455,Marshalltown,2002,S194
+Newton,3,2005,9195,1,2014,455,Marshalltown,2002,S194
+Newton,4,2006,9230,1,2014,455,Marshalltown,2002,S194
+Newton,5,2007,9210,1,2014,455,Marshalltown,2002,S194
+Newton,-3,1997,5878,1,2014,455,State Center,2000,S196
+Newton,-2,1998,3247,1,2014,455,State Center,2000,S196
+Newton,-1,1999,4700,1,2014,455,State Center,2000,S196
+Newton,0,2000,4658,1,2014,455,State Center,2000,S196
+Newton,1,2001,8324,1,2014,455,State Center,2000,S196
+Newton,2,2002,5319,1,2014,455,State Center,2000,S196
+Newton,3,2003,8634,1,2014,455,State Center,2000,S196
+Newton,4,2004,8836,1,2014,455,State Center,2000,S196
+Newton,5,2005,9195,1,2014,455,State Center,2000,S196
+Northwood,-3,2001,346,0,0,304,Mason City,2004,S199
+Northwood,-2,2002,310,0,0,304,Mason City,2004,S199
+Northwood,-1,2003,417,0,0,304,Mason City,2004,S199
+Northwood,0,2004,429,0,0,304,Mason City,2004,S199
+Northwood,1,2005,463,0,0,304,Mason City,2004,S199
+Northwood,2,2006,391,0,0,304,Mason City,2004,S199
+Northwood,3,2007,420,0,0,304,Mason City,2004,S199
+Northwood,4,2008,435,0,0,304,Mason City,2004,S199
+Northwood,5,2009,443,0,0,304,Mason City,2004,S199
+Oelwein,-3,2003,1263,0,0,230,West Union,2006,S203
+Oelwein,-2,2004,1288,0,0,230,West Union,2006,S203
+Oelwein,-1,2005,1330,0,0,230,West Union,2006,S203
+Oelwein,0,2006,1166,0,0,230,West Union,2006,S203
+Oelwein,1,2007,1309,0,0,230,West Union,2006,S203
+Oelwein,2,2008,1263,0,0,230,West Union,2006,S203
+Oelwein,3,2009,1232,0,0,230,West Union,2006,S203
+Oelwein,4,2010,1262,0,0,230,West Union,2006,S203
+Oelwein,5,2011,1158,0,0,230,West Union,2006,S203
+Ogden,-3,1997,305,0,0,15,Story City,2000,S205
+Ogden,-2,1998,125,0,0,15,Story City,2000,S205
+Ogden,-1,1999,123,0,0,15,Story City,2000,S205
+Ogden,0,2000,131,0,0,15,Story City,2000,S205
+Ogden,1,2001,86,0,0,15,Story City,2000,S205
+Ogden,2,2002,82,0,0,15,Story City,2000,S205
+Ogden,3,2003,276,0,0,15,Story City,2000,S205
+Ogden,4,2004,277,0,0,15,Story City,2000,S205
+Ogden,5,2005,314,0,0,15,Story City,2000,S205
+Osceola,-3,2009,642,1,1997,526,Chariton,2012,S209
+Osceola,-2,2010,629,1,1997,526,Chariton,2012,S209
+Osceola,-1,2011,533,1,1997,526,Chariton,2012,S209
+Osceola,0,2012,615,1,1997,526,Chariton,2012,S209
+Osceola,1,2013,635,1,1997,526,Chariton,2012,S209
+Osceola,2,2014,599,1,1997,526,Chariton,2012,S209
+Osceola,3,2015,560,1,1997,526,Chariton,2012,S209
+Osceola,4,2016,557,1,1997,526,Chariton,2012,S209
+Osceola,5,2017,538,1,1997,526,Chariton,2012,S209
+Oskaloosa,-3,2003,1735,1,1986,393,Ottumwa,2006,S214
+Oskaloosa,-2,2004,1562,1,1986,393,Ottumwa,2006,S214
+Oskaloosa,-1,2005,1636,1,1986,393,Ottumwa,2006,S214
+Oskaloosa,0,2006,1774,1,1986,393,Ottumwa,2006,S214
+Oskaloosa,1,2007,1857,1,1986,393,Ottumwa,2006,S214
+Oskaloosa,2,2008,1912,1,1986,393,Ottumwa,2006,S214
+Oskaloosa,3,2009,1803,1,1986,393,Ottumwa,2006,S214
+Oskaloosa,4,2010,1796,1,1986,393,Ottumwa,2006,S214
+Oskaloosa,5,2011,1707,1,1986,393,Ottumwa,2006,S214
+Parkersburg,-3,2003,235,0,0,230,West Union,2006,S221
+Parkersburg,-2,2004,235,0,0,230,West Union,2006,S221
+Parkersburg,-1,2005,236,0,0,230,West Union,2006,S221
+Parkersburg,0,2006,219,0,0,230,West Union,2006,S221
+Parkersburg,1,2007,206,0,0,230,West Union,2006,S221
+Parkersburg,2,2008,202,0,0,230,West Union,2006,S221
+Parkersburg,3,2009,173,0,0,230,West Union,2006,S221
+Parkersburg,4,2010,219,0,0,230,West Union,2006,S221
+Parkersburg,5,2011,209,0,0,230,West Union,2006,S221
+Pella,-3,2003,1439,0,0,393,Ottumwa,2006,S225
+Pella,-2,2004,1441,0,0,393,Ottumwa,2006,S225
+Pella,-1,2005,1476,0,0,393,Ottumwa,2006,S225
+Pella,0,2006,1607,0,0,393,Ottumwa,2006,S225
+Pella,1,2007,1635,0,0,393,Ottumwa,2006,S225
+Pella,2,2008,1570,0,0,393,Ottumwa,2006,S225
+Pella,3,2009,1550,0,0,393,Ottumwa,2006,S225
+Pella,4,2010,1488,0,0,393,Ottumwa,2006,S225
+Pella,5,2011,1464,0,0,393,Ottumwa,2006,S225
+Postville,-3,2009,470,0,0,470,Lansing,2012,S228
+Postville,-2,2010,418,0,0,470,Lansing,2012,S228
+Postville,-1,2011,360,0,0,470,Lansing,2012,S228
+Postville,0,2012,391,0,0,470,Lansing,2012,S228
+Postville,1,2013,385,0,0,470,Lansing,2012,S228
+Postville,2,2014,375,0,0,470,Lansing,2012,S228
+Postville,3,2015,363,0,0,470,Lansing,2012,S228
+Postville,4,2016,368,0,0,470,Lansing,2012,S228
+Postville,5,2017,360,0,0,470,Lansing,2012,S228
+Reinbeck,-3,2003,525,0,0,230,West Union,2006,S231
+Reinbeck,-2,2004,511,0,0,230,West Union,2006,S231
+Reinbeck,-1,2005,632,0,0,230,West Union,2006,S231
+Reinbeck,0,2006,667,0,0,230,West Union,2006,S231
+Reinbeck,1,2007,678,0,0,230,West Union,2006,S231
+Reinbeck,2,2008,679,0,0,230,West Union,2006,S231
+Reinbeck,3,2009,727,0,0,230,West Union,2006,S231
+Reinbeck,4,2010,715,0,0,230,West Union,2006,S231
+Reinbeck,5,2011,707,0,0,230,West Union,2006,S231
+Sigourney,-3,2003,590,0,0,393,Ottumwa,2006,S242
+Sigourney,-2,2004,583,0,0,393,Ottumwa,2006,S242
+Sigourney,-1,2005,585,0,0,393,Ottumwa,2006,S242
+Sigourney,0,2006,534,0,0,393,Ottumwa,2006,S242
+Sigourney,1,2007,583,0,0,393,Ottumwa,2006,S242
+Sigourney,2,2008,580,0,0,393,Ottumwa,2006,S242
+Sigourney,3,2009,670,0,0,393,Ottumwa,2006,S242
+Sigourney,4,2010,653,0,0,393,Ottumwa,2006,S242
+Sigourney,5,2011,630,0,0,393,Ottumwa,2006,S242
+State Center,-3,2006,219,1,2000,455,Colfax,2009,S246
+State Center,-2,2007,194,1,2000,455,Colfax,2009,S246
+State Center,-1,2008,196,1,2000,455,Colfax,2009,S246
+State Center,0,2009,201,1,2000,455,Colfax,2009,S246
+State Center,1,2010,182,1,2000,455,Colfax,2009,S246
+State Center,2,2011,175,1,2000,455,Colfax,2009,S246
+State Center,3,2012,187,1,2000,455,Colfax,2009,S246
+State Center,4,2013,225,1,2000,455,Colfax,2009,S246
+State Center,5,2014,198,1,2000,455,Colfax,2009,S246
+State Center,-3,1999,19,1,2000,455,Marshalltown,2002,S247
+State Center,-2,2000,21,1,2000,455,Marshalltown,2002,S247
+State Center,-1,2001,24,1,2000,455,Marshalltown,2002,S247
+State Center,0,2002,64,1,2000,455,Marshalltown,2002,S247
+State Center,1,2003,192,1,2000,455,Marshalltown,2002,S247
+State Center,2,2004,223,1,2000,455,Marshalltown,2002,S247
+State Center,3,2005,210,1,2000,455,Marshalltown,2002,S247
+State Center,4,2006,219,1,2000,455,Marshalltown,2002,S247
+State Center,5,2007,194,1,2000,455,Marshalltown,2002,S247
+Strawberry Point,-3,2009,290,0,0,470,Lansing,2012,S254
+Strawberry Point,-2,2010,217,0,0,470,Lansing,2012,S254
+Strawberry Point,-1,2011,201,0,0,470,Lansing,2012,S254
+Strawberry Point,0,2012,214,0,0,470,Lansing,2012,S254
+Strawberry Point,1,2013,234,0,0,470,Lansing,2012,S254
+Strawberry Point,2,2014,228,0,0,470,Lansing,2012,S254
+Strawberry Point,3,2015,232,0,0,470,Lansing,2012,S254
+Strawberry Point,4,2016,260,0,0,470,Lansing,2012,S254
+Strawberry Point,5,2017,238,0,0,470,Lansing,2012,S254
+Sumner,-3,2003,292,0,0,230,West Union,2006,S257
+Sumner,-2,2004,317,0,0,230,West Union,2006,S257
+Sumner,-1,2005,317,0,0,230,West Union,2006,S257
+Sumner,0,2006,327,0,0,230,West Union,2006,S257
+Sumner,1,2007,321,0,0,230,West Union,2006,S257
+Sumner,2,2008,318,0,0,230,West Union,2006,S257
+Sumner,3,2009,272,0,0,230,West Union,2006,S257
+Sumner,4,2010,294,0,0,230,West Union,2006,S257
+Sumner,5,2011,217,0,0,230,West Union,2006,S257
+Tama,-3,2006,379,0,0,455,Colfax,2009,S258
+Tama,-2,2007,396,0,0,455,Colfax,2009,S258
+Tama,-1,2008,386,0,0,455,Colfax,2009,S258
+Tama,0,2009,383,0,0,455,Colfax,2009,S258
+Tama,1,2010,352,0,0,455,Colfax,2009,S258
+Tama,2,2011,310,0,0,455,Colfax,2009,S258
+Tama,3,2012,387,0,0,455,Colfax,2009,S258
+Tama,4,2013,410,0,0,455,Colfax,2009,S258
+Tama,5,2014,408,0,0,455,Colfax,2009,S258
+Tama,-3,1999,181,0,0,455,Marshalltown,2002,S259
+Tama,-2,2000,180,0,0,455,Marshalltown,2002,S259
+Tama,-1,2001,209,0,0,455,Marshalltown,2002,S259
+Tama,0,2002,187,0,0,455,Marshalltown,2002,S259
+Tama,1,2003,356,0,0,455,Marshalltown,2002,S259
+Tama,2,2004,355,0,0,455,Marshalltown,2002,S259
+Tama,3,2005,367,0,0,455,Marshalltown,2002,S259
+Tama,4,2006,379,0,0,455,Marshalltown,2002,S259
+Tama,5,2007,396,0,0,455,Marshalltown,2002,S259
+Tama,-3,1997,347,0,0,455,State Center,2000,S261
+Tama,-2,1998,192,0,0,455,State Center,2000,S261
+Tama,-1,1999,181,0,0,455,State Center,2000,S261
+Tama,0,2000,180,0,0,455,State Center,2000,S261
+Tama,1,2001,209,0,0,455,State Center,2000,S261
+Tama,2,2002,187,0,0,455,State Center,2000,S261
+Tama,3,2003,356,0,0,455,State Center,2000,S261
+Tama,4,2004,355,0,0,455,State Center,2000,S261
+Tama,5,2005,367,0,0,455,State Center,2000,S261
+Tipton,-3,2005,873,0,0,161,Washington,2008,S262
+Tipton,-2,2006,919,0,0,161,Washington,2008,S262
+Tipton,-1,2007,1050,0,0,161,Washington,2008,S262
+Tipton,0,2008,1005,0,0,161,Washington,2008,S262
+Tipton,1,2009,923,0,0,161,Washington,2008,S262
+Tipton,2,2010,960,0,0,161,Washington,2008,S262
+Tipton,3,2011,975,0,0,161,Washington,2008,S262
+Tipton,4,2012,1008,0,0,161,Washington,2008,S262
+Tipton,5,2013,938,0,0,161,Washington,2008,S262
+Toledo,-3,2006,387,0,0,455,Colfax,2009,S263
+Toledo,-2,2007,404,0,0,455,Colfax,2009,S263
+Toledo,-1,2008,429,0,0,455,Colfax,2009,S263
+Toledo,0,2009,409,0,0,455,Colfax,2009,S263
+Toledo,1,2010,408,0,0,455,Colfax,2009,S263
+Toledo,2,2011,325,0,0,455,Colfax,2009,S263
+Toledo,3,2012,388,0,0,455,Colfax,2009,S263
+Toledo,4,2013,387,0,0,455,Colfax,2009,S263
+Toledo,5,2014,393,0,0,455,Colfax,2009,S263
+Toledo,-3,1999,350,0,0,455,Marshalltown,2002,S264
+Toledo,-2,2000,352,0,0,455,Marshalltown,2002,S264
+Toledo,-1,2001,315,0,0,455,Marshalltown,2002,S264
+Toledo,0,2002,315,0,0,455,Marshalltown,2002,S264
+Toledo,1,2003,421,0,0,455,Marshalltown,2002,S264
+Toledo,2,2004,440,0,0,455,Marshalltown,2002,S264
+Toledo,3,2005,437,0,0,455,Marshalltown,2002,S264
+Toledo,4,2006,387,0,0,455,Marshalltown,2002,S264
+Toledo,5,2007,404,0,0,455,Marshalltown,2002,S264
+Toledo,-3,1997,414,0,0,455,State Center,2000,S266
+Toledo,-2,1998,338,0,0,455,State Center,2000,S266
+Toledo,-1,1999,350,0,0,455,State Center,2000,S266
+Toledo,0,2000,352,0,0,455,State Center,2000,S266
+Toledo,1,2001,315,0,0,455,State Center,2000,S266
+Toledo,2,2002,315,0,0,455,State Center,2000,S266
+Toledo,3,2003,421,0,0,455,State Center,2000,S266
+Toledo,4,2004,440,0,0,455,State Center,2000,S266
+Toledo,5,2005,437,0,0,455,State Center,2000,S266
+Traer,-3,2006,280,0,0,455,Colfax,2009,S267
+Traer,-2,2007,600,0,0,455,Colfax,2009,S267
+Traer,-1,2008,294,0,0,455,Colfax,2009,S267
+Traer,0,2009,327,0,0,455,Colfax,2009,S267
+Traer,1,2010,394,0,0,455,Colfax,2009,S267
+Traer,2,2011,246,0,0,455,Colfax,2009,S267
+Traer,3,2012,316,0,0,455,Colfax,2009,S267
+Traer,4,2013,318,0,0,455,Colfax,2009,S267
+Traer,5,2014,268,0,0,455,Colfax,2009,S267
+Traer,-3,1999,215,0,0,455,Marshalltown,2002,S268
+Traer,-2,2000,233,0,0,455,Marshalltown,2002,S268
+Traer,-1,2001,227,0,0,455,Marshalltown,2002,S268
+Traer,0,2002,217,0,0,455,Marshalltown,2002,S268
+Traer,1,2003,295,0,0,455,Marshalltown,2002,S268
+Traer,2,2004,281,0,0,455,Marshalltown,2002,S268
+Traer,3,2005,305,0,0,455,Marshalltown,2002,S268
+Traer,4,2006,280,0,0,455,Marshalltown,2002,S268
+Traer,5,2007,600,0,0,455,Marshalltown,2002,S268
+Traer,-3,1997,255,0,0,455,State Center,2000,S270
+Traer,-2,1998,180,0,0,455,State Center,2000,S270
+Traer,-1,1999,215,0,0,455,State Center,2000,S270
+Traer,0,2000,233,0,0,455,State Center,2000,S270
+Traer,1,2001,227,0,0,455,State Center,2000,S270
+Traer,2,2002,217,0,0,455,State Center,2000,S270
+Traer,3,2003,295,0,0,455,State Center,2000,S270
+Traer,4,2004,281,0,0,455,State Center,2000,S270
+Traer,5,2005,305,0,0,455,State Center,2000,S270
+Tripoli,-3,2003,158,0,0,230,West Union,2006,S273
+Tripoli,-2,2004,154,0,0,230,West Union,2006,S273
+Tripoli,-1,2005,151,0,0,230,West Union,2006,S273
+Tripoli,0,2006,147,0,0,230,West Union,2006,S273
+Tripoli,1,2007,188,0,0,230,West Union,2006,S273
+Tripoli,2,2008,136,0,0,230,West Union,2006,S273
+Tripoli,3,2009,124,0,0,230,West Union,2006,S273
+Tripoli,4,2010,118,0,0,230,West Union,2006,S273
+Tripoli,5,2011,137,0,0,230,West Union,2006,S273
+Wapello,-3,2005,426,0,0,161,Washington,2008,S274
+Wapello,-2,2006,455,0,0,161,Washington,2008,S274
+Wapello,-1,2007,432,0,0,161,Washington,2008,S274
+Wapello,0,2008,415,0,0,161,Washington,2008,S274
+Wapello,1,2009,352,0,0,161,Washington,2008,S274
+Wapello,2,2010,382,0,0,161,Washington,2008,S274
+Wapello,3,2011,338,0,0,161,Washington,2008,S274
+Wapello,4,2012,360,0,0,161,Washington,2008,S274
+Wapello,5,2013,335,0,0,161,Washington,2008,S274
+Waukon,-3,2009,1273,0,0,470,Lansing,2012,S277
+Waukon,-2,2010,1255,0,0,470,Lansing,2012,S277
+Waukon,-1,2011,1252,0,0,470,Lansing,2012,S277
+Waukon,0,2012,1284,0,0,470,Lansing,2012,S277
+Waukon,1,2013,1281,0,0,470,Lansing,2012,S277
+Waukon,2,2014,1261,0,0,470,Lansing,2012,S277
+Waukon,3,2015,1237,0,0,470,Lansing,2012,S277
+Waukon,4,2016,1229,0,0,470,Lansing,2012,S277
+Waukon,5,2017,1134,0,0,470,Lansing,2012,S277
+Waverly,-3,2003,1499,1,1989,230,West Union,2006,S280
+Waverly,-2,2004,1607,1,1989,230,West Union,2006,S280
+Waverly,-1,2005,1579,1,1989,230,West Union,2006,S280
+Waverly,0,2006,1559,1,1989,230,West Union,2006,S280
+Waverly,1,2007,1555,1,1989,230,West Union,2006,S280
+Waverly,2,2008,1545,1,1989,230,West Union,2006,S280
+Waverly,3,2009,1454,1,1989,230,West Union,2006,S280
+Waverly,4,2010,1508,1,1989,230,West Union,2006,S280
+Waverly,5,2011,1524,1,1989,230,West Union,2006,S280
+Wellman,-3,2005,179,0,0,161,Washington,2008,S282
+Wellman,-2,2006,171,0,0,161,Washington,2008,S282
+Wellman,-1,2007,176,0,0,161,Washington,2008,S282
+Wellman,0,2008,170,0,0,161,Washington,2008,S282
+Wellman,1,2009,192,0,0,161,Washington,2008,S282
+Wellman,2,2010,185,0,0,161,Washington,2008,S282
+Wellman,3,2011,200,0,0,161,Washington,2008,S282
+Wellman,4,2012,214,0,0,161,Washington,2008,S282
+Wellman,5,2013,226,0,0,161,Washington,2008,S282
+West Burlington,-3,2006,416,0,0,192,Fort Madison,2009,S284
+West Burlington,-2,2007,482,0,0,192,Fort Madison,2009,S284
+West Burlington,-1,2008,410,0,0,192,Fort Madison,2009,S284
+West Burlington,0,2009,438,0,0,192,Fort Madison,2009,S284
+West Burlington,1,2010,430,0,0,192,Fort Madison,2009,S284
+West Burlington,2,2011,504,0,0,192,Fort Madison,2009,S284
+West Burlington,3,2012,752,0,0,192,Fort Madison,2009,S284
+West Burlington,4,2013,853,0,0,192,Fort Madison,2009,S284
+West Burlington,5,2014,739,0,0,192,Fort Madison,2009,S284
+West Burlington,-3,1999,423,0,0,192,Mount Pleasant,2002,S286
+West Burlington,-2,2000,423,0,0,192,Mount Pleasant,2002,S286
+West Burlington,-1,2001,428,0,0,192,Mount Pleasant,2002,S286
+West Burlington,0,2002,469,0,0,192,Mount Pleasant,2002,S286
+West Burlington,1,2003,453,0,0,192,Mount Pleasant,2002,S286
+West Burlington,2,2004,419,0,0,192,Mount Pleasant,2002,S286
+West Burlington,3,2005,429,0,0,192,Mount Pleasant,2002,S286
+West Burlington,4,2006,416,0,0,192,Mount Pleasant,2002,S286
+West Burlington,5,2007,482,0,0,192,Mount Pleasant,2002,S286
+West Liberty,-3,2005,315,0,0,161,Washington,2008,S287
+West Liberty,-2,2006,299,0,0,161,Washington,2008,S287
+West Liberty,-1,2007,296,0,0,161,Washington,2008,S287
+West Liberty,0,2008,310,0,0,161,Washington,2008,S287
+West Liberty,1,2009,305,0,0,161,Washington,2008,S287
+West Liberty,2,2010,288,0,0,161,Washington,2008,S287
+West Liberty,3,2011,1448,0,0,161,Washington,2008,S287
+West Liberty,4,2012,1490,0,0,161,Washington,2008,S287
+West Liberty,5,2013,1525,0,0,161,Washington,2008,S287
+Williamsburg,-3,2005,435,0,0,161,Washington,2008,S291
+Williamsburg,-2,2006,535,0,0,161,Washington,2008,S291
+Williamsburg,-1,2007,544,0,0,161,Washington,2008,S291
+Williamsburg,0,2008,566,0,0,161,Washington,2008,S291
+Williamsburg,1,2009,485,0,0,161,Washington,2008,S291
+Williamsburg,2,2010,500,0,0,161,Washington,2008,S291
+Williamsburg,3,2011,468,0,0,161,Washington,2008,S291
+Williamsburg,4,2012,382,0,0,161,Washington,2008,S291
+Williamsburg,5,2013,421,0,0,161,Washington,2008,S291
+Wilton,-3,2005,209,0,0,161,Washington,2008,S292
+Wilton,-2,2006,243,0,0,161,Washington,2008,S292
+Wilton,-1,2007,251,0,0,161,Washington,2008,S292
+Wilton,0,2008,190,0,0,161,Washington,2008,S292
+Wilton,1,2009,169,0,0,161,Washington,2008,S292
+Wilton,2,2010,174,0,0,161,Washington,2008,S292
+Wilton,3,2011,175,0,0,161,Washington,2008,S292
+Wilton,4,2012,171,0,0,161,Washington,2008,S292
+Wilton,5,2013,194,0,0,161,Washington,2008,S292
+Winfield,-3,2006,225,0,0,192,Fort Madison,2009,S294
+Winfield,-2,2007,300,0,0,192,Fort Madison,2009,S294
+Winfield,-1,2008,176,0,0,192,Fort Madison,2009,S294
+Winfield,0,2009,185,0,0,192,Fort Madison,2009,S294
+Winfield,1,2010,182,0,0,192,Fort Madison,2009,S294
+Winfield,2,2011,175,0,0,192,Fort Madison,2009,S294
+Winfield,3,2012,190,0,0,192,Fort Madison,2009,S294
+Winfield,4,2013,186,0,0,192,Fort Madison,2009,S294
+Winfield,5,2014,181,0,0,192,Fort Madison,2009,S294
+Winfield,-3,1999,202,0,0,192,Mount Pleasant,2002,S296
+Winfield,-2,2000,202,0,0,192,Mount Pleasant,2002,S296
+Winfield,-1,2001,157,0,0,192,Mount Pleasant,2002,S296
+Winfield,0,2002,146,0,0,192,Mount Pleasant,2002,S296
+Winfield,1,2003,326,0,0,192,Mount Pleasant,2002,S296
+Winfield,2,2004,257,0,0,192,Mount Pleasant,2002,S296
+Winfield,3,2005,313,0,0,192,Mount Pleasant,2002,S296
+Winfield,4,2006,225,0,0,192,Mount Pleasant,2002,S296
+Winfield,5,2007,300,0,0,192,Mount Pleasant,2002,S296
