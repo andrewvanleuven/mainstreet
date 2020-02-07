@@ -31,6 +31,17 @@ iowa_roads <- map((counties("IA", cb = TRUE, resolution = "20m") %>% pull(COUNTY
                   ~{roads(state = "19", county = .x)}) %>% rbind_tigris() %>% st_transform(.,crs = iowa_crs)  
 beepr::beep()
 
+
+# Experiment with buffer ring shapefiles ----------------------------------
+d <- iowa_downtowns #%>% filter(name == "Ackley")
+cbd1 <- st_buffer((d), 200, joinStyle = "MITRE", endCapStyle = "SQUARE")
+cbd0 <- st_buffer((cbd1), -100, joinStyle = "MITRE", endCapStyle = "SQUARE")
+
+ggplot() +
+  geom_sf(data = cbd1, fill = "black" , color = NA) +
+  geom_sf(data = cbd0, fill = "yellow", color = NA) +
+  theme_void() + ggsave("plot/shp.png", height = 20, width = 30)
+
 # Loop for everything -----------------------------------------------------
 #for (i in (iowa_downtowns %>% pull(name))) {
 #  town <- (iowa_towns %>% select(-geoid)) %>% filter(name == i)
