@@ -1,3 +1,0 @@
-#!/bin/bash
-
-./uscensuspop.awk -v place=$2 $1
