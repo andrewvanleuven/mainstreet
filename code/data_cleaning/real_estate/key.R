@@ -1,4 +1,0 @@
-# Key for what each file does --------------------
-
-# "datatree_01.R" <- load all files, filter by HAS A SALE DATE, merge
-# "datatree_02.R" <- reduce width of dataframes by over half

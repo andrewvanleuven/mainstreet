@@ -11,7 +11,7 @@ df <- read_csv("data/csv/universe/universe.csv")
 
 # Add Main Street Program details (year joined, accredited and/or affiliate membership status)
 msp <- read_csv("data/csv/universe/msp.csv") %>% 
-  select(-name,-st)
+  select(city_fips,msp,msp_yr,msp_accr,msp_affl)
 # Add county seat binary
 seats <- read_csv("data/csv/universe/cty_seats.csv") %>% 
   mutate(city_fips = as.numeric(paste0(STATE_FIPS,FIPS55)),
@@ -30,5 +30,3 @@ msp_universe <- df %>%
   mutate_at(vars(8:13), ~replace_na(., 0)) %>% 
   select(city_fips,name,st,cty_fips,cbsa_fips,everything()) %>% 
   write_csv("data/csv/universe/msp_universe.csv")
-
-
