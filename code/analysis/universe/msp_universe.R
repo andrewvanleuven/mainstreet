@@ -22,11 +22,11 @@ cbsa <- read_csv("data/csv/universe/cbsa_xw.csv") %>%
   select(1:2)
 
 # Finish Building Universe ------------------------------------------------
-
+## Universe with MSP, CBSA, and county seat data added
 msp_universe <- df %>% 
   left_join(msp, by = "city_fips") %>% 
   left_join(seats, by = "city_fips") %>% 
   left_join(cbsa, by = "cty_fips") %>% 
   mutate_at(vars(8:13), ~replace_na(., 0)) %>% 
   select(city_fips,name,st,cty_fips,cbsa_fips,everything()) %>% 
-  write_csv("data/csv/universe/msp_universe.csv")
+  write_csv("data/csv/universe/msp_universe.csv") 
