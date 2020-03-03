@@ -1,6 +1,7 @@
 suppressMessages({
   library(tidyverse)
   library(sf)
+  library(fst)
   library(crsuggest)
   library(rleuven)
   library(tigris)})
@@ -31,7 +32,7 @@ iowa_dots <- iowa %>%
   st_centroid_xy() %>% 
   st_intersection(.,iowa_sf) %>% 
   st_drop_geometry() %>% select(-x,-y) %>% 
-  write_csv("hidden/datatree/cleaned/datatree_ia03.csv")
+  write_fst("hidden/datatree/cleaned/datatree_ia03.fst")
 beepr::beep()
 
 rm(ia_ctys,iowa_sf,iowa,iowa_dots)
@@ -58,7 +59,7 @@ ohio_dots <- ohio %>%
   st_centroid_xy() %>% 
   st_intersection(.,ohio_sf) %>% 
   st_drop_geometry() %>% select(-x,-y) %>% 
-  write_csv("hidden/datatree/cleaned/datatree_oh03.csv")
+  write_fst("hidden/datatree/cleaned/datatree_oh03.fst")
 beepr::beep()
 
 rm(oh_ctys,ohio_sf,ohio,ohio_dots)
@@ -83,6 +84,9 @@ wisconsin_dots <- wisconsin %>%
   st_as_sf(., coords = c("situs_longitude","situs_latitude"), crs = 4326, remove = F) %>% 
   st_transform(.,crs = 3069) %>% 
   st_centroid_xy() %>% 
-  st_intersection(.,wisconsin_sf) %>% 
-  write_csv("hidden/datatree/cleaned/datatree_wi03.csv")
+  st_intersection(.,wisconsin_sf) 
+
+wisconsin_dots %>% st_drop_geometry() %>% select(-x,-y) %>% 
+  write_fst("hidden/datatree/cleaned/datatree_wi03.fst")
+str(wisconsin_dots)
 beepr::beep()

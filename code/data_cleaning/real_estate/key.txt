@@ -1,5 +1,7 @@
 Key for what each file does --------------------
 
-"datatree_01.R" <- load all files, filter by HAS A SALE DATE, merge
+"datatree_01.R" <- load all county files, merge by state
 "datatree_02.R" <- reduce width of dataframes by over half
-"datatree_03.R" <- playing around with Ohio data
+"datatree_03.R" <- spatial intersection with municipal boundaries of MSP universe
+"datatree_fst.R" <- same as "03" but save output as .fst 
+"datatree_04.R" <- merge all state files together
