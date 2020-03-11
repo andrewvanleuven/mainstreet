@@ -33,6 +33,6 @@ ggplot() +
   geom_sf(data = town) +
   geom_sf(data = trds) +
   geom_sf(data = th2o, color = "blue", fill = "cyan") +
-  geom_point(data = dots, aes(x,y), size = .25, color = "red", shape = 18) +
+  geom_point(data = dots, aes(x,y), size = .5, color = "red") +
   theme_void() +
   ggsave("plot/ohio_feasible.png", width = 8, height = 12)
