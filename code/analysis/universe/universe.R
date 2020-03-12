@@ -46,4 +46,26 @@ universe <- get_decennial(geography = "place",
   distinct() %>% 
   arrange(city_fips) %>% 
   write_csv("data/csv/universe/universe.csv")
-  
+
+ohio_univ <- get_decennial(geography = "place", 
+                          state = "OH",  # Just Ohio
+                          variables = "P001001", 
+                          year = 2010) %>%
+  separate(NAME,c("name","ST"),sep = ",") %>%
+  rename_all(tolower) %>% 
+  trim_census() %>% 
+  mutate(city_fips = as.numeric(geoid)) %>% 
+  select(-variable,-geoid) %>% 
+  rename(pop_2010 = value) %>% 
+  left_join(xw, by = "city_fips") %>%     # Attaches county to city/place ID
+  left_join(rucc, by = "cty_fips") %>%     # Attaches rural-urban continuum code
+  left_join(cz, by = "cty_fips") %>%     # Attaches commute zone ID
+  filter(afact > 0.5,    # NO urban-rural county filter
+         pop_2010 > 750 & pop_2010 < 75000) %>%     # Current population filter
+  select(city_fips,name,st,cty_fips,cz,rucc,pop_2010,-afact) %>% 
+  inner_join(historical, by = c("name","st")) %>% 
+  filter(pop_1940 > 999 | pop_1930 > 999 | pop_1920 > 999) %>%     # Historical population filter
+  select(1:7) %>% 
+  distinct() %>% 
+  arrange(city_fips) %>% 
+  write_csv("data/csv/universe/oh_universe.csv")
