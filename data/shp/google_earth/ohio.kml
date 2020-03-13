@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
 <Document>
 	<name>ohio.kml</name>
-	<Style id="s_ylw-pushpin_hl2">
+	<Style id="s_ylw-pushpin_hl">
 		<IconStyle>
 			<scale>1.3</scale>
 			<Icon>
@@ -18,13 +18,72 @@
 	<StyleMap id="m_ylw-pushpin">
 		<Pair>
 			<key>normal</key>
-			<styleUrl>#s_ylw-pushpin</styleUrl>
+			<styleUrl>#s_ylw-pushpin0</styleUrl>
 		</Pair>
 		<Pair>
 			<key>highlight</key>
 			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
 		</Pair>
 	</StyleMap>
+	<StyleMap id="m_ylw-pushpin1">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin01</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl20</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl0">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff06ff21</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin0">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl0</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl1">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff06ff21</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="s_ylw-pushpin01">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff06ff21</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
 	<Style id="s_ylw-pushpin">
 		<IconStyle>
 			<scale>1.1</scale>
@@ -38,17 +97,7 @@
 			<width>2</width>
 		</LineStyle>
 	</Style>
-	<StyleMap id="m_ylw-pushpin1">
-		<Pair>
-			<key>normal</key>
-			<styleUrl>#s_ylw-pushpin0</styleUrl>
-		</Pair>
-		<Pair>
-			<key>highlight</key>
-			<styleUrl>#s_ylw-pushpin_hl2</styleUrl>
-		</Pair>
-	</StyleMap>
-	<Style id="s_ylw-pushpin0">
+	<Style id="s_ylw-pushpin1">
 		<IconStyle>
 			<scale>1.1</scale>
 			<Icon>
@@ -61,9 +110,32 @@
 			<width>2</width>
 		</LineStyle>
 	</Style>
-	<Style id="s_ylw-pushpin_hl">
+	<Style id="s_ylw-pushpin_hl20">
 		<IconStyle>
 			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+		<LineStyle>
+			<color>ff06ff21</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin00">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin1</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl1</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin0">
+		<IconStyle>
+			<scale>1.1</scale>
 			<Icon>
 				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
 			</Icon>
@@ -1149,7 +1221,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Paulding</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1159,7 +1231,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Payne</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1169,7 +1241,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Peebles</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1179,7 +1251,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Plymouth</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1189,7 +1261,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Pomeroy</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1199,7 +1271,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Port Clinton</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1209,7 +1281,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Portsmouth</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1219,7 +1291,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Powhatan Point</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1229,7 +1301,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Prospect</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1239,7 +1311,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Rittman</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1249,7 +1321,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Rockford</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1259,7 +1331,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Sabina</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1269,7 +1341,7 @@
 		</Placemark>
 		<Placemark>
 			<name>St. Clairsville</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1279,7 +1351,7 @@
 		</Placemark>
 		<Placemark>
 			<name>St. Marys</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1289,7 +1361,7 @@
 		</Placemark>
 		<Placemark>
 			<name>St. Paris</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1299,7 +1371,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Salem</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1309,7 +1381,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Salineville</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1319,7 +1391,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Sandusky</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1329,7 +1401,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Scio</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1339,7 +1411,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Shadyside</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1349,7 +1421,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Shelby</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1359,7 +1431,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Shreve</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1369,7 +1441,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Sidney</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1379,7 +1451,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Smithfield</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1389,7 +1461,7 @@
 		</Placemark>
 		<Placemark>
 			<name>South Charleston</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1399,7 +1471,7 @@
 		</Placemark>
 		<Placemark>
 			<name>South Zanesville</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1409,7 +1481,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Spencerville</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1419,7 +1491,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Springfield</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1429,7 +1501,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Steubenville</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1439,7 +1511,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Strasburg</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1449,7 +1521,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Stryker</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1459,7 +1531,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Tiffin</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1469,7 +1541,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Tiltonsville</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1479,7 +1551,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Toronto</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1489,7 +1561,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Uhrichsville</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1499,7 +1571,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Union City</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1509,7 +1581,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Upper Sandusky</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1519,7 +1591,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Urbana</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1529,7 +1601,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Van Wert</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1539,7 +1611,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Versailles</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1549,7 +1621,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Wapakoneta</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1559,7 +1631,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Washington Court House</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1569,7 +1641,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Waverly City</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1579,7 +1651,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Wellston</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1589,7 +1661,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Wellsville</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1599,7 +1671,7 @@
 		</Placemark>
 		<Placemark>
 			<name>West Lafayette</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1609,7 +1681,7 @@
 		</Placemark>
 		<Placemark>
 			<name>West Liberty</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1619,7 +1691,7 @@
 		</Placemark>
 		<Placemark>
 			<name>West Union</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1629,7 +1701,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Willard</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1639,7 +1711,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Wilmington</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1649,7 +1721,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Woodsfield</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1659,7 +1731,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Woodville</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1669,7 +1741,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Wooster</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1679,7 +1751,7 @@
 		</Placemark>
 		<Placemark>
 			<name>Yorkville</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
@@ -1689,11 +1761,541 @@
 		</Placemark>
 		<Placemark>
 			<name>Zanesville</name>
-			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<styleUrl>#m_ylw-pushpin00</styleUrl>
 			<LineString>
 				<tessellate>1</tessellate>
 				<coordinates>
 					-82.01727810412382,39.93914763333412,0 -82.01577409251608,39.93948813268884,0 -82.01428443920625,39.94043260667364,0 -82.00874132598341,39.94019093226763,0 -82.00905643235424,39.94021290726204,0 -82.00882709905885,39.94280458956159,0 -82.00917111280225,39.93862055698073,0 -82.00795624596648,39.93846305282594,0 -82.00794308784316,39.93779432735108,0 -82.00753295263635,39.94390403258804,0 -82.00757262411878,39.94354939917149,0 -82.00318501909126,39.94340724231082,0 -82.00372685693469,39.94344781504416,0 -82.00424321507538,39.93621347657233,0 -82.00424318646864,39.93643638846413,0 -82.00318604805626,39.93637550516509,0 -82.00578925631754,39.93648715747983,0 -82.00548532776887,39.93647700620373,0 -82.00496910508348,39.94367082051863,0 -82.00508826713839,39.94178622603351,0 -82.00914538695133,39.94191817301577,0 -82.00159945607204,39.94159342690374,0 -82.00387247424742,39.94169494602109,0 -82.00397842329564,39.94002315524301,0 -82.0088415257233,39.94018555436126,0 -82.00248493789763,39.93993688382585,0 -82.00290678014053,39.93993692121263,0 -82.00301708193223,39.93830572621004,0 -82.00820765385974,39.93851694517515,0 -82.00270529879056,39.93826351444718,0 -82.00306057084265,39.9382587860659,0 -82.00322707297777,39.93626255524492,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Archbold</name>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.30634368104757,41.52017172603109,0 -84.30632117601819,41.52446569218624,0 -84.30630802465303,41.52364429955571,0 -84.30807181077125,41.52366061153419,0 -84.30761932285297,41.52365326898452,0 -84.30760089571629,41.52402785171436,0 -84.30755042516901,41.52157001964886,0 -84.30834420676011,41.5215873393355,0 -84.30711332952508,41.52158643623044,0 -84.30633035539314,41.52166277495881,0 -84.30634547936076,41.52274976270942,0 -84.30801497289249,41.52274584237643,0 -84.30505002621979,41.52275873957124,0 -84.30502699091227,41.52185235224677,0 -84.30634306995191,41.52187325259189,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Ashville</name>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.95350036774364,39.71484997549754,0 -82.95363002005212,39.71314403420735,0 -82.95485050417362,39.71305542899124,0 -82.95340772563799,39.71314355979693,0 -82.95249361673436,39.71320620449455,0 -82.95248548260844,39.71408779444451,0 -82.95354741719392,39.71413186722746,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Batavia</name>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.17469092604654,39.07489809959175,0 -84.17899199652146,39.07827684955162,0 -84.17868430247407,39.07802804920686,0 -84.17937016270646,39.0775155039381,0 -84.17771639351707,39.07876451827394,0 -84.17662667510925,39.07793351456342,0 -84.17819710967503,39.07673925813307,0 -84.17762022146711,39.07720203421664,0 -84.17682538730482,39.07657008051308,0 -84.17744714356289,39.07607247574843,0 -84.17625490237457,39.0770179216218,0 -84.17549213032478,39.07638595866997,0 -84.17655617574491,39.07554003983373,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Bethel</name>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.08223410721651,38.96369891488665,0 -84.07778865135103,38.96335534656674,0 -84.07841400833793,38.96340292722454,0 -84.07835281618087,38.96383103110895,0 -84.07850919790373,38.96256257594783,0 -84.08050078784804,38.96270001455789,0 -84.07988224036916,38.96264187395823,0 -84.07969189457143,38.96411645190725,0 -84.07979386447224,38.96350336512675,0 -84.08115332740442,38.96360907316012,0 -84.08118731145045,38.96321796613301,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Bowling Green</name>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.65044872807842,41.37039030878099,0 -83.65048888670189,41.37786780280815,0 -83.65049520194708,41.37695986703725,0 -83.64879037413795,41.37697362800824,0 -83.64879818717544,41.37598676420825,0 -83.64685142886718,41.37599797194248,0 -83.64880029735689,41.37599281407954,0 -83.64876641352524,41.37486527268246,0 -83.64702088929259,41.37480752475896,0 -83.65278389744623,41.37496250091331,0 -83.65205818073044,41.37494703512311,0 -83.65206737770131,41.37558666637759,0 -83.65207077748097,41.3731312076622,0 -83.64875689015933,41.37311238237704,0 -83.64878950580047,41.37475497774096,0 -83.64875535319443,41.3720622660899,0 -83.65136323385384,41.37213688838653,0 -83.65044820848517,41.37211944011294,0 -83.65048005396669,41.37600721968896,0 -83.64846424172634,41.37599560167425,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Bradford</name>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.43090744714746,40.13097215382961,0 -84.43094918927129,40.13333701118243,0 -84.43095382492719,40.13300018552832,0 -84.4318720295615,40.13300727384881,0 -84.43092600058772,40.132989548951,0 -84.43091208593941,40.13223080914658,0 -84.42904789046793,40.13189751887521,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Bremen</name>
+			<styleUrl>#m_ylw-pushpin0</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.42889198214633,39.70183972155338,0 -82.42625921036753,39.70162795938425,0 -82.426822676984,39.70166533320376,0 -82.42687772797878,39.70104245822547,0 -82.42677734027781,39.70230066605984,0 -82.42680000871152,39.70204154961666,0 -82.42631749705795,39.70201165061793,0 -82.42836413392995,39.70213871037709,0 -82.42844831188917,39.70133644288489,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Cardington</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.8959381935277,40.50045656190402,0 -82.89292378858889,40.50049916190528,0 -82.89428166198213,40.5004707755652,0 -82.89430500006647,40.50095688045322,0 -82.8942629893255,40.49975758623672,0 -82.89572818610321,40.49976466137002,0 -82.89531290620026,40.50044237946261,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Carrollton</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-81.08477191139743,40.57212823864542,0 -81.08815057623757,40.57386372543509,0 -81.08764011462333,40.57359294529888,0 -81.08676507949059,40.57457764365891,0 -81.08828017436339,40.57282364486438,0 -81.08554161586926,40.57139587764417,0 -81.08680554772413,40.57201745774658,0 -81.08753472756231,40.57124815213498,0 -81.08516890379221,40.57391298289308,0 -81.0853066446071,40.57373450924028,0 -81.08481240649439,40.57345756435421,0 -81.08691902443358,40.57449148202383,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Cedarville</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.80670318809067,39.74085818995936,0 -83.80713869463908,39.74155889081992,0 -83.80791260123652,39.74089684205568,0 -83.80707839020144,39.74159753131933,0 -83.80637484260453,39.74181133510828,0 -83.807075041486,39.74152540091684,0 -83.80749380545518,39.74260994340441,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Chardon</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-81.20219441165875,41.58097533949656,0 -81.20500493094971,41.58097557381412,0 -81.20341050405295,41.58094175926434,0 -81.20348274481987,41.57980300385135,0 -81.20341049257804,41.58101587947331,0 -81.20381585663451,41.58100917503135,0 -81.20385153352774,41.5834484075375,0 -81.20512173156621,41.58341481794609,0 -81.20223902872178,41.58343478635709,0 -81.20352722911601,41.58345511807874,0 -81.20355411815854,41.5843782653482,0 -81.20354524692456,41.58344838139175,0 -81.20287862280584,41.58345506055841,0 -81.20285199837262,41.58098213937458,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Circleville</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.94322347195774,39.59891294382545,0 -82.94707795872786,39.60009508957102,0 -82.94621575316121,39.59981177751462,0 -82.94665953195502,39.59888365642054,0 -82.94395870921825,39.60413970445899,0 -82.94452933490778,39.60302596651195,0 -82.94308384560773,39.60260584356951,0 -82.94455870670893,39.6029881370835,0 -82.94459237163039,39.60291032629402,0 -82.94725184146274,39.60374898083575,0 -82.94805195720143,39.60218682828853,0 -82.94776328310948,39.60274290599441,0 -82.94831849510197,39.60292256223003,0 -82.94025759415707,39.60041582728012,0 -82.94236707491574,39.60109173675159,0 -82.94196732885734,39.60186165124813,0 -82.94351076032275,39.59885041642644,0 -82.94288895782188,39.60003096335475,0 -82.94206737129008,39.59980851581863,0 -82.94746342727635,39.60143399382973,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Coal Grove</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.64596196512682,38.50108107302719,0 -82.64587508582696,38.50180887454403,0 -82.64590574815053,38.50159293345689,0 -82.64652404796857,38.50166891871686,0 -82.64398445563805,38.5014009498851,0 -82.64475603289847,38.50150893813969,0 -82.64470491942173,38.50198880515767,0 -82.64481225460356,38.50108105724108,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Covington</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.35458107544966,40.11547819173914,0 -84.35469453888159,40.11946762191018,0 -84.35471881630939,40.11840211525517,0 -84.3523777009363,40.11845166154284,0 -84.3535361036863,40.1184145036491,0 -84.35355230660156,40.1192322141957,0 -84.35343080469441,40.11643838570755,0 -84.35345510415418,40.11668617483537,0 -84.35269365678606,40.11671094929938,0 -84.35576377404763,40.11663659690419,0 -84.35579623240183,40.11840210777256,0 -84.35445959051906,40.11840211584754,0 -84.35463780786108,40.1183835311863,0 -84.35470259984214,40.11755343409732,0 -84.35588531039001,40.11752244718492,0 -84.3546377942457,40.11755343448273,0 -84.35464589219556,40.11734900803559,0 -84.35292046101594,40.11740475911053,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Crooksville</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.09349158219028,39.76917636922642,0 -82.09600622639705,39.76986076123695,0 -82.09501957824264,39.76957689671653,0 -82.09458952702082,39.76992301724967,0 -82.09506511455635,39.76957689565461,0 -82.09419991917271,39.76934358033935,0 -82.09435675123484,39.76892746736371,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Delaware</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.06049875243755,40.29982742885657,0 -83.07167478713139,40.3003814563314,0 -83.07117798299194,40.30033850011265,0 -83.07134167874983,40.29822517086896,0 -83.0712598123818,40.29898513722276,0 -83.06421652613002,40.29869363481616,0 -83.06438040047973,40.29716332024283,0 -83.0640936049127,40.29998451014441,0 -83.06586808348578,40.30008865862474,0 -83.06607289548761,40.29781921292897,0 -83.06564960675527,40.30246223253102,0 -83.0657042413372,40.30143159425494,0 -83.06502173351296,40.30138993712194,0 -83.06979934646866,40.30166065358673,0 -83.06932157641059,40.30163983465686,0 -83.06923970188909,40.30244144923778,0 -83.06969001672896,40.29724663262888,0 -83.0705499503908,40.29731948417821,0 -83.0679046268764,40.29716423205448,0 -83.06809304071423,40.29508126472061,0 -83.06731497087769,40.30421126390735,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Delta</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.00931288208432,41.57379229025273,0 -84.00553223302047,41.57388769451583,0 -84.00624729214292,41.57385591215236,0 -84.00624728024356,41.57309852676733,0 -84.00628977092057,41.57385591178533,0 -84.00733050435757,41.57383471252793,0 -84.00730221898139,41.57477747690036,0 -84.00732342402189,41.57382411982284,0 -84.00864028267684,41.57378701474725,0 -84.00865441261807,41.57322029520105,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Dillonvale</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-80.77459120713691,40.19565267613022,0 -80.77642228815598,40.19702683594986,0 -80.77597918702664,40.19667616150051,0 -80.77499157758027,40.19746722728449,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Fairport Harbor</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-81.27708246729628,41.75415802013429,0 -81.2771614164859,41.75744439914884,0 -81.27713511289207,41.75673422398419,0 -81.277804801689,41.7567488999236,0 -81.27406902716987,41.75682732104353,0 -81.27409528958165,41.75572043729269,0 -81.27771938010022,41.75564201387765,0 -81.27561188848429,41.75569593739537,0 -81.27561187806329,41.75527963275837,0 -81.27563817843868,41.75676853571434,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Georgetown</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.90419258503807,38.86734904044006,0 -83.90460142605912,38.8637427834183,0 -83.90450088673713,38.8646613073262,0 -83.90336813851752,38.86456214880584,0 -83.90561354608992,38.86471870433744,0 -83.90538565008015,38.86471348850392,0 -83.90519800974863,38.86646704085749,0 -83.90529852688164,38.86542847735956,0 -83.90305310537622,38.86527712824707,0 -83.90355580597493,38.86532932053873,0 -83.90370327511553,38.86396198089611,0 -83.90335471591254,38.86710895960302,0 -83.90348877558809,38.86597123981021,0 -83.90305309696659,38.86595036025098,0 -83.90535216699003,38.86610693457189,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Granville</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.52108587320298,40.0680324006965,0 -82.51538067230905,40.06767093240622,0 -82.5184374572694,40.06786635261487,0 -82.51853958405857,40.06664053401103,0 -82.51830980402364,40.06912636001083,0 -82.51785031846001,40.06909216663158,0 -82.52055620978447,40.06923381987461,0 -82.52004565663134,40.06919963195866,0 -82.52023708462134,40.06717774687122,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Ironton</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.68806883133269,38.53720936593137,0 -82.68309689974839,38.53105604657111,0 -82.6836189347918,38.53082315952145,0 -82.68119213887441,38.531975639889,0 -82.68595092646734,38.53788992635399,0 -82.68522562836971,38.53694052405561,0 -82.6871438902926,38.53609252378737,0 -82.68644131495788,38.53513380367898,0 -82.68148928736454,38.5376379276214,0 -82.68690576312261,38.5348928530757,0 -82.68564571504426,38.53325153038396,0 -82.68014879998202,38.5359888483698,0 -82.68171485831965,38.53792172471535,0 -82.68087067855676,38.53681255926336,0 -82.67975836324715,38.53730632647762,0 -82.68581257662636,38.53436251465411,0 -82.68517809880491,38.53468701293234,0 -82.68654288294803,38.53638056674365,0 -82.68167807329213,38.53036024687836,0 -82.68321030886538,38.53232056939056,0 -82.68430989412097,38.53178206271943,0 -82.68144253638363,38.53321101741165,0 -82.68197488374874,38.53293307789006,0 -82.68262718933676,38.53373093653949,0 -82.68493880047704,38.53256232856466,0 -82.68157278739515,38.53424174740168,0 -82.68127720334333,38.53391417544556,0 -82.68469310431753,38.53808967238621,0 -82.68421778906009,38.53747755876348,0 -82.68544299113952,38.53691010260435,0 -82.68288086010419,38.53816355076983,0 -82.68318816263319,38.53805984395646,0 -82.6808139590083,38.53508012243721,0 -82.68115756261383,38.53548775882059,0 -82.68450113909306,38.53382668700985,0 -82.67722493017463,38.52498054862766,0 -82.67781285424654,38.52464439697227,0 -82.68300124198404,38.53092880636472,0 -82.68118900091795,38.52871707073516,0 -82.68166057805851,38.52849480255582,0 -82.67957463586026,38.52950841611875,0 -82.67984536053194,38.52936405242232,0 -82.67915637478404,38.5285721486065,0 -82.68048880109001,38.52795336012619,0 -82.67976087120699,38.5270407129007,0 -82.68023219294935,38.52680911547851,0 -82.67860763990782,38.52766597287581,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Jamestown</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.73582786553033,39.65823799597148,0 -83.73317664876974,39.65807927519009,0 -83.73488818595088,39.65818263428382,0 -83.73498886534018,39.65724145071754,0 -83.73472518380491,39.65950767955467,0 -83.73474436008701,39.65924562147248,0 -83.73526694462983,39.6592788422249,0 -83.73420260146587,39.65919025354091,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Johnstown</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.68330884822262,40.15221000136668,0 -82.6853914601317,40.15433589114161,0 -82.68487078483264,40.15379656122963,0 -82.68626835494298,40.15302161061869,0 -82.68405553452826,40.15426256951165,0 -82.68596691822442,40.15321535047845,0 -82.68456936488491,40.1517754136937,0 -82.68473377729789,40.1519482062987,0 -82.68302110262265,40.15290639727363,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Lancaster</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.60215582185148,39.70903328993275,0 -82.60178146427774,39.71646550997266,0 -82.60184957349745,39.71619476244392,0 -82.60081638144003,39.71617730655402,0 -82.60496057280871,39.71635190687213,0 -82.60447234247067,39.71633445198214,0 -82.60443812115466,39.71707938058724,0 -82.60470551048994,39.71133470911378,0 -82.60204555540385,39.70892572157159,0 -82.60218310687785,39.70916224088751,0 -82.60203755179258,39.7113158227077,0 -82.60101808624911,39.71127227266771,0 -82.60471570932546,39.71141531783741,0 -82.60465916437413,39.71254190918333,0 -82.60593761533435,39.71255430196302,0 -82.59859885954356,39.71237396784902,0 -82.59932706630174,39.71240508896025,0 -82.59927041771289,39.71369351120885,0 -82.59829136033862,39.7136250462329,0 -82.60619671462912,39.71392365301166,0 -82.60190051791922,39.7137767484132,0 -82.6018359437516,39.71497967559203,0 -82.60042723033352,39.71493993014785,0 -82.60588123345376,39.71510877211109,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Lebanon</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.21014554680596,39.43142881493641,0 -84.20967514775907,39.43566003714121,0 -84.20255967719974,39.43513958570647,0 -84.20813432095262,39.43555267378019,0 -84.20796325543701,39.43718069975103,0 -84.20857272525105,39.43169337107479,0 -84.20834814727469,39.43333792263167,0 -84.21078772994991,39.43350305736598,0 -84.20466749517615,39.43313970352416,0 -84.20692509443522,39.43326360679885,0 -84.20701063312467,39.43217275977289,0 -84.2065186849307,39.43655267224631,0 -84.2067325593617,39.43433792352741,0 -84.21065945207783,39.43462697638564,0 -84.20351195820534,39.43409832859921,0 -84.20527740043775,39.4342140021536,0 -84.20555551413783,39.432081900359,0 -84.20504208643582,39.43687500303896,0 -84.20505277368653,39.43643700833339,0 -84.20801670997415,39.43663526644718,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Lodi</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.01174912265446,41.0321400508662,0 -82.01152424630381,41.03265664839472,0 -82.01242374100525,41.03285326493462,0 -82.01253107240352,41.03336600891125,0 -82.0134663599879,41.03320408420331,0 -82.01232152850766,41.03343154781922,0 -82.01178489137172,41.03399055439652,0 -82.0122550880308,41.03350094179466,0 -82.01255663876748,41.03420259610695,0 -82.01226530897671,41.03339685078618,0 -82.01054298648583,41.03263736356564,0 -82.01121248752621,41.03294193158196,0 -82.01153957883456,41.03261809640286,0 -82.01079850619348,41.03348936690033,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Logan</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.40720657008936,39.53743691685577,0 -82.40675031011138,39.54133797774844,0 -82.40678998649776,39.54109320142851,0 -82.40598655624714,39.54103965183379,0 -82.41227529596532,39.5414756109187,0 -82.41195786707131,39.54143737106485,0 -82.41217589408693,39.53931085273055,0 -82.4121164702506,39.54034350750563,0 -82.41284058773672,39.5403664319558,0 -82.40401275349244,39.53983869887887,0 -82.40559974648274,39.53993816472749,0 -82.4055203820437,39.54051185132899,0 -82.40566919963202,39.53892848201838,0 -82.40559975944598,39.53938742750113,0 -82.40893242579246,39.53961690033299,0 -82.40867459588154,39.54140681984762,0 -82.40886301066237,39.54011409680959,0 -82.41071785755457,39.54024410343888,0 -82.41082689887305,39.5391885093539,0 -82.41058898753533,39.54136090331607,0 -82.41078725713528,39.53973160354264,0 -82.40887291376266,39.53963219934349,0 -82.40896216367668,39.5390355655091,0 -82.40565928325205,39.53882904364171,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>London</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.44503867408301,39.88323989821106,0 -83.44963868373587,39.88729847438138,0 -83.44857043631119,39.8863928959632,0 -83.45065514007412,39.8849386696977,0 -83.44676137973126,39.88758268012205,0 -83.44759699587021,39.88701422992139,0 -83.44490939194105,39.88472713675259,0 -83.44589998860394,39.88552696200193,0 -83.44532281976048,39.88589710472034,0 -83.44787267221747,39.88419177265437,0 -83.44983677469259,39.88592358020487,0 -83.44670117457331,39.88322670782735,0 -83.44526261765536,39.88367616392629,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Marysville</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.36721669266994,40.23374774374453,0 -83.36667753099366,40.23901202332469,0 -83.36672970765285,40.2385738787634,0 -83.36832115486828,40.23871993557418,0 -83.36550352786828,40.2385074783495,0 -83.36592972286483,40.23405975023199,0 -83.36560790486864,40.23744532560684,0 -83.36889507936976,40.23768432234098,0 -83.36415565801211,40.23735899843437,0 -83.36432088282601,40.23738555597459,0 -83.3645731741214,40.23465054815868,0 -83.36450358758387,40.23519489449451,0 -83.36412966994973,40.23514177808437,0 -83.36926024603247,40.23547371228429,0 -83.36829498151576,40.23538742839943,0 -83.3684862790162,40.23407301294871,0 -83.36791241943405,40.23868674164379,0 -83.36818195113734,40.23650932104557,0 -83.36931245979449,40.23658897011467,0 -83.36380787241926,40.23621718601006,0 -83.36573836757873,40.23635663096645,0 -83.36591232886325,40.23417924198864,0 -83.36845149723639,40.23431863734081,0 -83.36506015254437,40.23410620783164,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Medina</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-81.86400995289583,41.1346653792008,0 -81.86400154257416,41.14097695422968,0 -81.86401002707241,41.13525818582303,0 -81.86605646330916,41.13527194556674,0 -81.86604706767558,41.1343304214474,0 -81.8660574084508,41.1408721864789,0 -81.86604810112694,41.14062808665089,0 -81.86206603064609,41.14060047048837,0 -81.8625846214982,41.14060043847842,0 -81.86259331344787,41.13555120216897,0 -81.86684372474603,41.13626219506681,0 -81.86182482297559,41.13625563205517,0 -81.86399163465902,41.13625548622913,0 -81.86401965306169,41.13805478954072,0 -81.86638101261128,41.13804064102469,0 -81.8613897809708,41.13806890743056,0 -81.86258433479354,41.13806186321428,0 -81.86257519629683,41.13914284232306,0 -81.86084352262353,41.139156889879,0 -81.86147322109488,41.13912895975618,0 -81.86147310292381,41.13786665581868,0 -81.861461766327,41.13916612820827,0 -81.86645527644971,41.13916122913854,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Mentor</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-81.34255556347759,41.66580974513327,0 -81.33684826771383,41.66728163028362,0 -81.33999468665382,41.66647155402505,0 -81.33996924354746,41.66786736449114,0 -81.33999467837444,41.66517463908527,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Mount Gilead</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.8289594531654,40.54723441070059,0 -82.82815917846389,40.55041428490548,0 -82.82889196027413,40.54746154588744,0 -82.8281687832181,40.54733699790938,0 -82.83012619895399,40.54766667220586,0 -82.82964413016806,40.54938117713642,0 -82.82705991112165,40.54897821711648,0 -82.82727204583962,40.54901485185445,0 -82.82718526271684,40.5493005988701,0 -82.82740704060645,40.5485019726968,0 -82.82997196106366,40.54885363438458,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Mount Sterling</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.26557191477328,39.71818031982135,0 -83.26694509900992,39.71935863211707,0 -83.26546873845361,39.72026222981929,0 -83.26598467285952,39.71994475199317,0 -83.26765957476766,39.72143445112491,0 -83.26422257840447,39.71840010940654,0 -83.26514329982591,39.71921822274237,0 -83.26666726580508,39.71824746634505,0 -83.26446861983517,39.71967001202935,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Newark</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.39787089917492,40.05897796085435,0 -82.40082450092831,40.0581820038843,0 -82.40203092868796,40.06086720531392,0 -82.40038073349554,40.061281133904,0 -82.39814834801187,40.05669610909598,0 -82.39853657228144,40.05738597963965,0 -82.40361157771538,40.0558046131931,0 -82.40585829951418,40.06069734357616,0 -82.40315397514634,40.05483881350024,0 -82.40344517178238,40.0553482457977,0 -82.40502588338616,40.05490243926981,0 -82.40728652721818,40.05950857275494,0 -82.40987995068188,40.06029388543796,0 -82.40918649503379,40.06004979728583,0 -82.40915822831602,40.05611214377983,0 -82.40867276922754,40.05500837008162,0 -82.40915821890898,40.05602723541806,0 -82.40985156841849,40.05588920713849,0 -82.40878381539375,40.0561227830793,0 -82.4062046327508,40.05672788818723,0 -82.4025300638137,40.05770440272581,0 -82.40398620215289,40.06075044277326,0 -82.40154554295127,40.05542256217105,0 -82.4022665930589,40.05713128910298,0 -82.40058877716756,40.05761949964019,0 -82.39977070254174,40.05595321507757,0 -82.40144849851178,40.05957235431139,0 -82.40981013657297,40.05723713691415,0 -82.39918819088005,40.06018791876981,0 -82.40316796604418,40.05906290211831,0 -82.40287674146764,40.05831997037114,0 -82.40108796251663,40.05876573673821,0 -82.40197546146683,40.06094150096227,0 -82.40942206258759,40.05881859161082,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>New Lexington</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.20587787219525,39.71204038751838,0 -82.20960232121658,39.71605143447205,0 -82.209289098558,39.71568678881677,0 -82.21035568078723,39.71512028929295,0 -82.20923830824984,39.71568678860783,0 -82.20698667616533,39.71321895936256,0 -82.20599631064438,39.71373984866534,0 -82.20720672454409,39.71502911613347,0 -82.20680042490901,39.71458633707334,0 -82.20650415423152,39.71484678611336,0 -82.20687660776109,39.71455378153586,0 -82.2091705445808,39.71326454402417,0 -82.2087219164478,39.71351197836409,0 -82.20790931960046,39.71258736517481,0 -82.21043187584229,39.71530261048654,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>New Miami</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.53555002483284,39.43455682066959,0 -84.5339367021746,39.43454362846898,0 -84.53382304215893,39.43554836578165,0 -84.53410716354138,39.43352573063753,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>North Baltimore</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.67834091176505,41.17963795271888,0 -83.67841791532975,41.18493000192613,0 -83.6784264562946,41.18420893487822,0 -83.67911937195105,41.18421537608667,0 -83.67759667548295,41.18418961324229,0 -83.6783409113149,41.18418962011573,0 -83.67832378891039,41.18285695185607,0 -83.679461513794,41.18289557749713,0 -83.67699788801193,41.18283762825931,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Oakwood</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.38046212973107,41.09609212697539,0 -84.38044647290745,41.09379762360953,0 -84.38046995020959,41.09455852501626,0 -84.38143266054684,41.0945703178248,0 -84.3804464696662,41.09457622038006,0 -84.38038385449718,41.09464700178861,0 -84.37895154946882,41.09461749932042,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Oxford</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.74641338586503,39.51056948828459,0 -84.73879852776741,39.51042582654379,0 -84.74561778005915,39.51054557721837,0 -84.74560745361221,39.51106371925124,0 -84.74559710992582,39.509286095127,0 -84.74560744223747,39.50954118023543,0 -84.74037941676291,39.50943745816964,0 -84.74087534906876,39.50947733451925,0 -84.7408650439703,39.50904688228363,0 -84.7407615382872,39.51193250205164,0 -84.74075122999774,39.51156581817639,0 -84.73999697169566,39.51155781637228,0 -84.74494617584428,39.5116137441942,0 -84.74401625061468,39.51162170434307,0 -84.7439955825116,39.51197244643877,0 -84.74406794682228,39.50928609461101,0 -84.74404726055675,39.51052962602177,0 -84.74238377745462,39.5104737962104,0 -84.74241483478139,39.50899910103428,0 -84.74241471470046,39.51204415483836,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Painesville</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-81.24697917372178,41.72430185242196,0 -81.24429431282699,41.72789253803324,0 -81.24517728563322,41.7292239472208,0 -81.2451052041618,41.72910290931878,0 -81.24373566768975,41.72965427559426,0 -81.24391586643306,41.72988290630204,0 -81.23968169602225,41.7237906819425,0 -81.24350141407186,41.72927771029507,0 -81.24321308136551,41.7296811599755,0 -81.24658440021007,41.72479874578771,0 -81.24549124970038,41.72446280693712,0 -81.24417309820427,41.72285505174573,0 -81.24618786521867,41.72529466904552,0 -81.24540551388647,41.72437482123772,0 -81.24355144326948,41.72520666775479,0 -81.24302633256917,41.72455076647974,0 -81.24479465639703,41.72364693594943,0 -81.24297274626845,41.72458275995854,0 -81.24339069308267,41.72503069425961,0 -81.24033620369281,41.72643835977699,0 -81.24245828428967,41.72551859016313,0 -81.24450522119317,41.72820619347596,0 -81.24321916214545,41.7265584340818,0 -81.24200807226114,41.72710231305884,0 -81.24015069613256,41.72446759383102,0 -81.24114454766179,41.72396108344029,0 -81.24256652058708,41.72569790530306,0 -81.2401266031311,41.72276702135933,0 -81.24049822813329,41.72321328758728,0 -81.23956902720417,41.72365949113295,0 -81.23982754295587,41.7240394192483,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Pemberville</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.46094640579713,41.40965504520164,0 -83.45840298195222,41.41103930147192,0 -83.45873807954673,41.41086215346982,0 -83.45952360822965,41.41165319126583,0 -83.45915006626832,41.41127827158147,0 -83.46055088019959,41.41056142551124,0 -83.46055637857754,41.40988576053314,0 -83.45958405790445,41.41040897999248,0 -83.46030367567836,41.41115057122813,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Piqua</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.23915855200261,40.1407354056047,0 -84.23969917412933,40.14440141716855,0 -84.23933874139526,40.1420309326237,0 -84.2408171049161,40.14192068216152,0 -84.24110542890435,40.1533459116404,0 -84.24110541774645,40.15293243286116,0 -84.24245783197001,40.15290491460184,0 -84.24088903189211,40.15286351181577,0 -84.23968089850356,40.15289102661765,0 -84.2396808966804,40.15334585067767,0 -84.23944668852182,40.14590361203465,0 -84.23971719536962,40.14455301621972,0 -84.24079895714335,40.144442774617,0 -84.24088911283241,40.14420848486217,0 -84.24222329534281,40.14424982674444,0 -84.24222331123558,40.14361585923847,0 -84.24220524769764,40.14521455459298,0 -84.24083498749009,40.14524211525839,0 -84.24243963669882,40.14522833509203,0 -84.2424576592597,40.14660651283071,0 -84.23953680243631,40.14666160237893,0 -84.24449512078553,40.14668918676453,0 -84.2445673273716,40.14861866027911,0 -84.24454924621838,40.1475712297862,0 -84.24543278176995,40.14754365219734,0 -84.2380763471853,40.14762626519286,0 -84.23831050547362,40.15257396641708,0 -84.23827446576256,40.15196754492739,0 -84.24159225120275,40.15188498395433,0 -84.24106933244092,40.15192631392215,0 -84.24105128594967,40.15080995637657,0 -84.2444232117435,40.15079623939589,0 -84.2375713148992,40.15082359959866,0 -84.23960879728125,40.15082368966792,0 -84.23953669890278,40.14970735274078,0 -84.23483077126899,40.14987249486939,0 -84.23906790302372,40.14974868100105,0 -84.24474771116829,40.14970744472384,0 -84.24229542044674,40.14969364199557,0 -84.24236752371181,40.14863243614951,0 -84.24500008459601,40.14859109316077,0 -84.23785992365808,40.14871500264407,0 -84.24101522093717,40.14867376008932,0 -84.24090705015058,40.14758500148216,0 -84.24243963346358,40.14759880047156,0 -84.24247568960952,40.1463446592485,0 -84.24244840226801,40.14738825505096,0 -84.24229099886917,40.1475018872082,0 -84.2423230634701,40.14864266512586,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Richwood</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.29788304521166,40.42629712870605,0 -83.2950799725111,40.42679676061415,0 -83.29657527034466,40.42654507662926,0 -83.29720696901222,40.42850983046979,0 -83.29689111080646,40.42754059730174,0 -83.29533656839115,40.42778101302148,0 -83.29846047019429,40.4272513250059,0 -83.29817423262139,40.42730016497168,0 -83.29846049765105,40.42806277785787,0 -83.2978188879717,40.42605294367206,0 -83.29785837022253,40.42631215580237,0 -83.29661475023568,40.42652629330159,0 -83.29626346122656,40.42552347397443,0 -83.29497587079958,40.42577641162702,0 -83.29568192394116,40.42807929084792,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Ripley</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-83.84741036005713,38.74641842368124,0 -83.84628643794139,38.74456575475324,0 -83.84659295345934,38.74508370628207,0 -83.84383438262938,38.74609472007048,0 -83.8452903003441,38.74554688987116,0 -83.84605020759395,38.74683180941705,0 -83.84502210607174,38.74509866172813,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Roseville</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.07282949788197,39.80443225510681,0 -82.07256039170991,39.80798049517573,0 -82.07259707965174,39.8071486573077,0 -82.0735025030986,39.8072003407887,0 -82.0725603736533,39.80715805695102,0 -82.072731637122,39.8056212759175,0 -82.07315986778021,39.8056353676518,0 -82.07198529448364,39.80556018862626,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Sebring</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-81.01895083944429,40.92096417021824,0 -81.01899783385826,40.92435842379928,0 -81.01900722183619,40.92327197518254,0 -81.01653557202047,40.92323643998248,0 -81.02153533390697,40.92330746342863,0 -81.02101842578588,40.92332167278155,0 -81.0210371836135,40.92220681496229,0 -81.01776671084967,40.92217132537544,0 -81.01896962778711,40.92217133082061,0 -81.01895083400801,40.92167426559371,0 -81.02103717000402,40.92168134062121,0 -81.02101840528846,40.92277489522925,0 -81.01688330840889,40.92271098077508,0 -81.01693967051074,40.92354888824108,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Somerset</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.3009959846723,39.8062255752689,0 -82.29789072942013,39.80790633610262,0 -82.29934564985741,39.80712226990367,0 -82.3003446216436,39.80818989375931,0 -82.29841186972745,39.80610886393407,0 -82.29893304544676,39.80668437922566,0 -82.29805358688262,39.80717650304732,0 -82.29848790211082,39.80756852198579,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Troy</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.20944447740729,40.04230908387016,0 -84.20109748587359,40.038677276514,0 -84.20706388282342,40.04128741785585,0 -84.20743244146863,40.04080240538049,0 -84.20637283184138,40.04223098799329,0 -84.20113199655573,40.04001761437189,0 -84.20156967050571,40.04019398245997,0 -84.20450669094647,40.03628758555155,0 -84.20596943221824,40.0368695479136,0 -84.20552023879067,40.03667556156716,0 -84.20584272461647,40.0362170046065,0 -84.20246806178929,40.04074953149576,0 -84.20403448723252,40.03864202177036,0 -84.20546271718584,40.03925045039286,0 -84.20184615273992,40.03765439874422,0 -84.20214560434034,40.03777785415345,0 -84.20336647010184,40.03608478195696,0 -84.20061370185142,40.03980597118189,0 -84.20280211198529,40.03684314329805,0 -84.20264086991746,40.03676378015501,0 -84.20579930979945,40.03812939544545,0 -84.20356309685343,40.04104327562771,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Utica</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-82.45289278111363,40.23208575042726,0 -82.45256780633785,40.23577256113101,0 -82.45265135857116,40.23442545599693,0 -82.45162975384308,40.23440419237233,0 -82.45193623461627,40.23442546127787,0 -82.45212195875105,40.23241899374992,0 -82.45282777681184,40.23244025388557,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Wauseon</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.14053416046818,41.54581899251831,0 -84.14214362025041,41.55133533178895,0 -84.14196865613044,41.55070687952131,0 -84.14102393225107,41.55089017034468,0 -84.14406805460236,41.55036646152437,0 -84.1433449253004,41.55047993806846,0 -84.14257509167739,41.54795743941092,0 -84.14123387354462,41.54825420700162,0 -84.14152544302924,41.54926669356669,0 -84.14319324849743,41.54896119450699,0 -84.13977600317686,41.54948488420632,0 -84.1414321393903,41.54922305155192,0 -84.14069742232131,41.54631651315014,0 -84.13961281584761,41.54651725474054,0 -84.14311155629105,41.54595862581031,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Williamsburg</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-84.05063142417524,39.05278108081393,0 -84.05520729654792,39.05529939856205,0 -84.0522391068711,39.05365077074479,0 -84.05277501676619,39.05303186615532,0 -84.05167570975455,39.05422165104225,0 -84.05220475402368,39.0536454351731,0 -84.05352391474824,39.05435504209903,0 -84.05412853039095,39.05371478904025,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+		<Placemark>
+			<name>Willoughby</name>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-81.40848513507264,41.63721099622205,0 -81.40671832975075,41.63975235929598,0 -81.40638983002154,41.63797409897863,0 -81.40662954363202,41.63970591244287,0 -81.40552860125707,41.63967936733471,0 -81.40868940184019,41.63980542173547,0 -81.40866272164834,41.63821293925002,0 -81.40788140689094,41.63809351981129,0 -81.40667393675939,41.63979217106464,0 -81.40654966102885,41.64305677077657,0 -81.40655853283377,41.64248611893523,0 -81.41065188169891,41.64256572533901,0 -81.40873392571956,41.64253920299058,0 -81.40866275924675,41.63961963296904,0 -81.40868943793626,41.64073436931815,0 -81.40609682436182,41.64054859241917,0 -81.40664730450027,41.64060167635981,0 -81.40662067745717,41.64176285948269,0 -81.4087072427709,41.64172304134368,0 -81.407416270165,41.64174644697663,0 -81.40741993651005,41.64065882458491,0 
 				</coordinates>
 			</LineString>
 		</Placemark>

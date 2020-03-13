@@ -2,6 +2,7 @@ suppressMessages({
   library(tidyverse)
   library(sf)
   library(rleuven)
+  library(crsuggest)
   library(tidycensus)
   library(tigris)})
 options(tigris_class = "sf")
@@ -9,7 +10,7 @@ options(tigris_use_cache = TRUE)
 trim_census <- dget("code/functions/trim_census.R")
 
 # Get Data ----------------------------------------------------------------
-
+univ <- read_csv("data/csv/universe/universe.csv") %>% filter(st == "Ohio")
 xw <- read_csv("data/csv/universe/xw.csv") %>% 
   mutate(st = toupper(st)) %>% 
   filter(st %in% c("IA","MI","OH","WI")) %>% 
@@ -44,11 +45,61 @@ ohio_univ <- get_decennial(geography = "place",
   filter(pop_1940 > 999 | pop_1930 > 999 | pop_1920 > 999) %>%     # Historical population filter
   select(1:7) %>% 
   distinct() %>% 
-  arrange(city_fips) %>% 
-  write_csv("data/csv/universe/oh_universe.csv")
+  arrange(city_fips) 
 
 
 # Buffer from MSA Principal Cities ----------------------------------------
 
+univ_list <- univ %>% pull(name)
+univ_cities <- ohio_univ %>% pull(name)
+
 big_cities <- c("Akron","Canton","Massillon","Cincinnati","Cleveland","Elyria","Columbus",
                 "Dayton","Kettering","Toledo","Boardman","Warren","Youngstown")
+
+oh_urban <- places("39", cb = T) %>% 
+  filter(NAME %in% big_cities) %>% 
+  st_transform(crs = 2834) %>% 
+  st_centroid_xy() %>% st_drop_geometry() %>% 
+  select(5,6,10,11) %>% 
+  st_as_sf(., coords = c("x","y"), crs = 2834, remove = F) 
+
+oh_univers <- places("39", cb = T) %>% 
+  filter(NAME %in% univ_cities) %>% 
+  st_transform(crs = 2834) %>% 
+  st_centroid_xy() %>% st_drop_geometry() %>% 
+  select(5,6,10,11) %>% 
+  st_as_sf(., coords = c("x","y"), crs = 2834, remove = F) 
+
+oh_universe <- places("39", cb = T) %>% 
+  filter(NAME %in% univ_list) %>% 
+  st_transform(crs = 2834) %>% 
+  st_centroid_xy() %>% st_drop_geometry() %>% 
+  select(5,6,10,11) %>% 
+  st_as_sf(., coords = c("x","y"), crs = 2834, remove = F) 
+
+ohio <- counties("39", cb = T) %>% 
+  st_transform(crs = 2834) 
+
+urban_buff <- st_buffer(oh_urban,28968.2) %>% 
+  st_dissolve() %>% 
+  st_transform(crs = 2834) 
+
+non_urban_univ <- st_difference(oh_univers,urban_buff)
+
+non_urban_list <- non_urban_univ %>% pull(NAME)
+
+notable <- non_urban_univ %>% 
+  filter(NAME %in% c("Circleville","Chardon","Painesville","Newark","Delaware","Piqua","Troy"))
+
+ggplot() +
+  geom_sf(data = ohio, fill = "white") +
+  #geom_sf(data = urban_buff, fill = "yellow") +
+  #geom_point(data = oh_urban, aes(x,y), color = "red") +
+  geom_point(data = oh_universe, aes(x,y), color = "blue") +
+  geom_point(data = non_urban_univ, aes(x,y), color = "blue") +
+  ggrepel::geom_label_repel(data = notable, aes(x,y,label = NAME)) +
+  theme_void()
+
+ohio_universe <- ohio_univ %>% 
+  filter(name %in% non_urban_list | name %in% univ_list) %>% 
+  write_csv("data/csv/universe/oh_universe.csv")
