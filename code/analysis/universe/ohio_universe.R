@@ -24,10 +24,10 @@ historical <- read_csv("data/csv/universe/historical.csv") %>%
 
 # Create Universe ---------------------------------------------------------
 
-universe <- get_decennial(geography = "place", 
-                        state = c("IA","MI","OH","WI"),  # Four states I focus on
-                        variables = "P001001", 
-                        year = 2010) %>%
+ohio_univ <- get_decennial(geography = "place", 
+                           state = "OH",  # Just Ohio
+                           variables = "P001001", 
+                           year = 2010) %>%
   separate(NAME,c("name","ST"),sep = ",") %>%
   rename_all(tolower) %>% 
   trim_census() %>% 
@@ -37,7 +37,7 @@ universe <- get_decennial(geography = "place",
   left_join(xw, by = "city_fips") %>%     # Attaches county to city/place ID
   left_join(rucc, by = "cty_fips") %>%     # Attaches rural-urban continuum code
   left_join(cz, by = "cty_fips") %>%     # Attaches commute zone ID
-  filter(rucc > 2 & afact > 0.5,    # Omits cities from the two MOST URBAN counties
+  filter(afact > 0.5,    # NO urban-rural county filter
          pop_2010 > 750 & pop_2010 < 75000) %>%     # Current population filter
   select(city_fips,name,st,cty_fips,cz,rucc,pop_2010,-afact) %>% 
   inner_join(historical, by = c("name","st")) %>% 
@@ -45,5 +45,10 @@ universe <- get_decennial(geography = "place",
   select(1:7) %>% 
   distinct() %>% 
   arrange(city_fips) %>% 
-  write_csv("data/csv/universe/universe.csv")
-  
+  write_csv("data/csv/universe/oh_universe.csv")
+
+
+# Buffer from MSA Principal Cities ----------------------------------------
+
+big_cities <- c("Akron","Canton","Massillon","Cincinnati","Cleveland","Elyria","Columbus",
+                "Dayton","Kettering","Toledo","Boardman","Warren","Youngstown")
