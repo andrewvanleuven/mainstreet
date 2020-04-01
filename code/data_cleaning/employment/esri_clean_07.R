@@ -38,17 +38,19 @@ base_panel <- df_buffers %>%
             trn = sum(as.numeric(trn)),
             mfg = sum(as.numeric(mfg)),
             svc = sum(as.numeric(svc)),
-            estabs = n()) %>% 
-  arrange(city_fips,year)
+            estabs = n())
+panel <- base_panel %>% 
+  arrange(city_fips,year,buffer) %>% 
+  write_csv("data/csv/employment/panel_long.csv")
 jobs_panel <- base_panel %>% select(city_fips:job_total) %>% 
   pivot_wider(names_from = buffer, values_from = job_total, names_prefix = "buffer_") %>% 
   replace(is.na(.), 0) %>% 
   left_join(msp %>% select(1:3), by = "city_fips") %>% 
-  select(1,9,10,everything()) %>% 
+  select(1,9,10,2,buffer_0,buffer_1,buffer_2,buffer_3,buffer_4,buffer_5) %>% 
   write_csv("data/csv/employment/jobs_panel.csv")
 ests_panel <- base_panel %>% select(city_fips:buffer,estabs) %>% 
   pivot_wider(names_from = buffer, values_from = estabs, names_prefix = "buffer_") %>% 
   replace(is.na(.), 0) %>% 
   left_join(msp %>% select(1:3), by = "city_fips") %>% 
-  select(1,9,10,everything()) %>% 
+  select(1,9,10,2,buffer_0,buffer_1,buffer_2,buffer_3,buffer_4,buffer_5) %>% 
   write_csv("data/csv/employment/ests_panel.csv")
