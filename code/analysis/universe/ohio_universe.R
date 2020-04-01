@@ -103,3 +103,16 @@ ggplot() +
 ohio_universe <- ohio_univ %>% 
   filter(name %in% non_urban_list | name %in% univ_list) %>% 
   write_csv("data/csv/universe/oh_universe.csv")
+
+# Merge with Existing Universe --------------------------------------------
+
+oh_univ <- read_csv("data/csv/universe/oh_universe.csv") %>% 
+  filter(!name %in% c("New Miami","Oakwood","Oxford","Sebring"))
+
+msp <- read_csv("data/csv/universe/msp_universe.csv") %>% 
+  select(city_fips:cty_fips,cz:pop_2010) %>% 
+  filter(st != "Ohio")
+
+univ_merge <- rbind(msp,oh_univ) %>% distinct() %>% 
+  arrange(st,name) %>% 
+  write_csv("data/csv/universe/analytical_universe.csv")

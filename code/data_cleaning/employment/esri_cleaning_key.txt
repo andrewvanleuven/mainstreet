@@ -1,18 +1,11 @@
- _____________________________________________________________________________
-|  File                     |  Description                                    |
-|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
-| esri_clean_01.R           | combines all .csv files into one big file, but  |
-|                           | does not include any from 2018, which was used  |
-|                           | a different header naming scheme; cleans up the |
-|                           | header names and removes variables that won't   |
-|                           | be used in the analysis                         |
-|                           |                                                 |
-| esri_clean_02.R           | consists of similar cleaning process as above,  |
-|                           | but only for 2018 csv files, which needed to be |
-|                           | properly renamed in order to merge with large   |
-|                           | file containing 1997-2017 data                  |
-|                           |                                                 |
-| esri_clean_03.R           |                                                 |
-|                           |                                                 |
-|                           |                                                 |
-|___________________________|_________________________________________________|
+ ______________________________________________________________________________________
+|  File                     |  Description                                             |
+|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
+| esri_clean_01.R           | combines all .csv files into one big file; cleans up the |
+|                           | header names and removes variables that won't be used in |
+|                           | be used in the analysis                                  |
+|                           |                                                          |
+| esri_clean_02.R           |                                                          |
+|                           |                                                          |
+|                           |                                                          |
+|___________________________|__________________________________________________________|
