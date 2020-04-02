@@ -101,18 +101,20 @@ ggplot() +
   theme_void()
 
 ohio_universe <- ohio_univ %>% 
-  filter(name %in% non_urban_list | name %in% univ_list) %>% 
+  filter(name %in% non_urban_list | name %in% univ_list,
+         !name %in% c("Oakwood")) %>% 
+  mutate(city_fips = as.numeric(str_replace(city_fips,"3981942","3981935")),
+         name = str_replace(name,"Waverly City","Waverly")) %>% 
   write_csv("data/csv/universe/oh_universe.csv")
 
 # Merge with Existing Universe --------------------------------------------
 
-oh_univ <- read_csv("data/csv/universe/oh_universe.csv") %>% 
-  filter(!name %in% c("New Miami","Oakwood","Oxford","Sebring"))
-
-msp <- read_csv("data/csv/universe/msp_universe.csv") %>% 
-  select(city_fips:cty_fips,cz:pop_2010) %>% 
+non_oh_univ <- read_csv("data/csv/universe/universe.csv") %>% 
   filter(st != "Ohio")
 
-univ_merge <- rbind(msp,oh_univ) %>% distinct() %>% 
+univ_merge <- ohio_universe %>% 
+  filter(!name %in% c("New Miami","Oxford","Sebring")) %>% 
+  bind_rows(.,non_oh_univ) %>% 
   arrange(st,name) %>% 
   write_csv("data/csv/universe/analytical_universe.csv")
+

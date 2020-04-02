@@ -56,7 +56,6 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 3921616,Delta,Ohio,39051,432,2,3103
 3921714,Dennison,Ohio,39157,148,4,2655
 3921812,Deshler,Ohio,39069,432,6,1799
-3922008,Dillonvale,Ohio,39081,89,1,3474
 3922456,Dover,Ohio,39157,148,4,12826
 3922568,Doylestown,Ohio,39169,148,4,3051
 3922610,Dresden,Ohio,39119,10,4,1529
@@ -142,7 +141,6 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 3957302,Norwalk,Ohio,39077,417,4,17012
 3957582,Oak Harbor,Ohio,39123,77,4,2759
 3957596,Oak Hill,Ohio,39079,327,7,1551
-3957764,Oakwood,Ohio,39113,38,2,9202
 3958828,Orrville,Ohio,39169,148,4,8380
 3958982,Ottawa,Ohio,39137,404,6,4460
 3959234,Oxford,Ohio,39017,89,1,21371
@@ -199,7 +197,7 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 3980766,Wapakoneta,Ohio,39011,404,4,9867
 3981718,Washington Court House,Ohio,39047,400,6,14192
 3981928,Wauseon,Ohio,39051,432,2,7332
-3981942,Waverly City,Ohio,39131,327,7,4408
+3981935,Waverly,Ohio,39131,327,7,4408
 3982712,Wellston,Ohio,39079,327,7,5663
 3982740,Wellsville,Ohio,39029,296,4,3541
 3983608,West Lafayette,Ohio,39031,148,6,2321

@@ -32,6 +32,7 @@ universe <- get_decennial(geography = "place",
   rename_all(tolower) %>% 
   trim_census() %>% 
   mutate(city_fips = as.numeric(geoid)) %>% 
+  filter(city_fips != 5572670) %>% # Fixes problem of two Seymour, WI entries (city & CDP)
   select(-variable,-geoid) %>% 
   rename(pop_2010 = value) %>% 
   left_join(xw, by = "city_fips") %>%     # Attaches county to city/place ID

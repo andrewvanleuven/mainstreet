@@ -22,11 +22,11 @@ feasible <- df %>% filter(
   building_area > 0,                         # has sqft
   bath_total_calc > 0,                       # has bathrooms
   situs_geo_status_code %in% c('A','B'),     # geocoded correctly
-  stories_nbr_code > 0,                      # has number of stories
+  #stories_nbr_code > 0,                     # has number of stories
   situs_state == "OH"                        # in ohio
-)
+) 
 write_fst(feasible,"hidden/datatree/cleaned/datatree_oh03.fst")
-
+beepr::beep()
 # Load map components -----------------------------------------------------
 dots <- feasible %>% 
   st_as_sf(., coords = c("situs_longitude","situs_latitude"), crs = 4326, remove = F) %>% 
