@@ -48,3 +48,4 @@ universe <- get_decennial(geography = "place",
   arrange(city_fips) %>% 
   write_csv("data/csv/universe/universe.csv")
   
+#wishlist <- c("IA","MI","OH","WI","NY","PA","WV","DE","MD","NJ","VA","IN","IL","KY")
