@@ -137,6 +137,12 @@ bg_2000 <- rbind(bg_00,bg_00_2,bg_00_3) %>%
 # [x] Housing Tenure | [x] Housing Tenure  |
 # [ ] Poverty        | [x] Poverty         |
 
+# Calculate Block Group Population Density --------------------------------
+bgsize <- bgs %>% 
+  st_drop_geometry() %>% 
+  mutate(bg_size_sqmi = (ALAND+AWATER)*0.000000386,
+         bg_fips = as.numeric(GEOID)) %>% 
+  select(bg_fips,bg_size_sqmi)
 # Merge 2000 and 2010 with properties -------------------------------------
 df_neighborhood_2000 <- bg_xw %>% 
   st_drop_geometry() %>% 
@@ -150,6 +156,7 @@ df_neighborhood_2010 <- bg_clean %>%
 
 df_neighborhood <- inner_join(df_neighborhood_2000,df_neighborhood_2010, by = "property_id") %>% 
   select(property_id,bg_fips,everything()) %>% 
+  left_join(bgsize, by = "bg_fips") %>% 
   write_csv("hidden/datatree/cleaned/datatree_oh06.csv")
-names(df_neighborhood)
 
+names(df_neighborhood)

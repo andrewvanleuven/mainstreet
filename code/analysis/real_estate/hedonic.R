@@ -65,16 +65,33 @@ df_clean <- df_clean_0 %>%
   mutate(d2000 = if_else(between(sale_date, as.Date("2000-01-01"), as.Date("2009-12-31")),1,0),
          d2010 = if_else(between(sale_date, as.Date("2010-01-01"), as.Date("2019-12-31")),1,0),
          nbhood_pop = ((d2000*pop_2000)+(d2010*pop_2010)),
+         nbhood_pop_density = ((d2000*(pop_2000/bg_size_sqmi))+(d2010*(pop_2010/bg_size_sqmi))),
          nbhood_age = ((d2000*median_age_2000)+(d2010*median_age_2010)),
          nbhood_nonwhite = ((d2000*pct_nonwhite_2000)+(d2010*pct_nonwhite_2010)),
          nbhood_renting = ((d2000*pct_renting_2000)+(d2010*pct_renting_2010)),
          nbhood_bachelors = ((d2000*pct_bachelors_2000)+(d2010*pct_bachelors_2010)),
          nbhood_unempl = ((d2000*civ_unempl_2000)+(d2010*civ_unempl_2010)),
-         nbhood_income = ((d2000*median_income_2000)+(d2010*median_income_2010)),
+         nbhood_income = ((d2000*median_income_2000*1.496491)+(d2010*median_income_2010*1.187675)), # respective CPI-U inflators
+         msp_lag_year1 = msp_yr+1,
+         msp_lag_year2 = msp_yr+2,
+         msp_lag_year3 = msp_yr+3,
+         msp_lag_year5 = msp_yr+5,
          msp_yr = (ymd(sprintf("%d-01-01",msp_yr))),
+         msp_lag_yr1 = (ymd(sprintf("%d-01-01",msp_lag_year1))),
+         msp_lag_yr2 = (ymd(sprintf("%d-01-01",msp_lag_year2))),
+         msp_lag_yr3 = (ymd(sprintf("%d-01-01",msp_lag_year3))),
+         msp_lag_yr5 = (ymd(sprintf("%d-01-01",msp_lag_year5))),
          msp_at_sale = if_else(sale_date >= msp_yr,1,0),
-         rdate = round_date(sale_date, "month"),
          msp_at_sale = replace_na(msp_at_sale, 0),
+         msp_lag1 = if_else(sale_date >= msp_lag_yr1,1,0),
+         msp_lag2 = if_else(sale_date >= msp_lag_yr2,1,0),
+         msp_lag3 = if_else(sale_date >= msp_lag_yr3,1,0),
+         msp_lag5 = if_else(sale_date >= msp_lag_yr5,1,0),
+         msp_lag1 = replace_na(msp_lag1, 0),
+         msp_lag2 = replace_na(msp_lag2, 0),
+         msp_lag3 = replace_na(msp_lag3, 0),
+         msp_lag5 = replace_na(msp_lag5, 0),
+         rdate = round_date(sale_date, "month"),
          age = year(sale_date)-year_built,
          construction_yn = if_else(recent_construction == year_built,0,1),
          construction_before_sale = if_else(recent_construction < year(sale_date),1,1),
@@ -83,51 +100,266 @@ df_clean <- df_clean_0 %>%
   filter(!is.na(city_name)) %>% 
   left_join(.,cpi, by = "rdate") %>% 
   mutate(inflator = replace_na(inflator, 1),
-         real_sale_price = round(sale_price*inflator,digits = 0)) %>% #arrange(real_sale_price) 
-  select(property_id,msp_at_sale,msp_accr,msp_affl,distance,in_downtown,              # unique ID, MSP, distance
-         address,city_name,st,cz,rucc,cty_seat,                                       # location
-         sqft,lot_size,age,recent_remodel,bedrooms,total_rooms,                       # structural
-         baths,deck,garage,pool,brick,stories,poor_condition,basement,                # structural
-         sale_date,sale_price,real_sale_price,nbhood_pop:nbhood_income) %>%           # transaction, neighborhood
+         real_sale_price = round(sale_price*inflator,digits = 0)) %>% 
+  left_join(.,(read_csv("data/csv/universe/msp_universe.csv") %>% filter(st == "Ohio") %>% 
+                 select(city_fips,pop_2010) %>% rename(population = pop_2010)), by = "city_fips") %>% 
+  select(property_id,msp_at_sale,msp_lag1,msp_lag2,msp_lag3,msp_lag5,msp_accr,msp_affl,    # unique ID, MSP, distance
+         distance,in_downtown,address,city_name,st,city_fips,cz,rucc,cty_seat,population,  # distance, location
+         sqft,lot_size,age,recent_remodel,bedrooms,total_rooms,                            # structural
+         baths,deck,garage,pool,brick,stories,poor_condition,basement,                     # structural, cont.
+         sale_date,sale_price,real_sale_price,nbhood_pop:nbhood_income) %>%                # transaction, neighborhood
   write_csv("hidden/datatree/cleaned/datatree_model.csv")
 
 rm(neighborhood_df,msp,df_clean_0,cpi,df)
 
 # Hedonic price model -----------------------------------------------------
-modeldf <- df_clean
-#modeldf_nonmetro <- df_clean %>% filter(rucc>3) 
-
+modeldf <- df_clean 
+clr_cons()
 names(modeldf)
 
-model_0 <- lm(log(sale_price) ~ log(lot_size) + log(sqft) + age + bedrooms + baths + stories + basement + pool,
+model_1 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown,
               data = modeldf)
 
-model_1 <- lm(log(real_sale_price) ~ log(lot_size) + log(sqft) + age + bedrooms + baths + stories + basement + pool,
+model_2 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                log(lot_size) + 
+                log(sqft) + 
+                age +
+                total_rooms +
+                stories,
               data = modeldf)
 
-model_2 <- lm(log(real_sale_price) ~ log(lot_size) + log(sqft) + age + bedrooms + baths + stories + basement + pool +
-              nbhood_age + nbhood_nonwhite + nbhood_renting + nbhood_bachelors + nbhood_unempl + nbhood_income,
+model_3 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                log(lot_size) + 
+                log(sqft) + 
+                age +
+                total_rooms +
+                stories + 
+                nbhood_age +
+                nbhood_nonwhite + 
+                nbhood_bachelors + 
+                nbhood_unempl, 
               data = modeldf)
 
-model_3 <- lm(log(real_sale_price) ~ log(lot_size) + log(sqft) + age + bedrooms + baths + stories + basement + pool +
-              #nbhood_age + nbhood_nonwhite + nbhood_renting + nbhood_bachelors + nbhood_unempl + nbhood_income +
-              distance + in_downtown,
+model_4 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                log(lot_size) + 
+                log(sqft) + 
+                age +
+                total_rooms +
+                stories + pool + basement + deck +
+                nbhood_age +
+                nbhood_nonwhite + 
+                nbhood_bachelors + 
+                nbhood_unempl + 
+                msp_lag2, 
               data = modeldf)
 
-model_3.1 <- lm(log(real_sale_price) ~ log(lot_size) + log(sqft) + age + bedrooms + baths + stories + basement + pool +
-              nbhood_age + nbhood_nonwhite + nbhood_renting + nbhood_bachelors + nbhood_unempl + nbhood_income +
-              distance + in_downtown,
+model_5 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                log(lot_size) + 
+                log(sqft) + 
+                age +
+                total_rooms +
+                stories + pool + basement + deck +
+                nbhood_age +
+                nbhood_nonwhite + 
+                nbhood_bachelors + 
+                nbhood_unempl + 
+                msp_lag2*log(distance), 
               data = modeldf)
 
-model_4 <- lm(log(real_sale_price) ~ log(lot_size) + log(sqft) + age + bedrooms + baths + stories + basement + pool +
-              #nbhood_age + nbhood_nonwhite + nbhood_renting + nbhood_bachelors + nbhood_unempl + nbhood_income +
-              distance + in_downtown + msp_at_sale,
+model_6 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                msp_lag2*log(distance), 
               data = modeldf)
 
-model_4.1 <- lm(log(real_sale_price) ~ log(lot_size) + log(sqft) + age + bedrooms + baths + stories + basement + pool +
-              nbhood_age + nbhood_nonwhite + nbhood_renting + nbhood_bachelors + nbhood_unempl + nbhood_income +
-              distance + in_downtown + msp_at_sale,
+stargazer(
+  model_1,model_2,model_3,model_4,model_5,#model_6,
+  omit = c("Constant","pool","basement","deck"),
+  omit.stat = c("f", "ser", "adj.rsq"),
+  font.size = "footnotesize",#no.space = T,
+  covariate.labels = c("Downtown Distance","Propterty Located Downtown?","Lot Size (log)","Square Footage (log)","Home Age",
+                       "Total Rooms","Stories","Neighborhood Median Age","Neighborhood Pct. Non-White","Neighborhood Pct. w/Bachlelors+",
+                       "Neighborhood Unemployment Rate","MSP Adopted?","Distance*MSP interaction"),
+  digits = 2,
+  dep.var.labels = c("Natural Log of Property Sale Price (real USD)"),
+  add.lines = list(c("Additional Structure Characteristics?", "No","No","No","Yes","Yes")),
+  out = "results/real_estate/hedonic.html"
+  ) 
+
+# Models focusing only on main effect -------------------------------------
+clr_cons()
+names(modeldf)
+
+model_00 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                log(lot_size) + 
+                log(sqft) + 
+                age +
+                total_rooms +
+                stories + pool + basement +
+                nbhood_age +
+                nbhood_nonwhite + 
+                nbhood_bachelors + 
+                nbhood_unempl + 
+                msp_at_sale*log(distance), 
               data = modeldf)
 
+model_01 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                log(lot_size) + 
+                log(sqft) + 
+                age +
+                total_rooms +
+                stories + pool + basement +
+                nbhood_age +
+                nbhood_nonwhite + 
+                nbhood_bachelors + 
+                nbhood_unempl + 
+                msp_lag1*log(distance), 
+              data = modeldf)
 
-stargazer(model_0,model_1, out = "results/real_estate/hedonic.html", digits = 2)
+model_02 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                log(lot_size) + 
+                log(sqft) + 
+                age +
+                total_rooms +
+                stories + pool + basement +
+                nbhood_age +
+                nbhood_nonwhite + 
+                nbhood_bachelors + 
+                nbhood_unempl + 
+                msp_lag2*log(distance), 
+              data = modeldf)
+
+model_03 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                log(lot_size) + 
+                log(sqft) + 
+                age +
+                total_rooms +
+                stories + pool + basement +
+                nbhood_age +
+                nbhood_nonwhite + 
+                nbhood_bachelors + 
+                nbhood_unempl + 
+                msp_lag3*log(distance), 
+              data = modeldf)
+
+model_04 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                log(lot_size) + 
+                log(sqft) + 
+                age +
+                total_rooms +
+                stories + pool + basement +
+                nbhood_age +
+                nbhood_nonwhite + 
+                nbhood_bachelors + 
+                nbhood_unempl + 
+                msp_lag5*log(distance), 
+              data = modeldf)
+
+model_05 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                log(lot_size) + 
+                log(sqft) + 
+                age +
+                total_rooms +
+                stories + pool + basement +
+                nbhood_age +
+                nbhood_nonwhite + 
+                nbhood_bachelors + 
+                nbhood_unempl + 
+                msp_lag2*log(distance), 
+              data = (modeldf %>% filter(distance <= 12))) # only properties within 1.5 miles of downtown)
+
+model_06 <- lm(log(real_sale_price) ~ 
+                log(distance) + 
+                in_downtown +
+                log(lot_size) + 
+                log(sqft) + 
+                age +
+                total_rooms +
+                stories + pool + basement +
+                nbhood_age +
+                nbhood_nonwhite + 
+                nbhood_bachelors + 
+                nbhood_unempl + 
+                msp_lag2*log(distance), 
+              data = (modeldf %>% filter(distance <= 8))) # only properties within 1 mile of downtown)
+
+stargazer(
+  model_00,model_01,model_02,model_03,model_04,model_05,model_06,
+  omit = c("Constant","lot_size","sqft","age","total_rooms","stories","pool","basement",
+           "nbhood_age","nbhood_bachelors","nbhood_nonwhite","nbhood_unempl"),
+  omit.stat = c("f", "ser", "adj.rsq"),
+  digits = 2,
+  dep.var.labels = c("Natural Log of Property Sale Price (real USD)"),
+  add.lines = list(c("Structure Characteristics?", "Yes","Yes","Yes","Yes","Yes"),
+                   c("Neighborhood Characteristics?", "Yes","Yes","Yes","Yes","Yes")),
+  out = "results/real_estate/hedonic_main.html"
+) 
+
+
+# Tables Formatted for Paper ----------------------------------------------
+names(model_00$coefficients)[names(model_00$coefficients) == "log(distance):msp_at_sale"] <- "interaction"
+names(model_01$coefficients)[names(model_01$coefficients) == "log(distance):msp_lag1"] <- "interaction"
+names(model_02$coefficients)[names(model_02$coefficients) == "log(distance):msp_lag2"] <- "interaction"
+names(model_03$coefficients)[names(model_03$coefficients) == "log(distance):msp_lag3"] <- "interaction"
+names(model_04$coefficients)[names(model_04$coefficients) == "log(distance):msp_lag5"] <- "interaction"
+names(model_05$coefficients)[names(model_05$coefficients) == "log(distance):msp_lag2"] <- "interaction"
+names(model_06$coefficients)[names(model_06$coefficients) == "log(distance):msp_lag2"] <- "interaction"
+names(model_00$coefficients)[names(model_00$coefficients) == "msp_at_sale"] <- "msp"
+names(model_01$coefficients)[names(model_01$coefficients) == "msp_lag1"] <- "msp"
+names(model_02$coefficients)[names(model_02$coefficients) == "msp_lag2"] <- "msp"
+names(model_03$coefficients)[names(model_03$coefficients) == "msp_lag3"] <- "msp"
+names(model_04$coefficients)[names(model_04$coefficients) == "msp_lag5"] <- "msp"
+names(model_05$coefficients)[names(model_05$coefficients) == "msp_lag2"] <- "msp"
+names(model_06$coefficients)[names(model_06$coefficients) == "msp_lag2"] <- "msp"
+
+stargazer(
+  model_00,model_01,model_02,model_03,model_04,
+  title = "Price Elasticity of Distance to MSP, Time Between Transaction and MSP Adoption",
+  omit = c("Constant","lot_size","sqft","age","total_rooms","stories","pool","basement",
+           "nbhood_age","nbhood_bachelors","nbhood_nonwhite","nbhood_unempl"),
+  omit.stat = c("f", "ser", "adj.rsq"),
+  font.size = "footnotesize", no.space = T,
+  digits = 2,
+  covariate.labels = c("Downtown distance (natural log)","Property inside downtown district?","Active MSP Program?","Distance*MSP Interaction"),
+  dep.var.labels = c("Natural Log of Property Sale Price (real USD)"),
+  column.labels   = c("Time of Sale", "1-Year Lag", "2-Year Lag", "3-Year Lag", "5+ Year Lag"),
+  add.lines = list(c("Structure Characteristics?", "Yes","Yes","Yes","Yes","Yes"),
+                   c("Neighborhood Characteristics?", "Yes","Yes","Yes","Yes","Yes")),
+  ) 
+
+stargazer(
+  model_03,model_05,model_06,
+  title = "Price Elasticity of Distance to MSP, Restricting Data to Properties Near Downtown",
+  omit = c("Constant","lot_size","sqft","age","total_rooms","stories","pool","basement",
+           "nbhood_age","nbhood_bachelors","nbhood_nonwhite","nbhood_unempl"),
+  omit.stat = c("f", "ser", "adj.rsq"),
+  font.size = "footnotesize", #no.space = T,
+  digits = 2,
+  covariate.labels = c("Downtown distance (natural log)","Property inside downtown district?","Active MSP Program?","Distance*MSP Interaction"),
+  dep.var.labels = c("Natural Log of Property Sale Price (real USD)"),
+  column.labels   = c("Entire Municipality Radius","Within 1.5 Miles","Within a Mile"),
+  add.lines = list(c("Structure Characteristics?", "Yes", "Yes", "Yes"),
+                   c("Neighborhood Characteristics?", "Yes", "Yes", "Yes")),
+) 
