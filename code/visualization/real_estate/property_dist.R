@@ -42,10 +42,10 @@ center <- st_centroid(downtown) %>% st_coordinates()
 in_house <- bldg %>% filter(id == 3614) %>% st_centroid() %>% st_coordinates()
 out_house <- bldg %>% filter(id == 5022) %>% st_centroid() %>% st_coordinates()
 line_in = st_sfc(st_linestring(rbind(center,in_house))) %>% st_as_sf(crs = 2834) %>%  # 275 m
-  mutate(lngth = round(as.numeric(st_length(.))*3.281,digits = 0),
+  mutate(lngth = formattable::comma(round(as.numeric(st_length(.))*3.281,digits = 0),digits = 0),
          length = paste(lngth,"feet",sep = " "))
 line_out = st_sfc(st_linestring(rbind(center,out_house))) %>% st_as_sf(crs = 2834) %>%  # 960 m
-  mutate(lngth = round(as.numeric(st_length(.))*3.281,digits = 0),
+  mutate(lngth = formattable::comma(round(as.numeric(st_length(.))*3.281,digits = 0),digits = 0),
          length = paste(lngth,"feet",sep = " "))
 lines <- rbind(line_in,line_out) %>% rename(geometry = x) %>% select(-lngth)
 houses <- rbind(bldg %>% filter(id == 3614) %>% st_centroid(),
@@ -62,8 +62,8 @@ ggplot() +
   geom_sf(data = bldg, fill = "black", color = NA, alpha = .4) +
   geom_sf(data = lines, size = 1.5, color = "black") +
   #geom_sf(data = lines, size = 1, color = "black") +
-  geom_sf(data = bldg %>% filter(id == 3614) %>% st_buffer(3), fill = "red", color = NA) +
-  geom_sf(data = bldg %>% filter(id == 5022) %>% st_buffer(3), fill = "blue", color = NA) +
+  geom_sf(data = bldg %>% filter(id == 3614) %>% st_buffer(3), fill = "yellow", color = "black") +
+  geom_sf(data = bldg %>% filter(id == 5022) %>% st_buffer(3), fill = "red", color = "black") +
   geom_sf(data = centroid, size = 3, shape = 15) +
   ggrepel::geom_label_repel(
     data = houses %>% slice(1),
@@ -71,6 +71,7 @@ ggplot() +
     point.padding = .65,
     min.segment.length = Inf,
     family = "LM Roman 10",
+    size = 5,
     fontface = "bold",
     stat = "sf_coordinates"
   ) +
@@ -80,6 +81,7 @@ ggplot() +
     point.padding = .55,
     min.segment.length = Inf,
     family = "LM Roman 10",
+    size = 5,
     fontface = "bold",
     stat = "sf_coordinates"
   ) +
@@ -94,3 +96,4 @@ ggplot() +
         text=element_text(family="LM Roman 10")) + 
   coord_sf(crs = 4326) +
   ggsave("plot/maps/property_dist.png", height = 8, width = 12)
+
