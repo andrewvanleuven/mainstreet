@@ -42,9 +42,9 @@ colors <- c("Downtown District" = greys[4], "1 Mile Radius" = greys[3], "1.5 Mil
 ggplot() + 
   geom_sf(data = ohio, fill = greys[1], color = NA) + 
   geom_sf(data = town, fill = "white", color = NA) + 
-  geom_sf(data = downtown, aes(fill = 'Downtown District'), color = NA) +
-  geom_sf(data = outer_ring, aes(fill = '1.5 Mile Radius'), color = NA) +
-  geom_sf(data = inner_ring, aes(fill = '1 Mile Radius'), color = NA) +
+  geom_sf(data = downtown, aes(fill = 'Downtown District'), color = NA, alpha = .9) +
+  geom_sf(data = outer_ring, aes(fill = '1.5 Mile Radius'), color = NA, alpha = .85) +
+  geom_sf(data = inner_ring, aes(fill = '1 Mile Radius'), color = NA, alpha = .8) +
   geom_sf(data = ctyh2o, color =  greys[4], size = 3, fill = greys[4], alpha = .75) +
   geom_sf(data = cty_h2o, color = greys[4], size = 0, fill = greys[4], alpha = .75) +
   geom_sf(data = cty_rds, color = "black", size = .5) +
@@ -52,6 +52,7 @@ ggplot() +
   geom_sf(data = bldg, fill = "black", color = NA) +
   theme_void() +
   scale_fill_manual(name = "",
+                    breaks = c('Downtown District','1 Mile Radius','1.5 Mile Radius'),
                     values = colors,
                     guide = guide_legend(override.aes = list(shape = 19, size = 8))) + 
   theme(legend.title = element_text(size=16, face="bold", hjust = 0.5),
