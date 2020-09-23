@@ -1,0 +1,401 @@
+city_fips,name,st,match_city_fips,match_name,match_st,distance
+1901855,Ames,Iowa,1907480,Boone,Iowa,14
+1901855,Ames,Iowa,1948450,Madrid,Iowa,14.8
+1901855,Ames,Iowa,1955695,Nevada,Iowa,8.4
+1907030,Bloomfield,Iowa,1940935,Keosauqua,Iowa,23.8
+1909550,Burlington,Iowa,1986070,Wilton,Iowa,53.9
+1912720,Chariton,Iowa,1916635,Corydon,Iowa,17.8
+1912720,Chariton,Iowa,1942015,Knoxville,Iowa,23.6
+1912720,Chariton,Iowa,1950935,Melcher-Dallas,Iowa,14.7
+1912765,Charles City,Iowa,1932745,Greene,Iowa,13.5
+1912765,Charles City,Iowa,1955335,Nashua,Iowa,10.7
+1912765,Charles City,Iowa,1959745,Osage,Iowa,16.3
+1916500,Corning,Iowa,1905365,Bedford,Iowa,22.2
+1916500,Corning,Iowa,1913575,Clarinda,Iowa,23.4
+1916500,Corning,Iowa,1933150,Griswold,Iowa,27.2
+1916500,Corning,Iowa,1944490,Lenox,Iowa,11.8
+1916500,Corning,Iowa,1954480,Mount Ayr,Iowa,32.2
+1916500,Corning,Iowa,1966135,Red Oak,Iowa,25.9
+1916500,Corning,Iowa,1980985,Villisca,Iowa,13.3
+1922395,Dubuque,Iowa,1911305,Cascade,Iowa,22.6
+1922395,Dubuque,Iowa,1923115,Dyersville,Iowa,23.3
+1922395,Dubuque,Iowa,1949215,Maquoketa,Iowa,29.8
+1924690,Elkader,Iowa,1933465,Guttenberg,Iowa,16.5
+1924690,Elkader,Iowa,1948810,Manchester,Iowa,25.7
+1924690,Elkader,Iowa,1948000,McGregor,Iowa,16.6
+1924690,Elkader,Iowa,1953310,Monona,Iowa,13.7
+1924690,Elkader,Iowa,5565050,Prairie du Chien,Wisconsin,18.9
+1924690,Elkader,Iowa,1975855,Strawberry Point,Iowa,13.5
+1928605,Fort Madison,Iowa,1983685,West Burlington,Iowa,15.7
+1932790,Greenfield,Iowa,1902260,Anita,Iowa,18.5
+1932790,Greenfield,Iowa,1903520,Atlantic,Iowa,29.6
+1933195,Grundy Center,Iowa,1961590,Parkersburg,Iowa,14.9
+1933195,Grundy Center,Iowa,1966315,Reinbeck,Iowa,9.2
+1933195,Grundy Center,Iowa,1978735,Traer,Iowa,19.5
+1933960,Hampton,Iowa,1905680,Belmond,Iowa,21.8
+1933960,Hampton,Iowa,1972210,Sheffield,Iowa,10.4
+1938640,Iowa Falls,Iowa,1900190,Ackley,Iowa,11.1
+1938640,Iowa Falls,Iowa,1924465,Eldora,Iowa,13.9
+1939450,Jefferson,Iowa,1916050,Coon Rapids,Iowa,18.6
+1939450,Jefferson,Iowa,1931710,Gowrie,Iowa,18.8
+1939450,Jefferson,Iowa,1931980,Grand Junction,Iowa,7.2
+1939450,Jefferson,Iowa,1958665,Ogden,Iowa,17.8
+1943275,Lansing,Iowa,1982740,Waukon,Iowa,14.5
+1944400,Le Mars,Iowa,1900775,Akron,Iowa,20.1
+1944400,Le Mars,Iowa,1901585,Alton,Iowa,15.6
+1944400,Le Mars,Iowa,1935265,Hawarden,Iowa,21.4
+1944400,Le Mars,Iowa,1937515,Hull,Iowa,27.4
+1944400,Le Mars,Iowa,1941385,Kingsley,Iowa,17.4
+1944400,Le Mars,Iowa,1949350,Marcus,Iowa,18.4
+1944400,Le Mars,Iowa,1959475,Orange City,Iowa,15.8
+1944400,Le Mars,Iowa,1961905,Paullina,Iowa,27.5
+1944400,Le Mars,Iowa,1966405,Remsen,Iowa,9.9
+1944400,Le Mars,Iowa,1973290,Sioux Center,Iowa,19.8
+1948945,Manning,Iowa,1903655,Audubon,Iowa,14.7
+1948945,Manning,Iowa,1911080,Carroll,Iowa,14.9
+1948945,Manning,Iowa,1919945,Denison,Iowa,16.7
+1948945,Manning,Iowa,1926265,Exira,Iowa,24
+1948945,Manning,Iowa,1934500,Harlan,Iowa,21.7
+1948945,Manning,Iowa,1948855,Manilla,Iowa,8.8
+1949755,Marshalltown,Iowa,1977115,Tama,Iowa,18.2
+1949755,Marshalltown,Iowa,1978510,Toledo,Iowa,17.5
+1950160,Mason City,Iowa,1914025,Clear Lake,Iowa,9.2
+1950160,Mason City,Iowa,1928380,Forest City,Iowa,23.4
+1950160,Mason City,Iowa,1929955,Garner,Iowa,20.6
+1950160,Mason City,Iowa,1942555,Lake Mills,Iowa,25
+1950160,Mason City,Iowa,1948900,Manly,Iowa,9.3
+1950160,Mason City,Iowa,1956910,Nora Springs,Iowa,9.9
+1950160,Mason City,Iowa,1957630,Northwood,Iowa,20.2
+1954705,Mount Pleasant,Iowa,1926445,Fairfield,Iowa,21.6
+1954705,Mount Pleasant,Iowa,1955110,Muscatine,Iowa,41.1
+1954705,Mount Pleasant,Iowa,1956325,New London,Iowa,8.4
+1954705,Mount Pleasant,Iowa,1982200,Wapello,Iowa,24.3
+1954705,Mount Pleasant,Iowa,1986385,Winfield,Iowa,12.7
+1956100,New Hampton,Iowa,1917220,Cresco,Iowa,23.9
+1956505,Newton,Iowa,1908695,Brooklyn,Iowa,31.5
+1956505,Newton,Iowa,1933105,Grinnell,Iowa,17.3
+1956505,Newton,Iowa,1953355,Monroe,Iowa,12.5
+1959835,Osceola,Iowa,1900595,Afton,Iowa,22.5
+1959835,Osceola,Iowa,1942960,Lamoni,Iowa,29.6
+1959835,Osceola,Iowa,1944535,Leon,Iowa,20.3
+1959925,Oskaloosa,Iowa,1900910,Albia,Iowa,20.3
+1959925,Oskaloosa,Iowa,1953490,Montezuma,Iowa,21
+1959925,Oskaloosa,Iowa,1956460,New Sharon,Iowa,12.1
+1959925,Oskaloosa,Iowa,1962040,Pella,Iowa,16.1
+1959925,Oskaloosa,Iowa,1973110,Sigourney,Iowa,23
+1960465,Ottumwa,Iowa,1924420,Eldon,Iowa,12
+1969645,Sac City,Iowa,1901495,Alta,Iowa,23.6
+1969645,Sac City,Iowa,1938010,Ida Grove,Iowa,25.3
+1969645,Sac City,Iowa,1942465,Lake City,Iowa,16.9
+1969645,Sac City,Iowa,1942690,Lake View,Iowa,8.6
+1969645,Sac City,Iowa,1948990,Manson,Iowa,24.4
+1969645,Sac City,Iowa,1958575,Odebolt,Iowa,15.4
+1969645,Sac City,Iowa,1963975,Pocahontas,Iowa,27.1
+1969645,Sac City,Iowa,1968295,Rockwell City,Iowa,18.3
+1969645,Sac City,Iowa,1975630,Storm Lake,Iowa,18.8
+1974280,Spencer,Iowa,1925590,Emmetsburg,Iowa,23.7
+1974280,Spencer,Iowa,1925860,Estherville,Iowa,23.8
+1974280,Spencer,Iowa,1934725,Hartley,Iowa,16.9
+1974280,Spencer,Iowa,1943725,Laurens,Iowa,25.2
+1974280,Spencer,Iowa,1952095,Milford,Iowa,12.7
+1974280,Spencer,Iowa,1964650,Primghar,Iowa,24.6
+1974280,Spencer,Iowa,1970410,Sanborn,Iowa,25.9
+1974280,Spencer,Iowa,1973425,Sioux Rapids,Iowa,17.2
+1974280,Spencer,Iowa,1974415,Spirit Lake,Iowa,19.6
+1975675,Story City,Iowa,1939675,Jewell Junction,Iowa,8.6
+1982335,Washington,Iowa,1938595,Iowa City,Iowa,26.3
+1982335,Washington,Iowa,1940980,Keota,Iowa,14.3
+1982335,Washington,Iowa,1983280,Wellman,Iowa,13.7
+1982425,Waterloo,Iowa,1938100,Independence,Iowa,22.9
+1982425,Waterloo,Iowa,1943365,La Porte City,Iowa,14.7
+1982875,Waverly,Iowa,1913755,Clarksville,Iowa,10.9
+1982875,Waverly,Iowa,1978915,Tripoli,Iowa,12.2
+1983145,Webster City,Iowa,1913620,Clarion,Iowa,18.7
+1983145,Webster City,Iowa,1923250,Eagle Grove,Iowa,14.1
+1983145,Webster City,Iowa,1928515,Fort Dodge,Iowa,18.9
+1983145,Webster City,Iowa,1937560,Humboldt,Iowa,26.6
+1984765,West Union,Iowa,1910045,Calmar,Iowa,15.6
+1984765,West Union,Iowa,1919405,Decorah,Iowa,23.7
+1984765,West Union,Iowa,1927165,Fayette,Iowa,8.1
+1984765,West Union,Iowa,1958620,Oelwein,Iowa,20.3
+1984765,West Union,Iowa,1964290,Postville,Iowa,14.9
+1984765,West Union,Iowa,1976260,Sumner,Iowa,16.7
+2609000,Blissfield,Michigan,2600440,Adrian,Michigan,10.1
+2609000,Blissfield,Michigan,3902344,Archbold,Ohio,31.4
+2609000,Blissfield,Michigan,2616480,Clinton,Michigan,17.5
+2609000,Blissfield,Michigan,3921616,Delta,Ohio,19.3
+2609000,Blissfield,Michigan,2623380,Dundee,Michigan,13.6
+2609000,Blissfield,Michigan,2639720,Hudson,Michigan,25.4
+2609000,Blissfield,Michigan,2655500,Morenci,Michigan,19.9
+2609000,Blissfield,Michigan,2679120,Tecumseh,Michigan,12.6
+2609000,Blissfield,Michigan,3981928,Wauseon,Ohio,24.3
+2609820,Boyne City,Michigan,2615000,Cheboygan,Michigan,39.7
+2609820,Boyne City,Michigan,2624020,East Jordan,Michigan,6.8
+2609820,Boyne City,Michigan,2631720,Gaylord,Michigan,20.9
+2609820,Boyne City,Michigan,2636560,Harbor Springs,Michigan,15
+2609820,Boyne City,Michigan,2650620,Mancelona,Michigan,21.6
+2609820,Boyne City,Michigan,2660680,Onaway,Michigan,39.7
+2609820,Boyne City,Michigan,2663820,Petoskey,Michigan,11.5
+2614780,Charlevoix,Michigan,2670840,St. Ignace,Michigan,46.1
+2614780,Charlevoix,Michigan,2680340,Traverse City,Michigan,42.2
+2634640,Grayling,Michigan,2612320,Cadillac,Michigan,44.2
+2634640,Grayling,Michigan,2632320,Gladwin,Michigan,48.4
+2634640,Grayling,Michigan,2642260,Kalkaska,Michigan,23.3
+2634640,Grayling,Michigan,2650880,Manton,Michigan,38
+2634640,Grayling,Michigan,2685580,West Branch,Michigan,35.5
+2636920,Hart,Michigan,2649640,Ludington,Michigan,18
+2636920,Hart,Michigan,2655100,Montague,Michigan,19.7
+2636920,Hart,Michigan,2656320,Muskegon,Michigan,32.8
+2636920,Hart,Michigan,2656360,Muskegon Heights,Michigan,35.1
+2636920,Hart,Michigan,2657080,Newaygo,Michigan,34.4
+2636920,Hart,Michigan,2658640,North Muskegon,Michigan,30.9
+2636920,Hart,Michigan,2672080,Scottville,Michigan,18
+2636920,Hart,Michigan,2672840,Shelby,Michigan,6.2
+2636920,Hart,Michigan,2686780,Whitehall,Michigan,20.2
+2657760,Niles,Michigan,2607520,Benton Harbor,Michigan,22.3
+2657760,Niles,Michigan,2607860,Berrien Springs,Michigan,9.1
+2657760,Niles,Michigan,2611400,Buchanan,Michigan,5.3
+2657760,Niles,Michigan,2657220,New Buffalo,Michigan,25.4
+2657760,Niles,Michigan,2670960,St. Joseph,Michigan,22.5
+2657760,Niles,Michigan,2679720,Three Oaks,Michigan,18.4
+2657760,Niles,Michigan,2684500,Watervliet,Michigan,24.8
+2661620,Otsego,Michigan,2601260,Allegan,Michigan,9.1
+2661620,Otsego,Michigan,2605920,Battle Creek,Michigan,27.9
+2661620,Otsego,Michigan,2651940,Marshall,Michigan,39.9
+2661940,Owosso,Michigan,2601540,Alma,Michigan,36.1
+2661940,Owosso,Michigan,2615140,Chesaning,Michigan,13.2
+2661940,Owosso,Michigan,2623500,Durand,Michigan,11.1
+2661940,Owosso,Michigan,2630200,Frankenmuth,Michigan,31.7
+2661940,Owosso,Michigan,2641340,Ithaca,Michigan,29.9
+2661940,Owosso,Michigan,2670520,Saginaw,Michigan,31.8
+2661940,Owosso,Michigan,2670640,St. Charles,Michigan,20.7
+2661940,Owosso,Michigan,2671000,St. Louis,Michigan,36
+2661940,Owosso,Michigan,2681840,Vassar,Michigan,39.4
+2665860,Portland,Michigan,2600980,Albion,Michigan,43.8
+2665860,Portland,Michigan,2606900,Belding,Michigan,22.8
+2665860,Portland,Michigan,2618300,Corunna,Michigan,40.5
+2665860,Portland,Michigan,2640860,Ionia,Michigan,11.4
+2665860,Portland,Michigan,2644880,Lake Odessa,Michigan,13.4
+2671740,Sault Ste. Marie,Michigan,2657140,Newberry,Michigan,56.3
+2679760,Three Rivers,Michigan,2610860,Bronson,Michigan,23.2
+2679760,Three Rivers,Michigan,2617020,Coldwater,Michigan,32.6
+2679760,Three Rivers,Michigan,2617840,Constantine,Michigan,7.4
+2679760,Three Rivers,Michigan,2676960,Sturgis,Michigan,15
+2679760,Three Rivers,Michigan,2681360,Union City,Michigan,27
+2679760,Three Rivers,Michigan,2686920,White Pigeon,Michigan,10.2
+2684880,Wayland,Michigan,2664740,Plainwell,Michigan,16
+3902568,Ashland,Ohio,3919330,Crestline,Ohio,22.9
+3902568,Ashland,Ohio,3945066,Loudonville,Ohio,16.6
+3902568,Ashland,Ohio,3947138,Mansfield,Ohio,13
+3910996,Cambridge,Ohio,3903926,Barnesville,Ohio,22.1
+3910996,Cambridge,Ohio,3906138,Bethesda,Ohio,27.5
+3910996,Cambridge,Ohio,3910940,Caldwell,Ohio,19.5
+3910996,Cambridge,Ohio,3954446,New Concord,Ohio,8
+3913554,Chardon,Ohio,3926306,Fairport Harbor,Ohio,12.6
+3913554,Chardon,Ohio,3969834,Salem,Ohio,50.4
+3918868,Coshocton,Ohio,3910716,Byesville,Ohio,27.2
+3918868,Coshocton,Ohio,3922610,Dresden,Ohio,13
+3918868,Coshocton,Ohio,3954432,Newcomerstown,Ohio,13.6
+3918868,Coshocton,Ohio,3983608,West Lafayette,Ohio,6
+3921434,Delaware,Ohio,3912084,Cardington,Ohio,16.6
+3921434,Delaware,Ohio,3947754,Marion,Ohio,20.2
+3921434,Delaware,Ohio,3948160,Marysville,Ohio,16.4
+3921434,Delaware,Ohio,3964780,Prospect,Ohio,12.2
+3921434,Delaware,Ohio,3966936,Richwood,Ohio,15
+3942364,Lebanon,Ohio,3904150,Batavia,Ohio,24.6
+3942364,Lebanon,Ohio,3906068,Bethel,Ohio,33.1
+3942364,Lebanon,Ohio,3924234,Eaton,Ohio,31.3
+3942364,Lebanon,Ohio,3985288,Williamsburg,Ohio,27.4
+3947628,Marietta,Ohio,3902736,Athens,Ohio,35.2
+3947628,Marietta,Ohio,3905424,Belpre,Ohio,11.5
+3947628,Marietta,Ohio,3913778,Chauncey,Ohio,36.2
+3947628,Marietta,Ohio,3930674,Glouster,Ohio,34.3
+3947628,Marietta,Ohio,3945822,McConnelsville,Ohio,26.8
+3947628,Marietta,Ohio,3953886,Nelsonville,Ohio,41.9
+3947628,Marietta,Ohio,3964024,Pomeroy,Ohio,40.9
+3947628,Marietta,Ohio,3986436,Woodsfield,Ohio,30
+3948790,Medina,Ohio,3919344,Creston,Ohio,10.7
+3948790,Medina,Ohio,3922568,Doylestown,Ohio,14.5
+3948790,Medina,Ohio,3944604,Lodi,Ohio,10.6
+3948790,Medina,Ohio,3957302,Norwalk,Ohio,39.9
+3948790,Medina,Ohio,3967356,Rittman,Ohio,12.1
+3950372,Millersburg,Ohio,3922456,Dover,Ohio,23.3
+3950372,Millersburg,Ohio,3955216,New Philadelphia,Ohio,25.3
+3950372,Millersburg,Ohio,3974958,Strasburg,Ohio,20.8
+3953102,Mount Vernon,Ohio,3905284,Bellville,Ohio,15.8
+3953102,Mount Vernon,Ohio,3928658,Fredericktown,Ohio,6.9
+3953102,Mount Vernon,Ohio,3929162,Galion,Ohio,28.4
+3953102,Mount Vernon,Ohio,3952738,Mount Gilead,Ohio,21.1
+3953102,Mount Vernon,Ohio,3979114,Utica,Ohio,11.1
+3954040,Newark,Ohio,3908392,Bremen,Ohio,24.6
+3954040,Newark,Ohio,3919456,Crooksville,Ohio,25.8
+3954040,Newark,Ohio,3931402,Granville,Ohio,6.1
+3954040,Newark,Ohio,3939340,Johnstown,Ohio,16.3
+3954040,Newark,Ohio,3968560,Roseville,Ohio,24.7
+3954040,Newark,Ohio,3972977,Somerset,Ohio,18.1
+3954040,Newark,Ohio,3973894,South Zanesville,Ohio,23.1
+3954040,Newark,Ohio,3988084,Zanesville,Ohio,22.7
+3959416,Painesville,Ohio,3902638,Ashtabula,Ohio,25.7
+3959416,Painesville,Ohio,3918350,Conneaut,Ohio,38.6
+3959416,Painesville,Ohio,3929610,Geneva,Ohio,16.2
+3959416,Painesville,Ohio,3949056,Mentor,Ohio,6.4
+3959416,Painesville,Ohio,3985484,Willoughby,Ohio,10.4
+3962848,Piqua,Ohio,3908084,Bradford,Ohio,10.1
+3962848,Piqua,Ohio,3919050,Covington,Ohio,6.4
+3962848,Piqua,Ohio,3932340,Greenville,Ohio,21
+3962848,Piqua,Ohio,3950918,Minster,Ohio,18.4
+3962848,Piqua,Ohio,3954194,New Bremen,Ohio,21.2
+3962848,Piqua,Ohio,3972424,Sidney,Ohio,10.5
+3962848,Piqua,Ohio,3979912,Versailles,Ohio,13.9
+3964150,Port Clinton,Ohio,3905228,Bellevue,Ohio,17.3
+3964150,Port Clinton,Ohio,3916308,Clyde,Ohio,14.4
+3964150,Port Clinton,Ohio,3925144,Elmore,Ohio,18.6
+3964150,Port Clinton,Ohio,3928826,Fremont,Ohio,14.6
+3964150,Port Clinton,Ohio,3929722,Genoa,Ohio,21.7
+3964150,Port Clinton,Ohio,3937016,Huron,Ohio,21.5
+3964150,Port Clinton,Ohio,3947502,Marblehead,Ohio,10.8
+3964150,Port Clinton,Ohio,3957582,Oak Harbor,Ohio,10.7
+3964150,Port Clinton,Ohio,3970380,Sandusky,Ohio,12.4
+3964304,Portsmouth,Ohio,3916378,Coal Grove,Ohio,25
+3964304,Portsmouth,Ohio,3937464,Ironton,Ohio,22
+3964304,Portsmouth,Ohio,3937842,Jackson,Ohio,29.3
+3964304,Portsmouth,Ohio,3957596,Oak Hill,Ohio,25.6
+3964304,Portsmouth,Ohio,3961420,Peebles,Ohio,26.6
+3964304,Portsmouth,Ohio,3981935,Waverly,Ohio,27
+3964304,Portsmouth,Ohio,3982712,Wellston,Ohio,36.7
+3964304,Portsmouth,Ohio,3984294,West Union,Ohio,30
+3976778,Tiffin,Ohio,3910030,Bucyrus,Ohio,23.6
+3976778,Tiffin,Ohio,3912112,Carey,Ohio,15.5
+3976778,Tiffin,Ohio,3928014,Fostoria,Ohio,12.8
+3976778,Tiffin,Ohio,3930072,Gibsonburg,Ohio,20
+3976778,Tiffin,Ohio,3979044,Upper Sandusky,Ohio,20.5
+3976778,Tiffin,Ohio,3985232,Willard,Ohio,23.9
+3976778,Tiffin,Ohio,3986492,Woodville,Ohio,25.1
+3977588,Troy,Ohio,3902330,Arcanum,Ohio,18.9
+3977588,Troy,Ohio,3942938,Lewisburg,Ohio,22.2
+3977588,Troy,Ohio,3954334,New Carlisle,Ohio,11.8
+3979072,Urbana,Ohio,3905130,Bellefontaine,Ohio,17.4
+3979072,Urbana,Ohio,3944674,London,Ohio,22.3
+3979072,Urbana,Ohio,3948706,Mechanicsburg,Ohio,10.8
+3979072,Urbana,Ohio,3973124,South Charleston,Ohio,20.5
+3979072,Urbana,Ohio,3974118,Springfield,Ohio,13.1
+3979072,Urbana,Ohio,3969708,St. Paris,Ohio,11.1
+3979072,Urbana,Ohio,3983734,West Liberty,Ohio,9.9
+3979562,Van Wert,Ohio,3902204,Antwerp,Ohio,23
+3979562,Van Wert,Ohio,3912868,Celina,Ohio,22.1
+3979562,Van Wert,Ohio,3918504,Continental,Ohio,22.9
+3979562,Van Wert,Ohio,3921602,Delphos,Ohio,12.8
+3979562,Van Wert,Ohio,3943554,Lima,Ohio,26.5
+3979562,Van Wert,Ohio,3961252,Paulding,Ohio,18.5
+3979562,Van Wert,Ohio,3961322,Payne,Ohio,16.4
+3979562,Van Wert,Ohio,3967874,Rockford,Ohio,12.6
+3979562,Van Wert,Ohio,3974034,Spencerville,Ohio,16.3
+3979562,Van Wert,Ohio,3969680,St. Marys,Ohio,24.6
+3985792,Wilmington,Ohio,3906908,Blanchester,Ohio,13.5
+3985792,Wilmington,Ohio,3912784,Cedarville,Ohio,20.4
+3985792,Wilmington,Ohio,3932088,Greenfield,Ohio,24.8
+3985792,Wilmington,Ohio,3935560,Hillsboro,Ohio,20.3
+3985792,Wilmington,Ohio,3938374,Jamestown,Ohio,15.5
+3985792,Wilmington,Ohio,3969400,Sabina,Ohio,10.8
+3985792,Wilmington,Ohio,3981718,Washington Court House,Ohio,21.8
+3986548,Wooster,Ohio,3958828,Orrville,Ohio,9.6
+3986548,Wooster,Ohio,3972396,Shreve,Ohio,9.1
+5506500,Beloit,Wisconsin,5519450,Delavan,Wisconsin,21.8
+5506500,Beloit,Wisconsin,5523300,Elkhorn,Wisconsin,27.7
+5506500,Beloit,Wisconsin,5524550,Evansville,Wisconsin,23.6
+5506500,Beloit,Wisconsin,5537825,Janesville,Wisconsin,12.6
+5506500,Beloit,Wisconsin,5541450,Lake Geneva,Wisconsin,31.2
+5506500,Beloit,Wisconsin,5552200,Milton,Wisconsin,19.8
+5514575,Chippewa Falls,Wisconsin,5501550,Altoona,Wisconsin,9.2
+5514575,Chippewa Falls,Wisconsin,5503825,Augusta,Wisconsin,22.2
+5514575,Chippewa Falls,Wisconsin,5508225,Bloomer,Wisconsin,12.4
+5514575,Chippewa Falls,Wisconsin,5517100,Cornell,Wisconsin,19.9
+5514575,Chippewa Falls,Wisconsin,5522300,Eau Claire,Wisconsin,10.1
+5514575,Chippewa Falls,Wisconsin,5560575,Osseo,Wisconsin,26.2
+5514575,Chippewa Falls,Wisconsin,5576625,Stanley,Wisconsin,22.4
+5514575,Chippewa Falls,Wisconsin,5579625,Thorp,Wisconsin,29.1
+5518875,Darlington,Wisconsin,5565100,Prairie du Sac,Wisconsin,46.7
+5518875,Darlington,Wisconsin,5571650,Sauk City,Wisconsin,45.5
+5521625,Eagle River,Wisconsin,2607960,Bessemer,Michigan,54.7
+5521625,Eagle River,Wisconsin,2613860,Caspian,Michigan,31.6
+5521625,Eagle River,Wisconsin,5517425,Crandon,Wisconsin,29.2
+5521625,Eagle River,Wisconsin,2619140,Crystal Falls,Michigan,45.9
+5521625,Eagle River,Wisconsin,2640980,Iron River,Michigan,31.7
+5521625,Eagle River,Wisconsin,2643300,Kingsford,Michigan,57.4
+5521625,Eagle River,Wisconsin,2682780,Wakefield,Michigan,50.9
+5526275,Fond du Lac,Wisconsin,5512325,Campbellsport,Wisconsin,14.7
+5526275,Fond du Lac,Wisconsin,5514475,Chilton,Wisconsin,22.4
+5540775,La Crosse,Wisconsin,5502500,Arcadia,Wisconsin,33
+5540775,La Crosse,Wisconsin,5507900,Black River Falls,Wisconsin,39
+5540775,La Crosse,Wisconsin,5528200,Galesville,Wisconsin,19.4
+5540775,La Crosse,Wisconsin,5559925,Onalaska,Wisconsin,5
+5540775,La Crosse,Wisconsin,5575325,Sparta,Wisconsin,23.8
+5540775,La Crosse,Wisconsin,5586275,West Salem,Wisconsin,10.3
+5541675,Lake Mills,Wisconsin,5522575,Edgerton,Wisconsin,18.8
+5541675,Lake Mills,Wisconsin,5526675,Fort Atkinson,Wisconsin,11.2
+5541675,Lake Mills,Wisconsin,5537900,Jefferson,Wisconsin,7.4
+5541675,Lake Mills,Wisconsin,5583925,Waterloo,Wisconsin,8.2
+5541675,Lake Mills,Wisconsin,5586925,Whitewater,Wisconsin,19.3
+5549675,Marshfield,Wisconsin,5550425,Medford,Wisconsin,33.7
+5549675,Marshfield,Wisconsin,5555800,Neillsville,Wisconsin,22
+5549675,Marshfield,Wisconsin,5555875,Nekoosa,Wisconsin,27.9
+5549675,Marshfield,Wisconsin,5560825,Owen,Wisconsin,27.4
+5549675,Marshfield,Wisconsin,5564175,Port Edwards,Wisconsin,27.1
+5549675,Marshfield,Wisconsin,5572150,Schofield,Wisconsin,32.7
+5549675,Marshfield,Wisconsin,5577750,Stratford,Wisconsin,10.7
+5549675,Marshfield,Wisconsin,5588200,Wisconsin Rapids,Wisconsin,25.6
+5550200,Mayville,Wisconsin,5505900,Beaver Dam,Wisconsin,15
+5550200,Mayville,Wisconsin,5527000,Fox Lake,Wisconsin,18.9
+5550200,Mayville,Wisconsin,5535750,Horicon,Wisconsin,5.3
+5550200,Mayville,Wisconsin,5538675,Juneau,Wisconsin,10
+5550200,Mayville,Wisconsin,5584425,Waupun,Wisconsin,13.3
+5551025,Menomonie,Wisconsin,5553600,Mondovi,Wisconsin,24.8
+5559875,Omro,Wisconsin,5502375,Appleton,Wisconsin,22.7
+5559875,Omro,Wisconsin,5550825,Menasha,Wisconsin,18.4
+5559875,Omro,Wisconsin,5555750,Neenah,Wisconsin,17.4
+5559875,Omro,Wisconsin,5560500,Oshkosh,Wisconsin,10.4
+5559875,Omro,Wisconsin,5566625,Redgranite,Wisconsin,17.8
+5559875,Omro,Wisconsin,5586400,Weyauwega,Wisconsin,21.7
+5563250,Platteville,Wisconsin,5508850,Boscobel,Wisconsin,30
+5563250,Platteville,Wisconsin,5517950,Cuba City,Wisconsin,9.2
+5563250,Platteville,Wisconsin,5525600,Fennimore,Wisconsin,19.4
+5563250,Platteville,Wisconsin,5542250,Lancaster,Wisconsin,14.2
+5567350,Rice Lake,Wisconsin,5501725,Amery,Wisconsin,33.2
+5567350,Rice Lake,Wisconsin,5504875,Barron,Wisconsin,9.1
+5567350,Rice Lake,Wisconsin,5514325,Chetek,Wisconsin,13.6
+5567350,Rice Lake,Wisconsin,5518025,Cumberland,Wisconsin,14.1
+5567350,Rice Lake,Wisconsin,5533450,Hayward,Wisconsin,37.4
+5567350,Rice Lake,Wisconsin,5575625,Spooner,Wisconsin,23.6
+5567350,Rice Lake,Wisconsin,5570550,St. Croix Falls,Wisconsin,44.6
+5568175,Ripon,Wisconsin,5506925,Berlin,Wisconsin,10.2
+5568175,Ripon,Wisconsin,5553875,Montello,Wisconsin,24.7
+5568175,Ripon,Wisconsin,5558000,North Fond du Lac,Wisconsin,18
+5568175,Ripon,Wisconsin,5565600,Princeton,Wisconsin,14.6
+5568175,Ripon,Wisconsin,5566150,Randolph,Wisconsin,22.8
+5573025,Sheboygan Falls,Wisconsin,5539525,Kiel,Wisconsin,16.9
+5573025,Sheboygan Falls,Wisconsin,5556800,New Holstein,Wisconsin,20.6
+5573025,Sheboygan Falls,Wisconsin,5563700,Plymouth,Wisconsin,8.4
+5573025,Sheboygan Falls,Wisconsin,5572975,Sheboygan,Wisconsin,5.2
+5577875,Sturgeon Bay,Wisconsin,2630260,Frankfort,Michigan,57.6
+5577875,Sturgeon Bay,Wisconsin,5549300,Marinette,Wisconsin,22.1
+5577875,Sturgeon Bay,Wisconsin,2653020,Menominee,Michigan,21.8
+5577875,Sturgeon Bay,Wisconsin,5562175,Peshtigo,Wisconsin,23.8
+5577875,Sturgeon Bay,Wisconsin,5572725,Seymour,Wisconsin,51.9
+5577875,Sturgeon Bay,Wisconsin,5572925,Shawano,Wisconsin,60.6
+5580125,Tomahawk,Wisconsin,5561200,Park Falls,Wisconsin,47.3
+5580125,Tomahawk,Wisconsin,5562450,Phillips,Wisconsin,35.6
+5580125,Tomahawk,Wisconsin,5567200,Rhinelander,Wisconsin,19.3
+5580125,Tomahawk,Wisconsin,5567275,Rib Lake,Wisconsin,25.2
+5581325,Two Rivers,Wisconsin,5509725,Brillion,Wisconsin,24.6
+5581325,Two Rivers,Wisconsin,5538800,Kaukauna,Wisconsin,36
+5581325,Two Rivers,Wisconsin,5540275,Kohler,Wisconsin,30.2
+5581325,Two Rivers,Wisconsin,5544950,Little Chute,Wisconsin,38.1
+5581325,Two Rivers,Wisconsin,5548500,Manitowoc,Wisconsin,5.9
+5582925,Viroqua,Wisconsin,5523800,Elroy,Wisconsin,33.5
+5582925,Viroqua,Wisconsin,5567625,Richland Center,Wisconsin,29.6
+5582925,Viroqua,Wisconsin,5580075,Tomah,Wisconsin,34.9
+5582925,Viroqua,Wisconsin,5585475,Westby,Wisconsin,6.9
+5584475,Wausau,Wisconsin,5502250,Antigo,Wisconsin,26.3
+5584475,Wausau,Wisconsin,5551250,Merrill,Wisconsin,15.5
+5584475,Wausau,Wisconsin,5554500,Mosinee,Wisconsin,12.2
+5584475,Wausau,Wisconsin,5577200,Stevens Point,Wisconsin,30.3

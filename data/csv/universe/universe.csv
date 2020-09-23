@@ -1,12 +1,10 @@
 city_fips,name,st,cty_fips,cz,rucc,pop_2010
 1900190,Ackley,Iowa,19083,561,6,1589
 1900595,Afton,Iowa,19175,509,6,845
-1900775,Akron,Iowa,19149,4,3,1486
 1900910,Albia,Iowa,19135,393,7,3766
 1901135,Algona,Iowa,19109,518,7,5560
 1901495,Alta,Iowa,19021,564,7,1883
 1901585,Alton,Iowa,19167,504,7,1216
-1901855,Ames,Iowa,19169,15,3,58965
 1902260,Anita,Iowa,19029,597,6,972
 1903520,Atlantic,Iowa,19029,597,6,7112
 1903655,Audubon,Iowa,19009,597,8,2176
@@ -20,8 +18,6 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 1909550,Burlington,Iowa,19057,192,5,25663
 1910045,Calmar,Iowa,19191,507,7,978
 1911080,Carroll,Iowa,19027,621,7,10103
-1911305,Cascade,Iowa,19061,344,3,2159
-1911755,Cedar Falls,Iowa,19013,230,3,39260
 1912315,Centerville,Iowa,19007,393,7,5528
 1912720,Chariton,Iowa,19117,526,6,4321
 1912765,Charles City,Iowa,19067,507,7,7652
@@ -34,15 +30,12 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 1915060,Colfax,Iowa,19099,455,6,2093
 1916050,Coon Rapids,Iowa,19027,621,7,1305
 1916500,Corning,Iowa,19003,509,9,1635
-1916545,Correctionville,Iowa,19193,4,3,821
 1916635,Corydon,Iowa,19185,526,9,1585
 1917220,Cresco,Iowa,19089,507,6,3868
 1917265,Creston,Iowa,19175,509,6,7834
 1919405,Decorah,Iowa,19191,507,7,8127
 1919945,Denison,Iowa,19047,564,7,8298
 1921180,De Witt,Iowa,19045,344,4,5322
-1922395,Dubuque,Iowa,19061,344,3,57637
-1923115,Dyersville,Iowa,19061,344,3,4058
 1923250,Eagle Grove,Iowa,19197,401,7,3583
 1924420,Eldon,Iowa,19179,393,5,927
 1924465,Eldora,Iowa,19083,561,6,2732
@@ -63,7 +56,6 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 1932790,Greenfield,Iowa,19001,15,8,1982
 1933105,Grinnell,Iowa,19157,455,7,9218
 1933150,Griswold,Iowa,19029,597,6,1036
-1933195,Grundy Center,Iowa,19075,230,3,2706
 1933465,Guttenberg,Iowa,19043,470,8,1919
 1933780,Hamburg,Iowa,19071,295,8,1187
 1933960,Hampton,Iowa,19069,561,7,4461
@@ -75,23 +67,19 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 1937560,Humboldt,Iowa,19091,401,7,4690
 1938010,Ida Grove,Iowa,19093,564,8,2142
 1938100,Independence,Iowa,19019,230,6,5966
-1938595,Iowa City,Iowa,19103,161,3,67862
 1938640,Iowa Falls,Iowa,19083,561,6,5238
 1939450,Jefferson,Iowa,19073,621,6,4345
 1939675,Jewell Junction,Iowa,19079,401,6,1215
 1940845,Keokuk,Iowa,19111,192,5,10780
 1940935,Keosauqua,Iowa,19177,478,9,1006
 1940980,Keota,Iowa,19107,393,8,1009
-1941385,Kingsley,Iowa,19149,4,3,1411
 1942015,Knoxville,Iowa,19125,393,6,7313
 1942465,Lake City,Iowa,19025,401,9,1727
 1942555,Lake Mills,Iowa,19189,304,7,2100
 1942690,Lake View,Iowa,19161,564,9,1142
 1942960,Lamoni,Iowa,19053,526,9,2324
 1943275,Lansing,Iowa,19005,470,6,999
-1943365,La Porte City,Iowa,19013,230,3,2285
 1943725,Laurens,Iowa,19151,564,9,1258
-1944400,Le Mars,Iowa,19149,4,3,9826
 1944490,Lenox,Iowa,19173,509,9,1407
 1944535,Leon,Iowa,19053,526,9,1977
 1948000,McGregor,Iowa,19043,470,8,871
@@ -116,7 +104,6 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 1954705,Mount Pleasant,Iowa,19087,192,6,8668
 1955110,Muscatine,Iowa,19139,161,4,22886
 1955335,Nashua,Iowa,19037,507,6,1663
-1955695,Nevada,Iowa,19169,15,3,6798
 1956100,New Hampton,Iowa,19037,507,6,3571
 1956325,New London,Iowa,19087,192,6,1897
 1956460,New Sharon,Iowa,19123,393,7,1293
@@ -139,8 +126,6 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 1964290,Postville,Iowa,19005,470,6,2227
 1964650,Primghar,Iowa,19141,504,7,909
 1966135,Red Oak,Iowa,19137,295,6,5742
-1966315,Reinbeck,Iowa,19075,230,3,1664
-1966405,Remsen,Iowa,19149,4,3,1663
 1968070,Rockford,Iowa,19067,507,7,860
 1968160,Rock Rapids,Iowa,19119,504,8,2549
 1968205,Rock Valley,Iowa,19167,504,7,3354
@@ -159,23 +144,16 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 1974415,Spirit Lake,Iowa,19059,518,7,4840
 1975135,State Center,Iowa,19127,455,4,1468
 1975630,Storm Lake,Iowa,19021,564,7,10600
-1975675,Story City,Iowa,19169,15,3,3431
 1975855,Strawberry Point,Iowa,19043,470,8,1279
-1976260,Sumner,Iowa,19017,230,3,2028
 1976935,Tabor,Iowa,19071,295,8,1040
 1977115,Tama,Iowa,19171,455,6,2877
 1978285,Tipton,Iowa,19031,161,6,3221
 1978510,Toledo,Iowa,19171,455,6,2341
 1978735,Traer,Iowa,19171,455,6,1703
-1978915,Tripoli,Iowa,19017,230,3,1313
 1980985,Villisca,Iowa,19137,295,6,1252
 1982200,Wapello,Iowa,19115,161,8,2067
-1982335,Washington,Iowa,19183,161,3,7266
-1982425,Waterloo,Iowa,19013,230,3,68406
 1982740,Waukon,Iowa,19005,470,6,3897
-1982875,Waverly,Iowa,19017,230,3,9874
 1983145,Webster City,Iowa,19079,401,6,8070
-1983280,Wellman,Iowa,19183,161,3,1408
 1983685,West Burlington,Iowa,19057,192,5,2968
 1984315,West Liberty,Iowa,19139,161,4,3736
 1984765,West Union,Iowa,19065,230,6,2486
@@ -183,30 +161,23 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 1986070,Wilton,Iowa,19139,161,4,2802
 1986385,Winfield,Iowa,19087,192,6,1134
 2600440,Adrian,Michigan,26091,513,4,21133
-2600980,Albion,Michigan,26025,284,3,8616
 2601260,Allegan,Michigan,26005,249,4,4998
 2601540,Alma,Michigan,26057,352,6,9383
 2601740,Alpena,Michigan,26007,322,7,10483
 2604740,Bad Axe,Michigan,26063,583,7,3129
 2605320,Baraga,Michigan,26013,13,9,2053
-2605920,Battle Creek,Michigan,26025,284,3,52347
-2606020,Bay City,Michigan,26017,352,3,34932
 2606900,Belding,Michigan,26067,249,4,5757
-2607520,Benton Harbor,Michigan,26021,408,3,10038
-2607860,Berrien Springs,Michigan,26021,408,3,1800
 2607960,Bessemer,Michigan,26053,130,7,1905
 2608300,Big Rapids,Michigan,26107,172,6,10601
 2609000,Blissfield,Michigan,26091,513,4,3340
 2609820,Boyne City,Michigan,26029,395,7,3735
 2610860,Bronson,Michigan,26023,284,6,2349
-2611400,Buchanan,Michigan,26021,408,3,4456
 2612320,Cadillac,Michigan,26165,172,7,10355
 2613420,Caro,Michigan,26157,583,6,4229
 2613860,Caspian,Michigan,26071,111,7,906
 2613880,Cass City,Michigan,26157,583,6,2428
 2614780,Charlevoix,Michigan,26029,395,7,2513
 2615000,Cheboygan,Michigan,26031,395,7,4867
-2615140,Chesaning,Michigan,26145,352,3,2394
 2615920,Clare,Michigan,26035,352,6,3118
 2616480,Clinton,Michigan,26091,513,4,2336
 2617020,Coldwater,Michigan,26023,284,6,10945
@@ -214,14 +185,11 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 2618300,Corunna,Michigan,26155,53,4,3497
 2618920,Croswell,Michigan,26151,232,6,2447
 2619140,Crystal Falls,Michigan,26071,111,7,1469
-2623380,Dundee,Michigan,26115,77,3,3957
 2623500,Durand,Michigan,26155,53,4,3446
 2624020,East Jordan,Michigan,26029,395,7,2351
 2624420,East Tawas,Michigan,26069,322,7,2808
 2626360,Escanaba,Michigan,26041,519,5,12616
-2626420,Essexville,Michigan,26017,352,3,3478
 2626640,Evart,Michigan,26133,172,9,1903
-2630200,Frankenmuth,Michigan,26145,352,3,4944
 2630260,Frankfort,Michigan,26019,104,9,1286
 2630700,Fremont,Michigan,26123,249,6,4081
 2631720,Gaylord,Michigan,26137,322,7,3645
@@ -233,7 +201,6 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 2636560,Harbor Springs,Michigan,26047,395,7,1194
 2636920,Hart,Michigan,26127,249,6,2126
 2638460,Hillsdale,Michigan,26059,513,6,8305
-2638920,Homer,Michigan,26025,284,3,1668
 2639360,Houghton,Michigan,26061,13,5,7708
 2639720,Hudson,Michigan,26091,513,4,2307
 2640860,Ionia,Michigan,26067,249,4,11394
@@ -242,7 +209,6 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 2641060,Ironwood,Michigan,26053,130,7,5387
 2641220,Ishpeming,Michigan,26103,519,5,6470
 2641340,Ithaca,Michigan,26057,352,6,2910
-2641420,Jackson,Michigan,26075,513,3,33534
 2641920,Jonesville,Michigan,26059,513,6,2258
 2642260,Kalkaska,Michigan,26079,104,7,2020
 2643300,Kingsford,Michigan,26043,111,7,5133
@@ -257,39 +223,26 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 2650880,Manton,Michigan,26165,172,7,1287
 2651820,Marlette,Michigan,26151,232,6,1875
 2651900,Marquette,Michigan,26103,519,5,21355
-2651940,Marshall,Michigan,26025,284,3,7088
 2653020,Menominee,Michigan,26109,111,7,8599
-2653780,Midland,Michigan,26111,352,3,41863
-2655020,Monroe,Michigan,26115,77,3,20733
-2655100,Montague,Michigan,26121,249,3,2361
 2655500,Morenci,Michigan,26091,513,4,2220
 2656020,Mount Pleasant,Michigan,26073,352,4,26016
 2656200,Munising,Michigan,26003,519,7,2355
-2656320,Muskegon,Michigan,26121,249,3,38401
-2656360,Muskegon Heights,Michigan,26121,249,3,10856
 2656860,Negaunee,Michigan,26103,519,5,4568
 2657080,Newaygo,Michigan,26123,249,6,1976
 2657140,Newberry,Michigan,26095,508,7,1519
-2657220,New Buffalo,Michigan,26021,408,3,1883
-2657760,Niles,Michigan,26021,408,3,11600
-2658640,North Muskegon,Michigan,26121,249,3,3786
 2659220,Norway,Michigan,26043,111,7,2845
 2660680,Onaway,Michigan,26141,322,7,880
 2660860,Ontonagon,Michigan,26131,130,9,1494
 2661620,Otsego,Michigan,26005,249,4,3956
 2661940,Owosso,Michigan,26155,53,4,15194
 2663820,Petoskey,Michigan,26047,395,7,5670
-2664160,Pinconning,Michigan,26017,352,3,1307
 2664740,Plainwell,Michigan,26005,249,4,3804
 2665860,Portland,Michigan,26067,249,4,3883
 2666640,Quincy,Michigan,26023,284,6,1652
 2667500,Reading,Michigan,26059,513,6,1078
 2667820,Reed City,Michigan,26133,172,9,2425
 2669260,Rogers City,Michigan,26141,322,7,2827
-2670520,Saginaw,Michigan,26145,352,3,51508
-2670640,St. Charles,Michigan,26145,352,3,2054
 2670840,St. Ignace,Michigan,26097,508,7,2452
-2670960,St. Joseph,Michigan,26021,408,3,8365
 2671000,St. Louis,Michigan,26057,352,6,7482
 2671540,Sandusky,Michigan,26151,232,6,2679
 2671740,Sault Ste. Marie,Michigan,26033,508,7,14144
@@ -300,34 +253,24 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 2676960,Sturgis,Michigan,26149,284,4,10994
 2678140,Tawas City,Michigan,26069,322,7,1827
 2679120,Tecumseh,Michigan,26091,513,4,8521
-2679720,Three Oaks,Michigan,26021,408,3,1622
 2679760,Three Rivers,Michigan,26149,284,4,7811
 2680340,Traverse City,Michigan,26055,104,5,14674
 2681360,Union City,Michigan,26023,284,6,1599
 2681840,Vassar,Michigan,26157,583,6,2697
 2682780,Wakefield,Michigan,26053,130,7,1851
-2684500,Watervliet,Michigan,26021,408,3,1735
 2684880,Wayland,Michigan,26005,249,4,4079
 2685580,West Branch,Michigan,26129,388,9,2139
-2686780,Whitehall,Michigan,26121,249,3,2706
 2686920,White Pigeon,Michigan,26149,284,4,1522
 3900198,Ada,Ohio,39065,536,6,5952
-3900464,Adena,Ohio,39081,213,3,759
 3902204,Antwerp,Ohio,39125,432,6,1736
 3902330,Arcanum,Ohio,39037,38,6,2129
 3902568,Ashland,Ohio,39005,391,4,20362
 3902638,Ashtabula,Ohio,39007,170,4,19124
 3902736,Athens,Ohio,39009,442,4,23832
-3903926,Barnesville,Ohio,39013,222,3,4193
-3905074,Bellaire,Ohio,39013,222,3,4278
 3905130,Bellefontaine,Ohio,39091,536,6,13370
 3905228,Bellevue,Ohio,39143,77,4,8202
-3905284,Bellville,Ohio,39139,391,3,1918
 3905424,Belpre,Ohio,39167,81,4,6441
-3906138,Bethesda,Ohio,39013,222,3,1256
 3906908,Blanchester,Ohio,39027,400,6,4243
-3907426,Bluffton,Ohio,39003,404,3,4125
-3908560,Bridgeport,Ohio,39013,222,3,1831
 3909792,Bryan,Ohio,39171,432,6,8545
 3910030,Bucyrus,Ohio,39033,391,4,12362
 3910716,Byesville,Ohio,39059,318,6,2438
@@ -348,7 +291,6 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 3919330,Crestline,Ohio,39033,391,4,4630
 3919344,Creston,Ohio,39169,148,4,2171
 3921308,Defiance,Ohio,39039,432,4,16494
-3921602,Delphos,Ohio,39003,404,3,7101
 3921714,Dennison,Ohio,39157,148,4,2655
 3921812,Deshler,Ohio,39069,432,6,1799
 3922456,Dover,Ohio,39157,148,4,12826
@@ -360,7 +302,6 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 3924486,Edgerton,Ohio,39171,432,6,2012
 3925144,Elmore,Ohio,39123,77,4,1410
 3927048,Findlay,Ohio,39063,536,4,41202
-3927552,Flushing,Ohio,39013,222,3,879
 3927636,Forest,Ohio,39065,536,6,1461
 3927902,Fort Recovery,Ohio,39107,404,7,1430
 3928014,Fostoria,Ohio,39147,536,4,13441
@@ -384,22 +325,18 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 3942560,Leetonia,Ohio,39029,296,4,1959
 3942602,Leipsic,Ohio,39137,404,6,2093
 3942938,Lewisburg,Ohio,39135,38,6,1820
-3943554,Lima,Ohio,39003,404,3,38771
 3944030,Lisbon,Ohio,39029,296,4,2821
 3945066,Loudonville,Ohio,39005,391,4,2641
 3945696,McArthur,Ohio,39163,327,8,1701
 3945808,McComb,Ohio,39063,536,4,1648
 3945822,McConnelsville,Ohio,39115,10,6,1784
 3947012,Manchester,Ohio,39001,89,6,2023
-3947138,Mansfield,Ohio,39139,391,3,47821
 3947502,Marblehead,Ohio,39123,77,4,903
 3947628,Marietta,Ohio,39167,81,4,14085
 3947754,Marion,Ohio,39101,391,4,36837
-3948104,Martins Ferry,Ohio,39013,222,3,6915
 3948706,Mechanicsburg,Ohio,39021,38,6,1644
 3949756,Middleport,Ohio,39105,442,6,2530
 3950372,Millersburg,Ohio,39075,148,7,3025
-3950904,Mingo Junction,Ohio,39081,213,3,3454
 3950918,Minster,Ohio,39011,404,4,2805
 3951618,Monroeville,Ohio,39077,417,4,1400
 3951772,Montpelier,Ohio,39171,432,6,4072
@@ -408,7 +345,6 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 3953886,Nelsonville,Ohio,39009,442,4,5392
 3954166,New Boston,Ohio,39145,327,4,2272
 3954194,New Bremen,Ohio,39011,404,4,2978
-3954334,New Carlisle,Ohio,39023,38,3,5785
 3954432,Newcomerstown,Ohio,39157,148,4,3822
 3954446,New Concord,Ohio,39119,10,4,2491
 3954908,New London,Ohio,39077,417,4,2461
@@ -421,37 +357,25 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 3961252,Paulding,Ohio,39125,432,6,3605
 3961322,Payne,Ohio,39125,432,6,1194
 3961420,Peebles,Ohio,39001,89,6,1782
-3963800,Plymouth,Ohio,39139,391,3,1857
 3964024,Pomeroy,Ohio,39105,442,6,1852
 3964150,Port Clinton,Ohio,39123,77,4,6056
 3964304,Portsmouth,Ohio,39145,327,4,20226
-3964542,Powhatan Point,Ohio,39013,222,3,1592
 3964780,Prospect,Ohio,39101,391,4,1112
 3967356,Rittman,Ohio,39169,148,4,6491
 3967874,Rockford,Ohio,39107,404,7,1120
 3969400,Sabina,Ohio,39027,400,6,2564
-3969526,St. Clairsville,Ohio,39013,222,3,5184
 3969680,St. Marys,Ohio,39011,404,4,8332
 3969708,St. Paris,Ohio,39021,38,6,2089
 3969834,Salem,Ohio,39029,296,4,12303
 3970100,Salineville,Ohio,39029,296,4,1311
 3970380,Sandusky,Ohio,39043,417,4,25793
 3970814,Scio,Ohio,39067,148,6,763
-3971640,Shadyside,Ohio,39013,222,3,3785
-3972102,Shelby,Ohio,39139,391,3,9317
 3972396,Shreve,Ohio,39169,148,4,1514
 3972424,Sidney,Ohio,39149,38,4,21229
-3972760,Smithfield,Ohio,39081,213,3,869
-3973124,South Charleston,Ohio,39023,38,3,1693
 3973894,South Zanesville,Ohio,39119,10,4,1989
-3974034,Spencerville,Ohio,39003,404,3,2223
-3974118,Springfield,Ohio,39023,38,3,60608
-3974608,Steubenville,Ohio,39081,213,3,18659
 3974958,Strasburg,Ohio,39157,148,4,2608
 3975140,Stryker,Ohio,39171,432,6,1335
 3976778,Tiffin,Ohio,39147,536,4,17963
-3976806,Tiltonsville,Ohio,39081,213,3,1372
-3977112,Toronto,Ohio,39081,213,3,5091
 3978176,Uhrichsville,Ohio,39157,148,4,5413
 3978624,Union City,Ohio,39037,38,6,1666
 3979044,Upper Sandusky,Ohio,39175,536,7,6596
@@ -471,33 +395,21 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 3986436,Woodsfield,Ohio,39111,222,8,2384
 3986492,Woodville,Ohio,39143,77,4,2135
 3986548,Wooster,Ohio,39169,148,4,26119
-3987178,Yorkville,Ohio,39081,213,3,1079
 3988084,Zanesville,Ohio,39119,10,4,25487
 5500275,Adams,Wisconsin,55001,223,8,1967
 5501225,Alma,Wisconsin,55011,204,8,781
-5501550,Altoona,Wisconsin,55035,204,3,6706
 5501725,Amery,Wisconsin,55095,567,6,2902
 5502250,Antigo,Wisconsin,55067,263,6,8234
-5502375,Appleton,Wisconsin,55087,233,3,72623
 5502500,Arcadia,Wisconsin,55121,204,6,2925
 5503225,Ashland,Wisconsin,55003,279,7,8216
-5503825,Augusta,Wisconsin,55035,204,3,1550
 5504625,Baraboo,Wisconsin,55111,223,4,12048
 5504875,Barron,Wisconsin,55005,517,6,3423
 5505900,Beaver Dam,Wisconsin,55027,70,4,16214
-5506500,Beloit,Wisconsin,55105,545,3,36966
 5506925,Berlin,Wisconsin,55047,233,6,5524
 5507900,Black River Falls,Wisconsin,55053,204,6,3622
-5508225,Bloomer,Wisconsin,55017,204,3,3539
 5508850,Boscobel,Wisconsin,55043,470,6,3231
-5509725,Brillion,Wisconsin,55015,233,3,3148
-5511200,Burlington,Wisconsin,55101,58,3,10464
-5512325,Campbellsport,Wisconsin,55039,233,3,2016
 5514325,Chetek,Wisconsin,55005,517,6,2221
-5514475,Chilton,Wisconsin,55015,233,3,3933
-5514575,Chippewa Falls,Wisconsin,55017,204,3,13661
 5515725,Clintonville,Wisconsin,55135,233,6,4559
-5517100,Cornell,Wisconsin,55017,204,3,1467
 5517425,Crandon,Wisconsin,55041,263,9,1920
 5517950,Cuba City,Wisconsin,55043,470,6,2086
 5518025,Cumberland,Wisconsin,55005,517,6,2170
@@ -505,13 +417,9 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 5519450,Delavan,Wisconsin,55127,58,4,8463
 5521225,Durand,Wisconsin,55091,204,8,1931
 5521625,Eagle River,Wisconsin,55125,263,9,1398
-5522300,Eau Claire,Wisconsin,55035,204,3,65883
-5522575,Edgerton,Wisconsin,55105,545,3,5461
 5523300,Elkhorn,Wisconsin,55127,58,4,10084
 5523800,Elroy,Wisconsin,55057,223,7,1442
-5524550,Evansville,Wisconsin,55105,545,3,5012
 5525600,Fennimore,Wisconsin,55043,470,6,2497
-5526275,Fond du Lac,Wisconsin,55039,233,3,43021
 5526675,Fort Atkinson,Wisconsin,55055,70,4,12368
 5527000,Fox Lake,Wisconsin,55027,70,4,1519
 5528200,Galesville,Wisconsin,55121,204,6,1481
@@ -520,19 +428,13 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 5535750,Horicon,Wisconsin,55027,70,4,3655
 5536525,Hurley,Wisconsin,55051,130,9,1547
 5536800,Independence,Wisconsin,55121,204,6,1336
-5537825,Janesville,Wisconsin,55105,545,3,63575
 5537900,Jefferson,Wisconsin,55055,70,4,7973
 5538675,Juneau,Wisconsin,55027,70,4,2814
-5538800,Kaukauna,Wisconsin,55087,233,3,15462
 5539525,Kiel,Wisconsin,55071,586,4,3738
-5539650,Kimberly,Wisconsin,55087,233,3,6468
-5540275,Kohler,Wisconsin,55117,586,3,2120
-5540775,La Crosse,Wisconsin,55063,186,3,51320
 5540850,Ladysmith,Wisconsin,55107,517,6,3414
 5541450,Lake Geneva,Wisconsin,55127,58,4,7651
 5541675,Lake Mills,Wisconsin,55055,70,4,5708
 5542250,Lancaster,Wisconsin,55043,470,6,3868
-5544950,Little Chute,Wisconsin,55087,233,3,10449
 5548500,Manitowoc,Wisconsin,55071,586,4,33736
 5549300,Marinette,Wisconsin,55075,111,6,10968
 5549400,Marion,Wisconsin,55135,233,6,1260
@@ -540,32 +442,22 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 5550025,Mauston,Wisconsin,55057,223,7,4423
 5550200,Mayville,Wisconsin,55027,70,4,5154
 5550425,Medford,Wisconsin,55119,366,6,4326
-5550825,Menasha,Wisconsin,55139,233,3,17353
 5551025,Menomonie,Wisconsin,55033,204,6,16264
 5551250,Merrill,Wisconsin,55069,366,6,9661
-5552200,Milton,Wisconsin,55105,545,3,5546
 5553600,Mondovi,Wisconsin,55011,204,8,2777
 5553875,Montello,Wisconsin,55077,223,8,1495
 5554075,Montreal,Wisconsin,55051,130,9,807
-5554500,Mosinee,Wisconsin,55073,366,3,3988
-5555750,Neenah,Wisconsin,55139,233,3,25501
 5555800,Neillsville,Wisconsin,55019,366,6,2463
 5555875,Nekoosa,Wisconsin,55141,366,4,2580
-5556800,New Holstein,Wisconsin,55015,233,3,3236
 5556900,New Lisbon,Wisconsin,55057,223,7,2554
 5556925,New London,Wisconsin,55135,233,6,7295
 5557325,Niagara,Wisconsin,55075,111,6,1624
-5558000,North Fond du Lac,Wisconsin,55039,233,3,5014
-5559875,Omro,Wisconsin,55139,233,3,3517
-5559925,Onalaska,Wisconsin,55063,186,3,17736
-5560500,Oshkosh,Wisconsin,55139,233,3,66083
 5560575,Osseo,Wisconsin,55121,204,6,1701
 5560825,Owen,Wisconsin,55019,366,6,940
 5561200,Park Falls,Wisconsin,55099,279,9,2462
 5562175,Peshtigo,Wisconsin,55075,111,6,3502
 5562450,Phillips,Wisconsin,55099,279,9,1478
 5563250,Platteville,Wisconsin,55043,470,6,11224
-5563700,Plymouth,Wisconsin,55117,586,3,8445
 5564175,Port Edwards,Wisconsin,55141,366,4,1818
 5565050,Prairie du Chien,Wisconsin,55023,470,7,5911
 5565100,Prairie du Sac,Wisconsin,55111,223,4,3972
@@ -577,20 +469,13 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 5567275,Rib Lake,Wisconsin,55119,366,6,910
 5567350,Rice Lake,Wisconsin,55005,517,6,8438
 5567625,Richland Center,Wisconsin,55103,470,6,5184
-5568175,Ripon,Wisconsin,55039,233,3,7733
 5570550,St. Croix Falls,Wisconsin,55095,567,6,2133
 5571650,Sauk City,Wisconsin,55111,223,4,3410
-5572150,Schofield,Wisconsin,55073,366,3,2169
-5572725,Seymour,Wisconsin,55087,233,3,3451
 5572925,Shawano,Wisconsin,55115,100,6,9305
-5572975,Sheboygan,Wisconsin,55117,586,3,49288
-5573025,Sheboygan Falls,Wisconsin,55117,586,3,7775
 5573825,Shullsburg,Wisconsin,55065,545,8,1226
 5575325,Sparta,Wisconsin,55081,186,6,9522
 5575625,Spooner,Wisconsin,55129,517,7,2682
-5576625,Stanley,Wisconsin,55017,204,3,3608
 5577200,Stevens Point,Wisconsin,55097,366,4,26717
-5577750,Stratford,Wisconsin,55073,366,3,1578
 5577875,Sturgeon Bay,Wisconsin,55029,100,6,9144
 5579625,Thorp,Wisconsin,55019,366,6,1621
 5580075,Tomah,Wisconsin,55081,186,6,9093
@@ -602,10 +487,8 @@ city_fips,name,st,cty_fips,cz,rucc,pop_2010
 5583975,Watertown,Wisconsin,55055,70,4,23861
 5584375,Waupaca,Wisconsin,55135,233,6,6069
 5584425,Waupun,Wisconsin,55027,70,4,11340
-5584475,Wausau,Wisconsin,55073,366,3,39106
 5584625,Wautoma,Wisconsin,55137,233,6,2218
 5585475,Westby,Wisconsin,55123,186,6,2200
-5586275,West Salem,Wisconsin,55063,186,3,4799
 5586400,Weyauwega,Wisconsin,55135,233,6,1900
 5586725,Whitehall,Wisconsin,55121,204,6,1558
 5586925,Whitewater,Wisconsin,55127,58,4,14390
