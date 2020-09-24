@@ -70,12 +70,16 @@ panel_nn <- panel_df %>%
   mutate(matched = round(1/matches.y,3),
          matches = matches.x) %>% 
   select(-matches.x,-matches.y,-treated_mfips) %>% 
-  rename(id = city_fips)
+  rename(id = city_fips) %>% 
+  arrange(town,cal_yr) %>% 
+  mutate(id = 1000+group_indices(., town, treated_match)) %>% arrange(id) %>% 
+  mutate(cz_yr = group_indices(.,cz,cal_yr)) 
+
+#foreign::write.dta(panel_nn,"data/stata/msp_nearest.dta")
 
 nrow(panel_nn %>% select(town) %>% distinct()) # 226 towns in the data
 nrow(panel_nn %>% filter(treated == 1) %>% select(town) %>% distinct()) # 43 treated towns (13 of which are RUCC = 3)
 
-#foreign::write.dta(panel_nn,"data/stata/msp_nearest.dta")
 
 # Panel - CZ stacks -------------------------------------------------------
 df %>% 
@@ -161,9 +165,21 @@ panel_stack <- stacked %>%
   left_join(.,weights_stack, by = "treated_match") %>% 
   mutate(matched = ifelse(treated == 0, round(1/x,3), NA),
          matches = ifelse(treated == 1, x, NA)) %>% 
-  select(-x)
+  select(-x) %>% 
+  arrange(town,cal_yr) %>% 
+  mutate(id = 1000+group_indices(., town, treated_match)) %>% arrange(id) %>% 
+  mutate(cz_yr = group_indices(.,cz,cal_yr)) 
+
+#foreign::write.dta(panel_stack,"data/stata/msp_stack.dta")
 
 nrow(panel_stack %>% select(town) %>% distinct()) # 288 towns in the data
 nrow(panel_stack %>% filter(treated == 1) %>% select(town) %>% distinct()) # 43 treated towns (13 of which are RUCC = 3)
 
-#foreign::write.dta(panel_stack,"data/stata/msp_stack.dta")
+# CZ-by-year FE -----------------------------------------------------------
+panel_nn_CZFE <- panel_nn %>% 
+  mutate(cz_yr = paste(cal_yr,cz,sep = "_")) 
+nrow(panel_nn_CZFE %>% select(cz_yr) %>% distinct())# there are 616 unique CZ-by-year combinations
+
+panel_stack_CZFE <- panel_stack %>% 
+  mutate(cz_yr = paste(cal_yr,cz,sep = "_")) 
+nrow(panel_stack_CZFE %>% select(cz_yr) %>% distinct())# there are 324 unique CZ-by-year combinations
