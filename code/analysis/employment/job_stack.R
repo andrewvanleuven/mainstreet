@@ -69,7 +69,8 @@ panel_nn <- panel_df %>%
   left_join(weights, by = "treated_mfips") %>% 
   mutate(matched = round(1/matches.y,3),
          matches = matches.x) %>% 
-  select(-matches.x,-matches.y,-treated_mfips) 
+  select(-matches.x,-matches.y,-treated_mfips) %>% 
+  rename(id = city_fips)
 
 nrow(panel_nn %>% select(town) %>% distinct()) # 226 towns in the data
 nrow(panel_nn %>% filter(treated == 1) %>% select(town) %>% distinct()) # 43 treated towns (13 of which are RUCC = 3)
@@ -90,3 +91,79 @@ stack_setup <- df %>% filter(cal_yr == 2000) %>%
   group_by(cz) %>% 
   mutate(id = row_number(),
          treateds = sum(msp))
+
+unstacked <- df %>% filter(msp == 1, cal_yr == 2000) %>% 
+  mutate(town = paste(name,st,sep = ", ")) %>% 
+  select(1,13,7,10) %>% 
+  group_by(cz) %>% 
+  mutate(msp1 = nth(town,1),
+         msp2 = nth(town,2),
+         msp3 = nth(town,3),
+         msp4 = nth(town,4),
+         msp5 = nth(town,5)) %>% 
+  summarise(num = n(),
+            name_stack1 = first(msp1),
+            name_stack2 = first(msp2),
+            name_stack3 = first(msp3),
+            name_stack4 = first(msp4),
+            name_stack5 = first(msp5)) %>% 
+  arrange(desc(num)) %>% 
+  right_join(.,stack_setup, by = "cz") %>% 
+  select(city_fips,town,cz,msp,name_stack1:name_stack5) %>% 
+  filter(msp != 1, !is.na(name_stack1)) %>% 
+  group_by(cz) %>% 
+  select(-msp)
+
+treated_stack <- stack_setup %>% 
+  filter(msp == 1) %>% 
+  select(1:3) %>% 
+  mutate(match_number = 0,
+         treated_match = town)
+
+treated_yrs <- df %>% filter(cal_yr == 2000) %>% 
+  mutate(town = paste(name,st,sep = ", ")) %>% 
+  select(town,msp_yr)
+
+stacked <- unstacked %>%
+  pivot_longer(cols = starts_with("name_stack"), names_to = "match_number",
+               values_to = "treated_match",values_drop_na = TRUE) %>% 
+  mutate(match_number = as.numeric(str_replace_all(match_number, "name_stack", ""))) %>%
+  rbind(.,treated_stack) %>% 
+  slice(rep(1:n(), each = 22)) %>% 
+  group_by(town,match_number) %>% 
+  mutate(cal_yr = row_number()+1996) %>% 
+  select(city_fips,cal_yr,town,everything(),-cz) %>% 
+  arrange(city_fips) %>% 
+  ungroup() %>% 
+  left_join(df, by = c("city_fips","cal_yr")) %>% 
+  select(-(name:cbsa_fips)) %>% 
+  left_join(treated_yrs, by = c("treated_match" = "town")) %>% 
+  rename(treated = msp,
+         treatment_year = msp_yr.y) %>% 
+  mutate(id = paste(city_fips,match_number,sep = "_")) %>% 
+  select(id,everything(),-msp_yr.x,-city_fips,-match_number) %>% 
+  mutate(post = ifelse(cal_yr >= treatment_year,1,0),
+         rel_yr = cal_yr - treatment_year) %>% 
+  filter(rel_yr >= -3 & rel_yr <= 5,
+         treatment_year >= 2000 & treatment_year <= 2013) %>% 
+  mutate(rel_yr = str_replace_all(rel_yr, "-", "m")) %>% 
+  dummy_cols(select_columns = c("rel_yr")) %>% 
+  mutate(rel_yr = str_replace_all(rel_yr, "m", "-")) %>% 
+  select(id,town,cz,rucc,pop_2010,cal_yr,jobs,treated,treatment_year,treated_match,post,rel_yr,rel_yr_m3,rel_yr_m2,rel_yr_m1,rel_yr_0:rel_yr_5)
+
+weights_stack <- stacked %>% 
+  filter(rel_yr == 0) %>% 
+  group_by(treated_match) %>% 
+  summarise(x = n()) %>% 
+  ungroup()
+  
+panel_stack <- stacked %>% 
+  left_join(.,weights_stack, by = "treated_match") %>% 
+  mutate(matched = ifelse(treated == 0, round(1/x,3), NA),
+         matches = ifelse(treated == 1, x, NA)) %>% 
+  select(-x)
+
+nrow(panel_stack %>% select(town) %>% distinct()) # 288 towns in the data
+nrow(panel_stack %>% filter(treated == 1) %>% select(town) %>% distinct()) # 43 treated towns (13 of which are RUCC = 3)
+
+#foreign::write.dta(panel_stack,"data/stata/msp_stack.dta")
