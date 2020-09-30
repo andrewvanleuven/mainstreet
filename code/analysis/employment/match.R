@@ -17,26 +17,14 @@ df <- read_csv("data/csv/employment/jobs_panel.csv") %>%
          st = str_replace_all(st, "Ohio", "OH"),
          st = str_replace_all(st, "Wisconsin", "WI"),) %>% 
   rename(cal_yr = year,
-         jobs = buffer_0)
-
-# Panel - no matches ------------------------------------------------------
-panel_df_treated <- df %>% 
-  mutate(post = ifelse(cal_yr >= msp_yr,1,0),
-         rel_yr = ifelse(msp == 1,cal_yr - msp_yr,0)) %>% 
-  filter(msp == 1) %>% 
-  filter(rel_yr >= -3 & rel_yr <= 5,
-         msp_yr >= 2000 & msp_yr <= 2013) %>% 
-  select(1:4,7,10:14) %>% 
-  mutate(rel_yr = str_replace_all(rel_yr, "-", "m")) %>% 
-  dummy_cols(select_columns = c("rel_yr")) %>% 
-  select(1:10,19,18,17,11:16) %>% 
-  mutate(rel_yr = str_replace_all(rel_yr, "m", "-"))
-
+         jobs = buffer_0) %>% 
+  group_by(city_fips) %>%
+  mutate(jobs_lead = lead(jobs, n = 1, default = NA))
 
 # Panel - nearest neighbor ------------------------------------------------
 panel_df <- read_csv("data/csv/universe/msp_nn_matches.csv") %>% 
   left_join(df,.,by = c("city_fips" = "match_city_fips")) %>% 
-  select(-(15:17)) %>%
+  select(-(16:18)) %>%
   rename(name = name.x,
          st = st.x,
          treated_match = name.y,
@@ -49,14 +37,15 @@ panel_df <- read_csv("data/csv/universe/msp_nn_matches.csv") %>%
   mutate(post = ifelse(cal_yr >= treatment_year,1,0),
          rel_yr = cal_yr - treatment_year) %>% 
   filter(rel_yr >= -3 & rel_yr <= 5,
-         treatment_year >= 2000 & treatment_year <= 2013) %>% 
+         treatment_year >= 2000 & treatment_year <= 2012) %>% 
   mutate(rel_yr = str_replace_all(rel_yr, "-", "m")) %>% 
   dummy_cols(select_columns = c("rel_yr")) %>% 
   mutate(rel_yr = str_replace_all(rel_yr, "m", "-")) %>% 
   rename(treated = msp,
          match_distance = distance) %>% 
   mutate(town = paste(name,st,sep = ", ")) %>% 
-  select(city_fips,town,cz,rucc,pop_2010,cal_yr,jobs,treated,treatment_year,treated_mfips,treated_match,match_distance,post,rel_yr,rel_yr_m3,rel_yr_m2,rel_yr_m1,rel_yr_0:rel_yr_5)
+  select(city_fips,town,cz,rucc,pop_2010,cal_yr,jobs,jobs_lead,treated,treatment_year,treated_mfips,treated_match,match_distance,
+         post,rel_yr,rel_yr_m3,rel_yr_m2,rel_yr_m1,rel_yr_0:rel_yr_5)
 
 weights <- panel_df %>% 
   filter(treated == 0,
@@ -67,19 +56,24 @@ weights <- panel_df %>%
 panel_nn <- panel_df %>% 
   left_join(weights, by = c("city_fips" = "treated_mfips")) %>% 
   left_join(weights, by = "treated_mfips") %>% 
-  mutate(matched = round(1/matches.y,3),
+  mutate(matched = 1/matches.y,
          matches = matches.x) %>% 
   select(-matches.x,-matches.y,-treated_mfips) %>% 
   rename(id = city_fips) %>% 
   arrange(town,cal_yr) %>% 
   mutate(id = 1000+group_indices(., town, treated_match)) %>% arrange(id) %>% 
-  mutate(cz_yr = group_indices(.,cz,cal_yr)) 
+  mutate(cz_yr = group_indices(.,cz,cal_yr),
+         weights = ifelse(is.na(matched),1,matched),
+         weights = ifelse(is.na(weights),1,weights),
+         weights = round(weights, 3)) %>% 
+  select(-matched,-matches) %>% 
+  write_csv("data/csv/employment/panel_nn.csv")
 
-#foreign::write.dta(panel_nn,"data/stata/msp_nearest.dta")
+foreign::write.dta(panel_nn,"data/stata/msp_nearest.dta")
 
 nrow(panel_nn %>% select(town) %>% distinct()) # 226 towns in the data
 nrow(panel_nn %>% filter(treated == 1) %>% select(town) %>% distinct()) # 43 treated towns (13 of which are RUCC = 3)
-
+rm(panel_df,weights)
 
 # Panel - CZ stacks -------------------------------------------------------
 df %>% 
@@ -91,14 +85,14 @@ df %>%
 
 stack_setup <- df %>% filter(cal_yr == 2000) %>% 
   mutate(town = paste(name,st,sep = ", ")) %>% 
-  select(1,13,7,10) %>% 
+  select(1,14,7,10) %>% 
   group_by(cz) %>% 
   mutate(id = row_number(),
          treateds = sum(msp))
 
 unstacked <- df %>% filter(msp == 1, cal_yr == 2000) %>% 
   mutate(town = paste(name,st,sep = ", ")) %>% 
-  select(1,13,7,10) %>% 
+  select(1,14,7,10) %>% 
   group_by(cz) %>% 
   mutate(msp1 = nth(town,1),
          msp2 = nth(town,2),
@@ -126,6 +120,7 @@ treated_stack <- stack_setup %>%
 
 treated_yrs <- df %>% filter(cal_yr == 2000) %>% 
   mutate(town = paste(name,st,sep = ", ")) %>% 
+  ungroup() %>% 
   select(town,msp_yr)
 
 stacked <- unstacked %>%
@@ -149,37 +144,75 @@ stacked <- unstacked %>%
   mutate(post = ifelse(cal_yr >= treatment_year,1,0),
          rel_yr = cal_yr - treatment_year) %>% 
   filter(rel_yr >= -3 & rel_yr <= 5,
-         treatment_year >= 2000 & treatment_year <= 2013) %>% 
+         treatment_year >= 2000 & treatment_year <= 2012) %>% 
   mutate(rel_yr = str_replace_all(rel_yr, "-", "m")) %>% 
   dummy_cols(select_columns = c("rel_yr")) %>% 
   mutate(rel_yr = str_replace_all(rel_yr, "m", "-")) %>% 
-  select(id,town,cz,rucc,pop_2010,cal_yr,jobs,treated,treatment_year,treated_match,post,rel_yr,rel_yr_m3,rel_yr_m2,rel_yr_m1,rel_yr_0:rel_yr_5)
+  select(id,town,cz,rucc,pop_2010,cal_yr,jobs,jobs_lead,treated,treatment_year,treated_match,post,rel_yr,rel_yr_m3,rel_yr_m2,rel_yr_m1,rel_yr_0:rel_yr_5)
 
 weights_stack <- stacked %>% 
   filter(rel_yr == 0) %>% 
   group_by(treated_match) %>% 
   summarise(x = n()) %>% 
   ungroup()
-  
+
+matches <- read_csv("data/csv/universe/all_nn_matches.csv") %>% 
+  mutate(st = str_replace_all(st, "Iowa", "IA"),
+         st = str_replace_all(st, "Michigan", "MI"),
+         st = str_replace_all(st, "Ohio", "OH"),
+         st = str_replace_all(st, "Wisconsin", "WI"),) %>% 
+  mutate(match_st = str_replace_all(match_st, "Iowa", "IA"),
+         match_st = str_replace_all(match_st, "Michigan", "MI"),
+         match_st = str_replace_all(match_st, "Ohio", "OH"),
+         match_st = str_replace_all(match_st, "Wisconsin", "WI"),) %>% 
+  mutate(treated_match = paste(name,st,sep = ", "),
+         town = paste(match_name,match_st,sep = ", ")) %>% 
+  select(town,treated_match,distance)
+
 panel_stack <- stacked %>% 
   left_join(.,weights_stack, by = "treated_match") %>% 
-  mutate(matched = ifelse(treated == 0, round(1/x,3), NA),
-         matches = ifelse(treated == 1, x, NA)) %>% 
-  select(-x) %>% 
+  mutate(matched = ifelse(treated == 0, 1/x, NA),
+         matches = ifelse(treated == 1, x, NA),
+         weights = ifelse(is.na(matched),1,matched),
+         weights = round(weights, 3)) %>% 
+  select(-x,-matched,-matches) %>% 
   arrange(town,cal_yr) %>% 
   mutate(id = 1000+group_indices(., town, treated_match)) %>% arrange(id) %>% 
-  mutate(cz_yr = group_indices(.,cz,cal_yr)) 
+  mutate(cz_yr = group_indices(.,cz,cal_yr)) %>% 
+  left_join(matches, by = c("town","treated_match")) %>% 
+  mutate(distance = ifelse(weights>=1,0,distance)) %>% 
+  write_csv("data/csv/employment/panel_stack.csv")
 
-#foreign::write.dta(panel_stack,"data/stata/msp_stack.dta")
+foreign::write.dta(panel_stack,"data/stata/msp_stack.dta")
 
-nrow(panel_stack %>% select(town) %>% distinct()) # 288 towns in the data
-nrow(panel_stack %>% filter(treated == 1) %>% select(town) %>% distinct()) # 43 treated towns (13 of which are RUCC = 3)
+rm(treated_stack,treated_yrs,stack_setup,matches,unstacked,stacked,weights_stack)
+nrow(panel_stack %>% select(town) %>% distinct()) # 280 towns in the data
+nrow(panel_stack %>% filter(treated == 1) %>% select(town) %>% distinct()) # 41 treated towns (13 of which are RUCC = 3)
 
-# CZ-by-year FE -----------------------------------------------------------
-panel_nn_CZFE <- panel_nn %>% 
-  mutate(cz_yr = paste(cal_yr,cz,sep = "_")) 
-nrow(panel_nn_CZFE %>% select(cz_yr) %>% distinct())# there are 616 unique CZ-by-year combinations
 
-panel_stack_CZFE <- panel_stack %>% 
-  mutate(cz_yr = paste(cal_yr,cz,sep = "_")) 
-nrow(panel_stack_CZFE %>% select(cz_yr) %>% distinct())# there are 324 unique CZ-by-year combinations
+# Establishments Panels ---------------------------------------------------
+ef <- read_csv("data/csv/employment/ests_panel.csv") %>% 
+  select(-(msp_accr:cty_seat),-(buffer_1:buffer_5)) %>% 
+  mutate(st = str_replace_all(st, "Iowa", "IA"),
+         st = str_replace_all(st, "Michigan", "MI"),
+         st = str_replace_all(st, "Ohio", "OH"),
+         st = str_replace_all(st, "Wisconsin", "WI"),) %>% 
+  rename(cal_yr = year,
+         ests = buffer_0) %>% 
+  group_by(city_fips) %>%
+  mutate(ests_lead = lead(ests, n = 1, default = NA),
+         town = paste(name,st,sep = ", ")) %>% 
+  ungroup() %>% 
+  select(town,cal_yr,ests,ests_lead)
+
+epanel_nn <- panel_nn %>% 
+  left_join(ef, by = c('town','cal_yr')) %>% 
+  relocate(ests, .after = jobs) %>% 
+  relocate(ests_lead, .after = jobs_lead) %>% 
+  write_csv("data/csv/employment/epanel_nn.csv")
+
+epanel_stack <- panel_stack %>% 
+  left_join(ef, by = c('town','cal_yr')) %>% 
+  relocate(ests, .after = jobs) %>% 
+  relocate(ests_lead, .after = jobs_lead) %>% 
+  write_csv("data/csv/employment/epanel_stack.csv")

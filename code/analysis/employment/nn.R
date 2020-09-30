@@ -37,6 +37,7 @@ control <- downtown_sf %>% filter(msp == 0) %>% st_centroid() %>% select(city_fi
 
 # Find matches ------------------------------------------------------------
 matches_mtx <- st_nn(treatment, control, k = 10, maxdist = 120000, returnDist = T)  # 75 miles
+big_matches_mtx <- st_nn(treatment, control, k = 100, maxdist = 500000, returnDist = T)  # 75 miles
 matches <- st_join(treatment, control, st_nn, k = 10, maxdist = 120000) %>%
   mutate(distance = round((unlist(matches_mtx[["dist"]]))/1609.34,1)) %>% 
   st_drop_geometry() %>% 
@@ -46,6 +47,17 @@ matches <- st_join(treatment, control, st_nn, k = 10, maxdist = 120000) %>%
          match_city_fips = city_fips.y,
          match_name = name.y,
          match_st = st.y) 
+
+big_matches <- st_join(treatment, control, st_nn, k = 100, maxdist = 500000) %>%
+  mutate(distance = round((unlist(big_matches_mtx[["dist"]]))/1609.34,1)) %>% 
+  st_drop_geometry() %>% 
+  rename(city_fips = city_fips.x,
+         name = name.x,
+         st = st.x,
+         match_city_fips = city_fips.y,
+         match_name = name.y,
+         match_st = st.y) %>% 
+  write_csv("data/csv/universe/all_nn_matches.csv")
 
 list_of_matches <- matches %>% 
   filter(distance >= 5) %>% 
