@@ -141,44 +141,26 @@ df2 <- read_csv("data/csv/iowa_dor/iowa_cities.csv") %>%
          fy1981 = as.numeric(sub(",", "", fy1981, fixed = TRUE)))
 
 # Population weights 1980-2014 --------------------------------------------
-populations <- df %>% select(1,2,14:48) %>% #can make this code MUCH tighter with pivot_longer
-  inner_join(df2 %>% select(1,2,14:48), by = c("city_fips", "name")) %>% 
-  mutate(pop_1980 = round(fy_1980/fy1980,0),
-         pop_1981 = round(fy_1981/fy1981,0),
-         pop_1982 = round(fy_1982/fy1982,0),
-         pop_1983 = round(fy_1983/fy1983,0),
-         pop_1984 = round(fy_1984/fy1984,0),
-         pop_1985 = round(fy_1985/fy1985,0),
-         pop_1986 = round(fy_1986/fy1986,0),
-         pop_1987 = round(fy_1987/fy1987,0),
-         pop_1988 = round(fy_1988/fy1988,0),
-         pop_1989 = round(fy_1989/fy1989,0),
-         pop_1990 = round(fy_1990/fy1990,0),
-         pop_1991 = round(fy_1991/fy1991,0),
-         pop_1992 = round(fy_1992/fy1992,0),
-         pop_1993 = round(fy_1993/fy1993,0),
-         pop_1994 = round(fy_1994/fy1994,0),
-         pop_1995 = round(fy_1995/fy1995,0),
-         pop_1996 = round(fy_1996/fy1996,0),
-         pop_1997 = round(fy_1997/fy1997,0),
-         pop_1998 = round(fy_1998/fy1998,0),
-         pop_1999 = round(fy_1999/fy1999,0),
-         pop_2000 = round(fy_2000/fy2000,0),
-         pop_2001 = round(fy_2001/fy2001,0),
-         pop_2002 = round(fy_2002/fy2002,0),
-         pop_2003 = round(fy_2003/fy2003,0),
-         pop_2004 = round(fy_2004/fy2004,0),
-         pop_2005 = round(fy_2005/fy2005,0),
-         pop_2006 = round(fy_2006/fy2006,0),
-         pop_2007 = round(fy_2007/fy2007,0),
-         pop_2008 = round(fy_2008/fy2008,0),
-         pop_2009 = round(fy_2009/fy2009,0),
-         pop_2010 = round(fy_2010/fy2010,0),
-         pop_2011 = round(fy_2011/fy2011,0),
-         pop_2012 = round(fy_2012/fy2012,0),
-         pop_2013 = round(fy_2013/fy2013,0),
-         pop_2014 = round(fy_2014/fy2014,0)) %>% 
-  select(1:2,pop_1980:pop_2014)
+cpi <- fredr::fredr(series_id = "CPIAUCSL", # maybe try CPIHOSSL --- Consumer Price Index for All Urban Consumers: Housing in U.S. City Average
+                    observation_start = as.Date("1980-01-01"),
+                    observation_end = as.Date("2020-01-31")) %>% 
+  mutate(now = last(value),
+         inflator = now/value) %>% 
+  rename(yr = date) %>% select(yr,inflator)
+
+populations <- df %>% select(1,14:48) %>% pivot_longer(!city_fips,names_to = "year", values_to = "nominal") %>% 
+  mutate(year = as.numeric(str_replace_all(year, "fy_", ""))) %>% 
+  inner_join(df2 %>% select(1,14:48) %>% 
+               pivot_longer(!city_fips,names_to = "year", values_to = "real_pk") %>% 
+               mutate(year = as.numeric(str_replace_all(year, "fy", ""))),
+             by = c("city_fips", "year")) %>% 
+  mutate(yr = ymd(year, truncated = 2L)) %>% 
+  left_join(cpi, by = "yr") %>% 
+  mutate(real = nominal*inflator,
+         population = round(real/real_pk,0)) %>% 
+  select(city_fips,year,population) %>% 
+  pivot_wider(names_from = "year", values_from = "population", names_prefix = "pop_")
+  
 
 pop_1980to2019 <- rio::import("https://www2.census.gov/programs-surveys/popest/datasets/2010-2019/cities/totals/sub-est2019_19.csv") %>% 
   clean_names() %>% 
@@ -196,20 +178,14 @@ pop_1980to2019 <- rio::import("https://www2.census.gov/programs-surveys/popest/d
 
 # Real Per-Capita Taxable Sales -------------------------------------------
 
-cpi <- fredr::fredr(series_id = "CPIAUCSL", # maybe try CPIHOSSL --- Consumer Price Index for All Urban Consumers: Housing in U.S. City Average
-             observation_start = as.Date("1980-01-01"),
-             observation_end = as.Date("2020-01-31")) %>% 
-  mutate(now = last(value),
-         inflator = now/value) %>% 
-  rename(yr = date) %>% select(yr,inflator)
-
 sales_pk <- nominal_taxable_sales %>% select(-(3:13)) %>% 
   pivot_longer(!city_fips:name,names_to = "year", values_to = "nominal_sales") %>% 
-  mutate(year = as.numeric(str_replace_all(year, "fy_", ""))) %>% 
-  mutate(yr = (as.Date(as.character(year), format = "%Y"))) %>% 
+  mutate(year = as.numeric(str_replace_all(year, "fy_", "")),
+         yr = ymd(year, truncated = 2L),
+         nominal_sales = round(nominal_sales,0)) %>% 
   inner_join(pop_1980to2019, by = c("city_fips", "year")) %>% 
   left_join(cpi, by = "yr") %>% select(-yr) %>% 
-  mutate(real_sales = nominal_sales*inflator,
+  mutate(real_sales = round(nominal_sales*inflator,0),
          real_pk_sales = round(real_sales/population,2)) %>% 
-  select(-inflator) %>% 
+  select(-inflator,-population) %>% 
   write_csv("data/csv/iowa_dor/real_taxable_sales_pk.csv")
