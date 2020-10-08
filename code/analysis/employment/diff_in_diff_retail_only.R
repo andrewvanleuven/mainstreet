@@ -1,50 +1,42 @@
 suppressMessages({library(tidyverse)
-library(rleuven)
-library(plm)
-library(scales)
-library(broom)
-library(fastDummies)})
+  library(rleuven)
+  library(plm)
+  library(scales)
+  library(broom)
+  library(fastDummies)})
 
 # Import/Clean Data -------------------------------------------------------
-#jobs per capita
-dfn <- read_csv("data/csv/employment/epanel_nn.csv") %>% 
+#retail jobs per capita
+dfn <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% 
   mutate(outcome_var = (jobs/(pop_2010/100)))
 
-dfs <- read_csv("data/csv/employment/epanel_stack.csv") %>% 
+dfs <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% 
   filter(distance > 5 | distance == 0) %>% 
   mutate(outcome_var = (jobs/(pop_2010/100)))
 
-#establishments per capita
-dfen <- read_csv("data/csv/employment/epanel_nn.csv") %>% 
+#retail establishments per capita
+dfen <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% 
   mutate(outcome_var = (ests/(pop_2010/100)))
 
-dfes <- read_csv("data/csv/employment/epanel_stack.csv") %>% 
+dfes <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% 
   filter(distance > 5 | distance == 0) %>% 
   mutate(outcome_var = (ests/(pop_2010/100)))
 
-#jobs pk lead
-ldfn <- read_csv("data/csv/employment/epanel_nn.csv") %>% 
+#retail jobs pk lead
+ldfn <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% 
   mutate(outcome_var = (jobs_lead/(pop_2010/100)))
 
-ldfs <- read_csv("data/csv/employment/epanel_stack.csv") %>% 
+ldfs <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% 
   filter(distance > 5 | distance == 0) %>% 
   mutate(outcome_var = (jobs_lead/(pop_2010/100)))
 
-#ests pk lead
-ldfen <- read_csv("data/csv/employment/epanel_nn.csv") %>% 
+#retail ests pk lead
+ldfen <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% 
   mutate(outcome_var = (ests_lead/(pop_2010/100)))
 
-ldfes <- read_csv("data/csv/employment/epanel_stack.csv") %>% 
+ldfes <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% 
   filter(distance > 5 | distance == 0) %>% 
   mutate(outcome_var = (ests_lead/(pop_2010/100)))
-
-#iowa retail sales
-idfn <- read_csv("data/csv/employment/i_panel_nn.csv") %>% 
-  mutate(outcome_var = sales)
-
-idfs <- read_csv("data/csv/employment/i_panel_stack.csv") %>% 
-  filter(match_distance > 5 | match_distance == 0) %>% 
-  mutate(outcome_var = sales)
 
 #### KEY ####
 ## rs = regression using stacked panel
@@ -58,37 +50,37 @@ data_source_nn <- dfn
 data_source_stack <- dfs
 
 rspa <- plm(outcome_var ~ treated*post + factor(cz)*factor(cal_yr),
-                data = data_source_stack, 
-                index = c("id","rel_yr"),
-                method = "within",
-                effect = "twoways")
+            data = data_source_stack, 
+            index = c("id","rel_yr"),
+            method = "within",
+            effect = "twoways")
 rnpa <- plm(outcome_var ~ treated*post + factor(cz)*factor(cal_yr),
-                data = data_source_nn, 
-                index = c("id","rel_yr"),
-                method = "within",
-                effect = "twoways")
+            data = data_source_nn, 
+            index = c("id","rel_yr"),
+            method = "within",
+            effect = "twoways")
 rsya <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr_0 + 
-                  treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
-                  treated*rel_yr_5 + factor(cz)*factor(cal_yr),
-                data = data_source_stack, 
-                index = c("id","rel_yr"),
-                method = "within",
-                effect = "twoways")
+              treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
+              treated*rel_yr_5 + factor(cz)*factor(cal_yr),
+            data = data_source_stack, 
+            index = c("id","rel_yr"),
+            method = "within",
+            effect = "twoways")
 rnya <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr_0 + 
-                  treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
-                  treated*rel_yr_5 + factor(cz)*factor(cal_yr),
-                data = data_source_nn, 
-                index = c("id","rel_yr"),
-                method = "within",
-                effect = "twoways")
+              treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
+              treated*rel_yr_5 + factor(cz)*factor(cal_yr),
+            data = data_source_nn, 
+            index = c("id","rel_yr"),
+            method = "within",
+            effect = "twoways")
 
 stargazer::stargazer(rnpa,rnya,rspa,rsya,
                      digits = 2,
                      type="text",
-                     out = "results/employment/jobs.html",
+                     out = "results/employment/retail_only/jobs.html",
                      covariate.labels = c("Treated * Post", "Treated * Rel. Year -3", "Treated * Rel. Year -1",
-                                        "Treated * Rel. Year 0", "Treated * Rel. Year 1", "Treated * Rel. Year 2",
-                                        "Treated * Rel. Year 3", "Treated * Rel. Year 4", "Treated * Rel. Year 5"),
+                                          "Treated * Rel. Year 0", "Treated * Rel. Year 1", "Treated * Rel. Year 2",
+                                          "Treated * Rel. Year 3", "Treated * Rel. Year 4", "Treated * Rel. Year 5"),
                      dep.var.caption = "Dependent Variable: Downtown Jobs Per-Capita",
                      dep.var.labels = "",
                      column.labels   = c("Nearest Neighbor", "CZ Stacks"),
@@ -96,51 +88,6 @@ stargazer::stargazer(rnpa,rnya,rspa,rsya,
                      omit = c("cz","cal_yr"),
                      omit.stat = c("ser", "f","adj.rsq"))
 beepr::beep()
-
-# Iowa taxable sales regressions ------------------------------------------
-data_source_nn <- idfn
-data_source_stack <- idfs
-
-rspa <- plm(outcome_var ~ treated*post + factor(cz)*factor(cal_yr),
-            data = data_source_stack, 
-            index = c("id","rel_yr"),
-            method = "within",
-            effect = "twoways")
-rnpa <- plm(outcome_var ~ treated*post + factor(cz)*factor(cal_yr),
-            data = data_source_nn, 
-            index = c("id","rel_yr"),
-            method = "within",
-            effect = "twoways")
-rsya <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr_0 + 
-              treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
-              treated*rel_yr_5 + factor(cz)*factor(cal_yr),
-            data = data_source_stack, 
-            index = c("id","rel_yr"),
-            method = "within",
-            effect = "twoways")
-rnya <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr_0 + 
-              treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
-              treated*rel_yr_5 + factor(cz)*factor(cal_yr),
-            data = data_source_nn, 
-            index = c("id","rel_yr"),
-            method = "within",
-            effect = "twoways")
-
-stargazer::stargazer(rnpa,rnya,rspa,rsya,
-                     digits = 2,
-                     type="text",
-                     out = "results/employment/ia_taxablesales.html",
-                     covariate.labels = c("Treated * Post", "Treated * Rel. Year -3", "Treated * Rel. Year -1",
-                                          "Treated * Rel. Year 0", "Treated * Rel. Year 1", "Treated * Rel. Year 2",
-                                          "Treated * Rel. Year 3", "Treated * Rel. Year 4", "Treated * Rel. Year 5"),
-                     dep.var.caption = "Dependent Variable: Real Taxable Sales Per-Capita",
-                     dep.var.labels = "",
-                     column.labels   = c("Nearest Neighbor", "CZ Stacks"),
-                     column.separate = c(2,2),
-                     omit = c("cz","cal_yr"),
-                     omit.stat = c("ser", "f","adj.rsq"))
-beepr::beep()
-
 
 # Establishments regressions - All States ---------------------------------
 
@@ -175,7 +122,7 @@ rnya <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr
 stargazer::stargazer(rnpa,rnya,rspa,rsya,
                      digits = 2,
                      type="text",
-                     out = "results/employment/ests.html",
+                     out = "results/employment/retail_only/ests.html",
                      covariate.labels = c("Treated * Post", "Treated * Rel. Year -3", "Treated * Rel. Year -1",
                                           "Treated * Rel. Year 0", "Treated * Rel. Year 1", "Treated * Rel. Year 2",
                                           "Treated * Rel. Year 3", "Treated * Rel. Year 4", "Treated * Rel. Year 5"),
@@ -221,7 +168,7 @@ rnya <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr
 stargazer::stargazer(rnpa,rnya,rspa,rsya,
                      digits = 2,
                      type="text",
-                     out = "results/employment/jobs_lead.html",
+                     out = "results/employment/retail_only/jobs_lead.html",
                      covariate.labels = c("Treated * Post", "Treated * Rel. Year -3", "Treated * Rel. Year -1",
                                           "Treated * Rel. Year 0", "Treated * Rel. Year 1", "Treated * Rel. Year 2",
                                           "Treated * Rel. Year 3", "Treated * Rel. Year 4", "Treated * Rel. Year 5"),
@@ -267,7 +214,7 @@ rnya <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr
 stargazer::stargazer(rnpa,rnya,rspa,rsya,
                      digits = 2,
                      type="text",
-                     out = "results/employment/ests_lead.html",
+                     out = "results/employment/retail_only/ests_lead.html",
                      covariate.labels = c("Treated * Post", "Treated * Rel. Year -3", "Treated * Rel. Year -1",
                                           "Treated * Rel. Year 0", "Treated * Rel. Year 1", "Treated * Rel. Year 2",
                                           "Treated * Rel. Year 3", "Treated * Rel. Year 4", "Treated * Rel. Year 5"),
@@ -279,50 +226,6 @@ stargazer::stargazer(rnpa,rnya,rspa,rsya,
                      omit.stat = c("ser", "f","adj.rsq"))
 beepr::beep()
 
-
-# Wisconsin Land Value regressions ----------------------------------------
-#data_source_nn <- wdfn
-#data_source_stack <- wdfs
-#
-#rspa <- plm(outcome_var ~ treated*post + factor(cz)*factor(cal_yr),
-#            data = data_source_stack, 
-#            index = c("id","rel_yr"),
-#            method = "within",
-#            effect = "twoways")
-#rnpa <- plm(outcome_var ~ treated*post + factor(cz)*factor(cal_yr),
-#            data = data_source_nn, 
-#            index = c("id","rel_yr"),
-#            method = "within",
-#            effect = "twoways")
-#rsya <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr_0 + 
-#              treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
-#              treated*rel_yr_5 + factor(cz)*factor(cal_yr),
-#            data = data_source_stack, 
-#            index = c("id","rel_yr"),
-#            method = "within",
-#            effect = "twoways")
-#rnya <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr_0 + 
-#              treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
-#              treated*rel_yr_5 + factor(cz)*factor(cal_yr),
-#            data = data_source_nn, 
-#            index = c("id","rel_yr"),
-#            method = "within",
-#            effect = "twoways")
-#stargazer::stargazer(rspa,rsya,rnpa,rnya,
-#                     digits = 2,
-#                     type="text",
-#                     out = "results/employment/wi_landvals.html",
-#                     covariate.labels = c("Treated * Post", "Treated * Rel. Year -3", "Treated * Rel. Year -1",
-#                                          "Treated * Rel. Year 0", "Treated * Rel. Year 1", "Treated * Rel. Year 2",
-#                                          "Treated * Rel. Year 3", "Treated * Rel. Year 4", "Treated * Rel. Year 5"),
-#                     dep.var.caption = "Dependent Variable: Land Value Per Acre",
-#                     dep.var.labels = "",
-#                     column.labels   = c("Nearest Neighbor", "CZ Stacks"),
-#                     column.separate = c(2,2),
-#                     omit = c("cz","cal_yr"),
-#                     omit.stat = c("ser", "f","adj.rsq"))
-#beepr::beep()
-# NO EFFECTS AT ALL
 
 # Job Regressions - by state ------------------------------------------------------
 data_source_nn <- dfn
@@ -379,22 +282,22 @@ rnyo <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr
             effect = "twoways")
 
 rspm <- plm(outcome_var ~ treated*post + factor(cz)*factor(cal_yr),
-           data = data_source_stack %>% filter(str_detect(town, ', MI')),
-           index = c("id","rel_yr"),
-           method = "within",
-           effect = "twoways")
+            data = data_source_stack %>% filter(str_detect(town, ', MI')),
+            index = c("id","rel_yr"),
+            method = "within",
+            effect = "twoways")
 rnpm <- plm(outcome_var ~ treated*post + factor(cz)*factor(cal_yr),
-           data = data_source_nn %>% filter(str_detect(town, ', MI')), 
-           index = c("id","rel_yr"),
-           method = "within",
-           effect = "twoways")
+            data = data_source_nn %>% filter(str_detect(town, ', MI')), 
+            index = c("id","rel_yr"),
+            method = "within",
+            effect = "twoways")
 rsym <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr_0 + 
-             treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
-             treated*rel_yr_5 + factor(cz)*factor(cal_yr),
-           data = data_source_stack %>% filter(str_detect(town, ', MI')), 
-           index = c("id","rel_yr"),
-           method = "within",
-           effect = "twoways")
+              treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
+              treated*rel_yr_5 + factor(cz)*factor(cal_yr),
+            data = data_source_stack %>% filter(str_detect(town, ', MI')), 
+            index = c("id","rel_yr"),
+            method = "within",
+            effect = "twoways")
 rnym <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr_0 + 
               treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
               treated*rel_yr_5 + factor(cz)*factor(cal_yr),
@@ -404,22 +307,22 @@ rnym <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr
             effect = "twoways")
 
 rspw <- plm(outcome_var ~ treated*post + factor(cz)*factor(cal_yr),
-           data = data_source_stack %>% filter(str_detect(town, ', WI')),
-           index = c("id","rel_yr"),
-           method = "within",
-           effect = "twoways")
+            data = data_source_stack %>% filter(str_detect(town, ', WI')),
+            index = c("id","rel_yr"),
+            method = "within",
+            effect = "twoways")
 rnpw <- plm(outcome_var ~ treated*post + factor(cz)*factor(cal_yr),
-           data = data_source_nn %>% filter(str_detect(town, ', WI')), 
-           index = c("id","rel_yr"),
-           method = "within",
-           effect = "twoways")
+            data = data_source_nn %>% filter(str_detect(town, ', WI')), 
+            index = c("id","rel_yr"),
+            method = "within",
+            effect = "twoways")
 rsyw <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr_0 + 
-             treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
-             treated*rel_yr_5 + factor(cz)*factor(cal_yr),
-           data = data_source_stack %>% filter(str_detect(town, ', WI')), 
-           index = c("id","rel_yr"),
-           method = "within",
-           effect = "twoways")
+              treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
+              treated*rel_yr_5 + factor(cz)*factor(cal_yr),
+            data = data_source_stack %>% filter(str_detect(town, ', WI')), 
+            index = c("id","rel_yr"),
+            method = "within",
+            effect = "twoways")
 rnyw <- plm(outcome_var ~ treated*rel_yr_m3 + treated*rel_yr_m1 + treated*rel_yr_0 + 
               treated*rel_yr_1 + treated*rel_yr_2 + treated*rel_yr_3 + treated*rel_yr_4 + 
               treated*rel_yr_5 + factor(cz)*factor(cal_yr),
@@ -460,7 +363,7 @@ stargazer::stargazer(rnpa,rnya,rspa,rsya,
                      rnpw,rnyw,rspw,rsyw,
                      digits = 2,
                      type="text",
-                     out = "results/employment/jobs_states.html",
+                     out = "results/employment/retail_only/jobs_states.html",
                      covariate.labels = c("Treated * Post", "Treated * Rel. Year -3", "Treated * Rel. Year -1",
                                           "Treated * Rel. Year 0", "Treated * Rel. Year 1", "Treated * Rel. Year 2",
                                           "Treated * Rel. Year 3", "Treated * Rel. Year 4", "Treated * Rel. Year 5"),
@@ -609,7 +512,7 @@ stargazer::stargazer(rnpa,rnya,rspa,rsya,
                      rnpw,rnyw,rspw,rsyw,
                      digits = 2,
                      type="text",
-                     out = "results/employment/ests_states.html",
+                     out = "results/employment/retail_only/ests_states.html",
                      covariate.labels = c("Treated * Post", "Treated * Rel. Year -3", "Treated * Rel. Year -1",
                                           "Treated * Rel. Year 0", "Treated * Rel. Year 1", "Treated * Rel. Year 2",
                                           "Treated * Rel. Year 3", "Treated * Rel. Year 4", "Treated * Rel. Year 5"),

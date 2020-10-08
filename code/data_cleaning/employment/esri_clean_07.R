@@ -36,10 +36,14 @@ base_panel <- df %>%
          ) %>%
   group_by(city_fips,year,buffer) %>% 
   summarise(job_total = sum(as.numeric(jobs)),
-            rtl = sum(as.numeric(rtl)),
-            trn = sum(as.numeric(trn)),
-            mfg = sum(as.numeric(mfg)),
-            svc = sum(as.numeric(svc)),
+            rtl_ests = sum(as.numeric(rtl)),
+            trn_ests = sum(as.numeric(trn)),
+            mfg_ests = sum(as.numeric(mfg)),
+            svc_ests = sum(as.numeric(svc)),
+            rtl_jobs = sum(as.numeric(rtl*jobs)),
+            trn_jobs = sum(as.numeric(trn*jobs)),
+            mfg_jobs = sum(as.numeric(mfg*jobs)),
+            svc_jobs = sum(as.numeric(svc*jobs)),
             estabs = n()) %>% 
   arrange(city_fips,year,buffer) %>% 
   write_csv("data/csv/employment/panel_long.csv")
@@ -57,3 +61,13 @@ ests_panel <- base_panel %>% select(city_fips:buffer,estabs) %>%
   filter(!is.na(st))%>% 
   select(1,2,9:20,buffer_0,buffer_1,buffer_2,buffer_3,buffer_4,buffer_5) %>% 
   write_csv("data/csv/employment/ests_panel.csv")
+retail_panel <- base_panel %>% select(city_fips:buffer,rtl_ests,rtl_jobs) %>% 
+  rename(ests = rtl_ests, jobs = rtl_jobs) %>% 
+  pivot_wider(names_from = buffer, values_from = c(ests,jobs), names_prefix = "buffer_") %>% 
+  replace(is.na(.), 0) %>% 
+  left_join(msp, by = "city_fips") %>% 
+  filter(!is.na(st)) %>% 
+  select(1,2,jobs_buffer_0,jobs_buffer_1,jobs_buffer_2,jobs_buffer_3,jobs_buffer_4,jobs_buffer_5,
+         ests_buffer_1,ests_buffer_2,ests_buffer_3,ests_buffer_4,ests_buffer_5,everything()) %>% 
+  select(1,2,15:26,3:14) %>% 
+  write_csv("data/csv/employment/retail_jobs_panel.csv")
