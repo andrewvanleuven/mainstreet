@@ -187,5 +187,5 @@ sales_pk <- nominal_taxable_sales %>% select(-(3:13)) %>%
   left_join(cpi, by = "yr") %>% select(-yr) %>% 
   mutate(real_sales = round(nominal_sales*inflator,0),
          real_pk_sales = round(real_sales/population,2)) %>% 
-  select(-inflator,-population) %>% 
+  select(-inflator) %>% 
   write_csv("data/csv/iowa_dor/real_taxable_sales_pk.csv")

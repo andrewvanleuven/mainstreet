@@ -67,7 +67,7 @@ panel_nn <- panel_df %>%
   select(-matched,-matches) %>% 
   write_csv("data/csv/employment/panel_nn.csv")
 
-foreign::write.dta(panel_nn,"data/stata/msp_nearest.dta")
+#foreign::write.dta(panel_nn,"data/stata/msp_nearest.dta")
 
 nrow(panel_nn %>% select(town) %>% distinct()) # 226 towns in the data
 nrow(panel_nn %>% filter(treated == 1) %>% select(town) %>% distinct()) # 43 treated towns (13 of which are RUCC = 3)
@@ -181,7 +181,7 @@ panel_stack <- stacked %>%
   mutate(distance = ifelse(weights>=1,0,distance)) %>% 
   write_csv("data/csv/employment/panel_stack.csv")
 
-foreign::write.dta(panel_stack,"data/stata/msp_stack.dta")
+#foreign::write.dta(panel_stack,"data/stata/msp_stack.dta")
 
 rm(treated_stack,treated_yrs,stack_setup,matches,unstacked,stacked,weights_stack)
 nrow(panel_stack %>% select(town) %>% distinct()) # 280 towns in the data
@@ -284,6 +284,50 @@ rpanel_nn_buff2 <- panel_nn %>% select(-jobs,-jobs_lead) %>%
   relocate(ests, .after = jobs) %>% 
   relocate(ests_lead, .after = jobs_lead) %>% 
   write_csv("data/csv/employment/rpanel_nn_buff2.csv")
+
+rdf_buff1 <- read_csv("data/csv/employment/retail_jobs_panel.csv") %>% 
+  mutate(ests = ests_buffer_0,
+         jobs = jobs_buffer_0) %>% 
+  mutate(st = str_replace_all(st, "Iowa", "IA"),
+         st = str_replace_all(st, "Michigan", "MI"),
+         st = str_replace_all(st, "Ohio", "OH"),
+         st = str_replace_all(st, "Wisconsin", "WI"),) %>% 
+  rename(cal_yr = year) %>% 
+  group_by(city_fips) %>%
+  mutate(jobs_lead = lead(jobs, n = 1, default = NA),
+         ests_lead = lead(ests, n = 1, default = NA),
+         town = paste(name,st,sep = ", ")) %>% 
+  ungroup() %>% 
+  select(town,cal_yr,jobs,ests,jobs_lead,ests_lead)
+
+rpanel_nn_buff1 <- panel_nn %>% select(-jobs,-jobs_lead) %>% 
+  left_join(rdf_buff1, by = c('town','cal_yr')) %>% 
+  relocate(c(jobs,jobs_lead), .after = cal_yr) %>% 
+  relocate(ests, .after = jobs) %>% 
+  relocate(ests_lead, .after = jobs_lead) %>% 
+  write_csv("data/csv/employment/rpanel_nn_buff1.csv")
+
+rdf_buff3 <- read_csv("data/csv/employment/retail_jobs_panel.csv") %>% 
+  mutate(ests = ests_buffer_0 + ests_buffer_1 + ests_buffer_2,
+         jobs = jobs_buffer_0 + jobs_buffer_1 + jobs_buffer_2) %>% 
+  mutate(st = str_replace_all(st, "Iowa", "IA"),
+         st = str_replace_all(st, "Michigan", "MI"),
+         st = str_replace_all(st, "Ohio", "OH"),
+         st = str_replace_all(st, "Wisconsin", "WI"),) %>% 
+  rename(cal_yr = year) %>% 
+  group_by(city_fips) %>%
+  mutate(jobs_lead = lead(jobs, n = 1, default = NA),
+         ests_lead = lead(ests, n = 1, default = NA),
+         town = paste(name,st,sep = ", ")) %>% 
+  ungroup() %>% 
+  select(town,cal_yr,jobs,ests,jobs_lead,ests_lead)
+
+rpanel_nn_buff3 <- panel_nn %>% select(-jobs,-jobs_lead) %>% 
+  left_join(rdf_buff3, by = c('town','cal_yr')) %>% 
+  relocate(c(jobs,jobs_lead), .after = cal_yr) %>% 
+  relocate(ests, .after = jobs) %>% 
+  relocate(ests_lead, .after = jobs_lead) %>% 
+  write_csv("data/csv/employment/rpanel_nn_buff3.csv")
 
 rpanel_stack_buff2 <- panel_stack %>% select(-jobs,-jobs_lead) %>% 
   left_join(rdf_buff2, by = c('town','cal_yr')) %>% 

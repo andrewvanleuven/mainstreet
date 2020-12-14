@@ -91,23 +91,20 @@ biz_dotmap <- function(fips,year,colors){
     geom_sf(data = bind, aes(fill = clrs), color = NA, alpha = 1) +
     geom_sf(data = road, size = .25, color = "black") +
     geom_sf(data = dots, shape = 21, color = "black", fill = "white", size = .75, stroke = .2) +
-    geom_sf(data = town, alpha = 0, color = "black", size = 1) +
+    geom_sf(data = town, alpha = 0, color = "black", size = .5) +
     scale_fill_manual(name = "# of Establishments\nin Each Buffer Zone",
                       values = rev(clrs),
                       labels = labs) +
     guides(fill = guide_legend(reverse = F,
                                override.aes = list(alpha = 1))) + 
     #ggtitle(titl, subtitle = "Concentric Buffers at Equal Distance Intervals from Downtown") +
-    theme_void(base_family = "LM Roman 10") +
+    theme_void(base_family = "Helvetica") +
     theme(plot.title = element_text(face = "bold", size = 20, hjust = 0.5), 
-          plot.subtitle = element_text(size = 12, hjust = 0.5)) + 
-    ggsave("plot/manuscripts/dot_buffers.png", height = 7, width = 10)
+          plot.subtitle = element_text(size = 12, hjust = 0.5),
+          legend.title=element_text(size=12 ,hjust = 0.5, face = "bold"),
+          legend.text=element_text(size=12, family="Helvetica Light")) + 
+    ggsave("plot/manuscripts/dot_buffers_edq.png", height = 7, width = 10)
     rm(n_yr,ntwn,titl,road,labs,nwth,tabl,clrs,town,cbd0,cbd1,cbd2,cbd3,cbd4,buf5,buf4,buf3,buf2,buf1,buf0,bind,fips,pcty,colors,crds,f_st,n_st)
 }
 
-biz_dotmap(fips = 5572925, year = 2000, colors = "Greys")
-
-
-# Next Map ----------------------------------------------------------------
-
-
+biz_dotmap(fips = 2617020, year = 2000, colors = "Greys")

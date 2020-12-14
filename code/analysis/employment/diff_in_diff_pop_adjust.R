@@ -7,34 +7,34 @@ suppressMessages({library(tidyverse)
 
 # Import/Clean Data -------------------------------------------------------
 #retail jobs per capita
-dfn <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% filter(pop_2010 <= 35000) %>% 
+dfn <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% filter(rucc > 3) %>% 
   mutate(outcome_var = (jobs/(pop_2010/100)))
 
-dfs <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% filter(pop_2010 <= 35000) %>% 
+dfs <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% filter(rucc > 3) %>% 
   filter(distance > 5 | distance == 0) %>% 
   mutate(outcome_var = (jobs/(pop_2010/100)))
 
 #retail establishments per capita
-dfen <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% filter(pop_2010 <= 35000) %>% 
+dfen <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% filter(rucc > 3) %>% 
   mutate(outcome_var = (ests/(pop_2010/100)))
 
-dfes <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% filter(pop_2010 <= 35000) %>% 
+dfes <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% filter(rucc > 3) %>% 
   filter(distance > 5 | distance == 0) %>% 
   mutate(outcome_var = (ests/(pop_2010/100)))
 
 #retail jobs pk lead
-ldfn <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% filter(pop_2010 <= 35000) %>% 
+ldfn <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% filter(rucc > 3) %>% 
   mutate(outcome_var = (jobs_lead/(pop_2010/100)))
 
-ldfs <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% filter(pop_2010 <= 35000) %>% 
+ldfs <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% filter(rucc > 3) %>% 
   filter(distance > 5 | distance == 0) %>% 
   mutate(outcome_var = (jobs_lead/(pop_2010/100)))
 
 #retail ests pk lead
-ldfen <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% filter(pop_2010 <= 35000) %>% 
+ldfen <- read_csv("data/csv/employment/rpanel_nn_buff2.csv") %>% filter(rucc > 3) %>% 
   mutate(outcome_var = (ests_lead/(pop_2010/100)))
 
-ldfes <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% filter(pop_2010 <= 35000) %>% 
+ldfes <- read_csv("data/csv/employment/rpanel_stack_buff2.csv") %>% filter(rucc > 3) %>% 
   filter(distance > 5 | distance == 0) %>% 
   mutate(outcome_var = (ests_lead/(pop_2010/100)))
 
