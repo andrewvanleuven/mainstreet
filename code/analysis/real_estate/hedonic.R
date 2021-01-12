@@ -7,133 +7,156 @@ library(stargazer)
 # Read in data ------------------------------------------------------------
 msp <- read_csv("data/csv/universe/msp_universe.csv") %>% 
   filter(st == "Ohio") %>% select(-pop_2010) 
-df <- read_csv("hidden/datatree/cleaned/datatree_clean.csv") %>% 
-  rename(city_fips = distance_to) %>% 
-  left_join(msp, by = "city_fips") %>% 
-  rename(distance_to = city_fips)
-#  select(1:4,name:cty_seat,everything())
-neighborhood_df <- read_csv("hidden/datatree/cleaned/datatree_oh06.csv")
-cpi <- fredr(series_id = "CPIAUCSL", # maybe try CPIHOSSL --- Consumer Price Index for All Urban Consumers: Housing in U.S. City Average
-             observation_start = as.Date("2000-01-01"),
-             observation_end = as.Date("2019-12-31")) %>% 
-  mutate(inflator = 258.444/value) %>% 
-  rename(rdate = date) %>% select(rdate,inflator)
+#df <- read_csv("hidden/datatree/cleaned/datatree_clean.csv") %>% 
+#  rename(city_fips = distance_to) %>% 
+#  left_join(msp, by = "city_fips") %>% 
+#  rename(distance_to = city_fips)
+##  select(1:4,name:cty_seat,everything())
+#neighborhood_df <- read_csv("hidden/datatree/cleaned/datatree_oh06.csv")
+#cpi <- fredr(series_id = "CPIAUCSL", # maybe try CPIHOSSL --- Consumer Price Index for All Urban Consumers: Housing in U.S. City Average
+#             observation_start = as.Date("2000-01-01"),
+#             observation_end = as.Date("2019-12-31")) %>% 
+#  mutate(inflator = 258.444/value) %>% 
+#  rename(rdate = date) %>% select(rdate,inflator)
 
 # Final data cleaning -----------------------------------------------------
-df_clean_0 <- df %>% 
-  inner_join(neighborhood_df, by = "property_id") %>% 
-  filter(owner_occupied == "Y",                                                       # removes any rentals or vacant properties
-         current_sale_document_type %in% c(71,27,67,35,49,68,55,20,36,44,69,61,4,22), # removes foreclosures, death transfers, other rare deeds
-         !is.na(current_sale_contract_date),                                          # removes any missing values for sale date
-         !is.na(current_sale_document_type),                                          # removes any missing values for deed type
-         !is.na(stories_nbr_code)                                                     # removes any missing values for number of stories
-         ) %>% 
-  mutate(basement = if_else(basement_code %in% c(1,2,3,4,6,7),1,0),                   # has basement binary
-         pool = if_else(pool_code %in% c(1,2,4,5,6,7,8,9,10,11),1,0),                 # has pool binary
-         garage = if_else(garage %in% c(1,2,3,4,5,7,10,17,19),1,0),                   # has garage binary
-         brick = if_else(exterior_walls_code == 2,1,0),                               # has brick ext. walls binary
-         poor_condition = if_else(building_condition_code %in% c(1,2,3,6),0,1),       # binary: if condition is "poor" or "unsound"
-         stories = stories_nbr_code/100,                                              # transform stories variable
-         dist_ft = dist_ft/660,                                                       # replace ft with 1/8 mile
-         deck_ind = replace_na(deck_ind, 0),                                          # has deck, replace NA values
-         brick = replace_na(brick, 0),                                                # brick, replace NA values
-         current_sale_contract_date = lubridate::ymd(current_sale_contract_date)      # format date properly
-         ) %>% 
-  select(-(situs_latitude:owner1ownership_rights),-building_class_code,               # unneeded variables
-         -site_influence_code,-basement_code,-pool_code,-style_code,
-         -exterior_walls_code,-interior_walls_code,lot_size_sq_ft,
-         -building_quality_code,-building_condition_code,
-         -stories_nbr_code,-current_sales_price_code,
-         -(prev_sale_contract_date:prev_sales_price_code),
-         -current_sale_document_type,-sum_building_sq_ft) %>% 
-  rename(sale_price = current_sales_price,                                            # give variables more intuitive names
-         in_downtown = inside,
-         city_fips = distance_to,
-         city_name = name,
-         address = situs_full_street_address,
-         city = situs_city,
-         deck = deck_ind,
-         distance = dist_ft,
-         state = situs_state,
-         zip = situs_zip5,
-         sale_date = current_sale_contract_date,
-         baths = bath_total_calc,
-         recent_construction = effective_year_built,
-         sqft = building_area,
-         lot_size = lot_size_sq_ft)
+#df_clean_0 <- df %>% 
+#  inner_join(neighborhood_df, by = "property_id") %>% 
+#  filter(owner_occupied == "Y",                                                       # removes any rentals or vacant properties
+#         current_sale_document_type %in% c(71,27,67,35,49,68,55,20,36,44,69,61,4,22), # removes foreclosures, death transfers, other rare deeds
+#         !is.na(current_sale_contract_date),                                          # removes any missing values for sale date
+#         !is.na(current_sale_document_type),                                          # removes any missing values for deed type
+#         !is.na(stories_nbr_code)                                                     # removes any missing values for number of stories
+#         ) %>% 
+#  mutate(basement = if_else(basement_code %in% c(1,2,3,4,6,7),1,0),                   # has basement binary
+#         pool = if_else(pool_code %in% c(1,2,4,5,6,7,8,9,10,11),1,0),                 # has pool binary
+#         garage = if_else(garage %in% c(1,2,3,4,5,7,10,17,19),1,0),                   # has garage binary
+#         brick = if_else(exterior_walls_code == 2,1,0),                               # has brick ext. walls binary
+#         poor_condition = if_else(building_condition_code %in% c(1,2,3,6),0,1),       # binary: if condition is "poor" or "unsound"
+#         stories = stories_nbr_code/100,                                              # transform stories variable
+#         dist_ft = dist_ft/660,                                                       # replace ft with 1/8 mile
+#         deck_ind = replace_na(deck_ind, 0),                                          # has deck, replace NA values
+#         brick = replace_na(brick, 0),                                                # brick, replace NA values
+#         current_sale_contract_date = lubridate::ymd(current_sale_contract_date)      # format date properly
+#         ) %>% 
+#  select(-(situs_latitude:owner1ownership_rights),-building_class_code,               # unneeded variables
+#         -site_influence_code,-basement_code,-pool_code,-style_code,
+#         -exterior_walls_code,-interior_walls_code,lot_size_sq_ft,
+#         -building_quality_code,-building_condition_code,
+#         -stories_nbr_code,-current_sales_price_code,
+#         -(prev_sale_contract_date:prev_sales_price_code),
+#         -current_sale_document_type,-sum_building_sq_ft) %>% 
+#  rename(sale_price = current_sales_price,                                            # give variables more intuitive names
+#         in_downtown = inside,
+#         city_fips = distance_to,
+#         city_name = name,
+#         address = situs_full_street_address,
+#         city = situs_city,
+#         deck = deck_ind,
+#         distance = dist_ft,
+#         state = situs_state,
+#         zip = situs_zip5,
+#         sale_date = current_sale_contract_date,
+#         baths = bath_total_calc,
+#         recent_construction = effective_year_built,
+#         sqft = building_area,
+#         lot_size = lot_size_sq_ft)
 
-df_clean <- df_clean_0 %>% 
-  filter(between(sale_date, as.Date("2000-01-01"), as.Date("2019-12-31"))) %>%        # filter date...only transactions since 2000
-  mutate(d2000 = if_else(between(sale_date, as.Date("2000-01-01"), as.Date("2009-12-31")),1,0),
-         d2010 = if_else(between(sale_date, as.Date("2010-01-01"), as.Date("2019-12-31")),1,0),
-         nbhood_pop = ((d2000*pop_2000)+(d2010*pop_2010)),
-         nbhood_pop_density = ((d2000*(pop_2000/bg_size_sqmi))+(d2010*(pop_2010/bg_size_sqmi))),
-         nbhood_age = ((d2000*median_age_2000)+(d2010*median_age_2010)),
-         nbhood_nonwhite = ((d2000*pct_nonwhite_2000)+(d2010*pct_nonwhite_2010)),
-         nbhood_nonwhite = 1-nbhood_nonwhite,
-         nbhood_renting = ((d2000*pct_renting_2000)+(d2010*pct_renting_2010)),
-         nbhood_bachelors = ((d2000*pct_bachelors_2000)+(d2010*pct_bachelors_2010)),
-         nbhood_unempl = ((d2000*civ_unempl_2000)+(d2010*civ_unempl_2010)),
-         nbhood_income = ((d2000*median_income_2000*1.496491)+(d2010*median_income_2010*1.187675)), # respective CPI-U inflators
-         msp_lag_year1 = msp_yr+1,
-         msp_lag_year2 = msp_yr+2,
-         msp_lag_year3 = msp_yr+3,
-         msp_lag_year5 = msp_yr+5,
-         msp_yr = (ymd(sprintf("%d-01-01",msp_yr))),
-         msp_lag_yr1 = (ymd(sprintf("%d-01-01",msp_lag_year1))),
-         msp_lag_yr2 = (ymd(sprintf("%d-01-01",msp_lag_year2))),
-         msp_lag_yr3 = (ymd(sprintf("%d-01-01",msp_lag_year3))),
-         msp_lag_yr5 = (ymd(sprintf("%d-01-01",msp_lag_year5))),
-         msp_at_sale = if_else(sale_date >= msp_yr,1,0),
-         msp_at_sale = replace_na(msp_at_sale, 0),
-         msp_lag1 = if_else(sale_date >= msp_lag_yr1,1,0),
-         msp_lag2 = if_else(sale_date >= msp_lag_yr2,1,0),
-         msp_lag3 = if_else(sale_date >= msp_lag_yr3,1,0),
-         msp_lag5 = if_else(sale_date >= msp_lag_yr5,1,0),
-         msp_lag1 = replace_na(msp_lag1, 0),
-         msp_lag2 = replace_na(msp_lag2, 0),
-         msp_lag3 = replace_na(msp_lag3, 0),
-         msp_lag5 = replace_na(msp_lag5, 0),
-         #distance = distance/8,            # changes distance to miles
-         lot_size = lot_size/43560, # acres
-         rdate = round_date(sale_date, "month"),
-         age = year(sale_date)-year_built,
-         age = if_else(age<0,0,age),
-         construction_yn = if_else(recent_construction == year_built,0,1),
-         construction_before_sale = if_else(recent_construction < year(sale_date),1,1),
-         yrs_since_construction = (year(sale_date)-recent_construction)*construction_yn*construction_before_sale,
-         recent_remodel = if_else(between(yrs_since_construction,1,10),1,0)) %>% 
-  filter(!is.na(city_name)) %>% 
-  left_join(.,cpi, by = "rdate") %>% 
-  mutate(inflator = replace_na(inflator, 1),
-         real_sale_price = round(sale_price*inflator,digits = 0)) %>% 
-  left_join(.,(read_csv("data/csv/universe/msp_universe.csv") %>% filter(st == "Ohio") %>% 
-                 select(city_fips,pop_2010) %>% rename(population = pop_2010)), by = "city_fips") %>% 
-  select(property_id,msp_at_sale,msp_lag1,msp_lag2,msp_lag3,msp_lag5,msp_accr,msp_affl,    # unique ID, MSP, distance
-         distance,in_downtown,address,city_name,st,city_fips,cz,rucc,cty_seat,population,  # distance, location
-         sqft,lot_size,age,recent_remodel,bedrooms,total_rooms,                            # structural
-         baths,deck,garage,pool,brick,stories,poor_condition,basement,                     # structural, cont.
-         sale_date,sale_price,real_sale_price,nbhood_pop:nbhood_income) %>%                # transaction, neighborhood
-  write_csv("hidden/datatree/cleaned/datatree_model.csv")
+#df_clean <- df_clean_0 %>% 
+#  filter(between(sale_date, as.Date("2000-01-01"), as.Date("2019-12-31"))) %>%        # filter date...only transactions since 2000
+#  mutate(d2000 = if_else(between(sale_date, as.Date("2000-01-01"), as.Date("2009-12-31")),1,0),
+#         d2010 = if_else(between(sale_date, as.Date("2010-01-01"), as.Date("2019-12-31")),1,0),
+#         nbhood_pop = ((d2000*pop_2000)+(d2010*pop_2010)),
+#         nbhood_pop_density = ((d2000*(pop_2000/bg_size_sqmi))+(d2010*(pop_2010/bg_size_sqmi))),
+#         nbhood_age = ((d2000*median_age_2000)+(d2010*median_age_2010)),
+#         nbhood_nonwhite = ((d2000*pct_nonwhite_2000)+(d2010*pct_nonwhite_2010)),
+#         nbhood_nonwhite = 1-nbhood_nonwhite,
+#         nbhood_renting = ((d2000*pct_renting_2000)+(d2010*pct_renting_2010)),
+#         nbhood_bachelors = ((d2000*pct_bachelors_2000)+(d2010*pct_bachelors_2010)),
+#         nbhood_unempl = ((d2000*civ_unempl_2000)+(d2010*civ_unempl_2010)),
+#         nbhood_income = ((d2000*median_income_2000*1.496491)+(d2010*median_income_2010*1.187675)), # respective CPI-U inflators
+#         msp_lag_year1 = msp_yr+1,
+#         msp_lag_year2 = msp_yr+2,
+#         msp_lag_year3 = msp_yr+3,
+#         msp_lag_year5 = msp_yr+5,
+#         msp_yr = (ymd(sprintf("%d-01-01",msp_yr))),
+#         msp_lag_yr1 = (ymd(sprintf("%d-01-01",msp_lag_year1))),
+#         msp_lag_yr2 = (ymd(sprintf("%d-01-01",msp_lag_year2))),
+#         msp_lag_yr3 = (ymd(sprintf("%d-01-01",msp_lag_year3))),
+#         msp_lag_yr5 = (ymd(sprintf("%d-01-01",msp_lag_year5))),
+#         msp_at_sale = if_else(sale_date >= msp_yr,1,0),
+#         msp_at_sale = replace_na(msp_at_sale, 0),
+#         msp_lag1 = if_else(sale_date >= msp_lag_yr1,1,0),
+#         msp_lag2 = if_else(sale_date >= msp_lag_yr2,1,0),
+#         msp_lag3 = if_else(sale_date >= msp_lag_yr3,1,0),
+#         msp_lag5 = if_else(sale_date >= msp_lag_yr5,1,0),
+#         msp_lag1 = replace_na(msp_lag1, 0),
+#         msp_lag2 = replace_na(msp_lag2, 0),
+#         msp_lag3 = replace_na(msp_lag3, 0),
+#         msp_lag5 = replace_na(msp_lag5, 0),
+#         #distance = distance/8,            # changes distance to miles
+#         lot_size = lot_size/43560, # acres
+#         rdate = round_date(sale_date, "month"),
+#         age = year(sale_date)-year_built,
+#         age = if_else(age<0,0,age),
+#         construction_yn = if_else(recent_construction == year_built,0,1),
+#         construction_before_sale = if_else(recent_construction < year(sale_date),1,1),
+#         yrs_since_construction = (year(sale_date)-recent_construction)*construction_yn*construction_before_sale,
+#         recent_remodel = if_else(between(yrs_since_construction,1,10),1,0)) %>% 
+#  filter(!is.na(city_name)) %>% 
+#  left_join(.,cpi, by = "rdate") %>% 
+#  mutate(inflator = replace_na(inflator, 1),
+#         real_sale_price = round(sale_price*inflator,digits = 0)) %>% 
+#  left_join(.,(read_csv("data/csv/universe/msp_universe.csv") %>% filter(st == "Ohio") %>% 
+#                 select(city_fips,pop_2010) %>% rename(population = pop_2010)), by = "city_fips") %>% 
+#  select(property_id,msp_at_sale,msp_lag1,msp_lag2,msp_lag3,msp_lag5,msp_accr,msp_affl,    # unique ID, MSP, distance
+#         distance,in_downtown,address,city_name,st,city_fips,cz,rucc,cty_seat,population,  # distance, location
+#         sqft,lot_size,age,recent_remodel,bedrooms,total_rooms,                            # structural
+#         baths,deck,garage,pool,brick,stories,poor_condition,basement,                     # structural, cont.
+#         sale_date,sale_price,real_sale_price,nbhood_pop:nbhood_income) %>%                # transaction, neighborhood
+#  write_csv("hidden/datatree/cleaned/datatree_model.csv")
 
 #rm(neighborhood_df,msp,df_clean_0,cpi,df)
 
 # Summary Stats -----------------------------------------------------------
-dfsum <- df_clean %>% 
+df_clean <- read_csv("hidden/datatree/cleaned/datatree_model.csv") %>% 
+  mutate(nbhood_nonwhite = nbhood_nonwhite*100,
+         nbhood_bachelors = nbhood_bachelors*100,
+         nbhood_unempl = nbhood_unempl*100)
+modeldf <- df_clean %>% filter(real_sale_price <= 5000000,
+                               distance <= (5*8),
+                               lot_size <= 10,
+                               stories <= 5,
+                               baths <= 6,
+                               bedrooms <= 8,
+                               between(sqft,500,10000),
+                               between(total_rooms,1,20),
+                               lot_size >= 0.001) %>% 
+  mutate(ln_realsaleprice = log(real_sale_price),
+         ln_distance = log(distance),
+         ln_sqft = log(sqft),
+         ln_lotsize = log(lot_size),
+         log_dist2 = ln_distance^2,
+         ln_age = age+1,
+         ln_age = log(ln_age)) 
+modeldf <- left_join(modeldf, (msp %>% select(city_fips,cty_fips))) #%>% 
+  #haven::write_dta("hidden/datatree/cleaned/datatree_model.dta")
+clr_cons()
+ggplot(modeldf) +
+  aes(x = bedrooms) +
+  geom_histogram(bins = 30L, fill = "#0c4c8a") +
+  theme_minimal()
+modeldf %>% 
   select(property_id,msp_at_sale,msp_lag1,msp_lag2,msp_lag3,msp_lag5,msp_accr,msp_affl,    
          distance,in_downtown,address,city_name,st,city_fips,cz,rucc,cty_seat,population,  
          sqft,lot_size,age,recent_remodel,bedrooms,baths,total_rooms,stories,                            
          deck,garage,pool,brick,poor_condition,basement,sale_date,sale_price,real_sale_price,nbhood_pop:nbhood_income) %>% 
   select(msp_at_sale,distance,in_downtown,sqft:nbhood_unempl) %>% 
   select(-recent_remodel,-brick,-poor_condition,-sale_price,-sale_date,-nbhood_pop,-nbhood_pop_density,-nbhood_renting) %>%
-  filter(real_sale_price < 5000000,
-         lot_size < 10,
-         distance <= (5*8),
-         lot_size >= 0.001) %>% 
   mutate(distance = distance/8,
          real_sale_price = real_sale_price/1000) %>% 
-  as.data.frame()
-stargazer(dfsum,
+  as.data.frame() %>% 
+  stargazer(.,
           font.size = "footnotesize",
           omit.summary.stat = c("p25", "p75", "n"),
           digits = 2,
@@ -147,20 +170,6 @@ stargazer(dfsum,
 
 
 # Hedonic price model -----------------------------------------------------
-modeldf <- df_clean %>% filter(real_sale_price < 5000000,
-                               lot_size < 10,
-                               distance <= (5*8),
-                               lot_size >= 0.001) %>% 
-  mutate(ln_realsaleprice = log(real_sale_price),
-         ln_distance = log(distance),
-         ln_sqft = log(sqft),
-         ln_lotsize = log(lot_size),
-         log_dist2 = ln_distance^2,
-         ln_age = age+1,
-         ln_age = log(ln_age)) #%>% haven::write_dta("hidden/datatree/cleaned/datatree_model.dta")
-clr_cons()
-names(modeldf)
-
 model_1 <- lm(ln_realsaleprice ~ 
                 ln_distance + 
                 in_downtown,
@@ -318,7 +327,7 @@ model_04 <- lm(ln_realsaleprice ~
                  in_downtown +
                  ln_lotsize + 
                  ln_sqft + 
-                 ln_age + 
+                 age + 
                  total_rooms +
                  stories + pool + basement + deck +
                  nbhood_age +

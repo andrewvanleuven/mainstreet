@@ -52,48 +52,51 @@ houses <- rbind(bldg %>% filter(id == 3614) %>% st_centroid(),
                 bldg %>% filter(id == 5022) %>% st_centroid()) %>% 
   cbind(lines %>% st_drop_geometry())
 
-ggplot() + 
-  geom_sf(data = ohio, fill = greys[1], color = NA) + 
-  geom_sf(data = town, fill = "white", color = NA) + 
-  geom_sf(data = downtown, aes(fill = 'Downtown District'), color = NA, alpha = 1) +
-  geom_sf(data = smooth_h2o, color =  greys[4], size = 3, fill = greys[4], alpha = .75) +
-  geom_sf(data = cty_rds, color = greys[3], size = .5) +
-  geom_sf(data = cty_rds %>% filter(RTTYP %in% c('U','I')), color = greys[3], size = 1) +
-  geom_sf(data = bldg, fill = "black", color = NA, alpha = .4) +
-  geom_sf(data = lines, size = 1.5, color = "black") +
-  #geom_sf(data = lines, size = 1, color = "black") +
-  geom_sf(data = bldg %>% filter(id == 3614) %>% st_buffer(3), fill = "yellow", color = "black") +
-  geom_sf(data = bldg %>% filter(id == 5022) %>% st_buffer(3), fill = "red", color = "black") +
-  geom_sf(data = centroid, size = 3, shape = 15) +
-  ggrepel::geom_label_repel(
-    data = houses %>% slice(1),
-    aes(label = length, geometry = geometry),
-    point.padding = .65,
-    min.segment.length = Inf,
-    family = "LM Roman 10",
-    size = 5,
-    fontface = "bold",
-    stat = "sf_coordinates"
-  ) +
-  ggrepel::geom_label_repel(
-    data = houses %>% slice(2),
-    aes(label = length, geometry = geometry),
-    point.padding = .55,
-    min.segment.length = Inf,
-    family = "LM Roman 10",
-    size = 5,
-    fontface = "bold",
-    stat = "sf_coordinates"
-  ) +
-  theme_void() +
-  scale_fill_manual(name = "",
-                    values = colors,
-                    guide = guide_legend(override.aes = list(shape = 19, size = 8))) + 
-  theme(legend.title = element_text(size=16, face="bold", hjust = 0.5),
-        legend.text = element_text(size=16),
-        legend.key = element_rect(fill = NA, color = NA),
-        legend.position = "bottom", #c(0.85, 0.17),
-        text=element_text(family="LM Roman 10")) + 
-  coord_sf(crs = 4326) +
-  ggsave("plot/maps/property_dist.png", height = 8, width = 12)
+(mplot <- ggplot() + 
+    geom_sf(data = ohio, fill = greys[1], color = NA) + 
+    geom_sf(data = town, fill = "white", color = NA) + 
+    geom_sf(data = downtown, aes(fill = 'Downtown District'), color = NA, alpha = 1, show.legend = "point") +
+    geom_sf(data = smooth_h2o, color =  greys[4], size = 3, fill = greys[4], alpha = .75) +
+    geom_sf(data = cty_rds, color = greys[3], size = .5) +
+    geom_sf(data = cty_rds %>% filter(RTTYP %in% c('U','I')), color = greys[3], size = 1) +
+    geom_sf(data = bldg, fill = "black", color = NA, alpha = .4) +
+    geom_sf(data = lines, size = 1.5, color = "black") +
+    #geom_sf(data = lines, size = 1, color = "black") +
+    geom_sf(data = bldg %>% filter(id == 3614) %>% st_buffer(3), fill = "yellow", color = "black") +
+    geom_sf(data = bldg %>% filter(id == 5022) %>% st_buffer(3), fill = "red", color = "black") +
+    geom_sf(data = centroid, size = 3, shape = 15) +
+    ggrepel::geom_label_repel(
+      data = houses %>% slice(1),
+      aes(label = length, geometry = geometry),
+      point.padding = .65,
+      min.segment.length = Inf,
+      family = "Times New Roman",
+      size = 5,
+      #fontface = "bold",
+      stat = "sf_coordinates"
+    ) +
+    ggrepel::geom_label_repel(
+      data = houses %>% slice(2),
+      aes(label = length, geometry = geometry),
+      point.padding = .55,
+      min.segment.length = Inf,
+      family = "Times New Roman",
+      size = 5,
+      #fontface = "bold",
+      stat = "sf_coordinates"
+    ) +
+    theme_void() +
+    coord_sf(crs = 4326) +
+    guides(fill = guide_legend(override.aes = list(shape = 21, size = 5))) +
+    scale_fill_manual(values = colors,
+                      guide = guide_legend(override.aes = list(shape = 19, size = 12))) + 
+    theme(legend.title = element_blank(),
+          legend.text = element_text(size=16),
+          legend.key = element_rect(fill = NA, color = NA),
+          legend.position = c(0.2, 0.1),#"bottom", 
+          text=element_text(family="Times New Roman"),
+          legend.margin=margin(t = 0, r = 10, b = 7, l = 7, unit = "pt"),
+          legend.background = element_rect(color = "black", fill = "white")))   
+
+ggsave(mplot,"plot/maps/property_dist.png", height = 8, width = 12)
 
